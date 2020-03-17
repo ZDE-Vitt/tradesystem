@@ -96,9 +96,9 @@
                         <tr>
                             <td class="fabu_twozero_td1 fabu_twozero_tdtop" style="letter-spacing:1px;">素材名称：</td>
                             <td class="fabu_twozero_td2">
-                                <input onkeyup="changenameLength(this,10)" type="text" name="name" />
+                                <input onkeyup="changenameLength(this,15)" type="text" name="name" />
                                 <div class="fabu_twozero_shengyu">
-                                    发布素材名称，10字以内（<label id="sn_sz">0</label>/10）
+                                    发布素材名称，15字以内（<label id="sn_sz">0</label>/15）
                                 </div>
                             </td>
                         </tr>
@@ -129,9 +129,9 @@
                         <tr>
                             <td class="fabu_twozero_td1" width="100px"><span id="prea" style="display: block" >素材标签：</span></td>
                             <td class="fabu_twozero_td2" >
-                                <select name="tagid">
+                                <select name="tagname">
                                     <option value="0" selected></option>
-                                    <option th:each="tag , iterStat: ${tags} " th:value="${iterStat.count}">[[${tag}]]</option>
+                                    <option th:each="tag : ${tags} " th:value="${tag}">[[${tag}]]</option>
 <!--                                    <option value="5">春节</option>-->
 <!--                                    <option value="6">重阳</option>-->
 <!--                                    <option value="7">清明</option>-->
@@ -147,9 +147,9 @@
                         <tr>
                             <td class="fabu_twozero_td1 fabu_twozero_tdtop" width="100px">素材描述：</td>
                             <td>
-                                <textarea name="description" class="fabu_twozero_textarea1 fabu_twozero_textarea1sm" onkeyup="changeLength(this,50)"></textarea>
+                                <textarea name="description" class="fabu_twozero_textarea1 fabu_twozero_textarea1sm" onkeyup="changeLength(this,200)"></textarea>
                                 <div class="fabu_twozero_shengyu">
-                                    素材内容说明：最多50字（<label id="ss_sz">0</label>/50）
+                                    素材内容说明：最多100字（<label id="ss_sz">0</label>/200）
                                 </div>
                             </td>
                         </tr>
@@ -193,7 +193,7 @@
         if(len.length>=lg){
             $(obj).next().find("span").text(70);
             $(obj).next().find("label").text(10);
-            $("#sn_sz").text(10);
+            $("#sn_sz").text(15);
             $(obj).val(len.substring(0,lg));
         }
     }

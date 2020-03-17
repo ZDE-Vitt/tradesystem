@@ -17,7 +17,7 @@ public interface SucaiListService {
 
     Page<Sucai> selectList(Integer curr, Integer limit, Integer status, Integer userid);
 
-    Integer sucaiupload(Sucai sucai, String width, String heigth,HttpServletRequest request);
+    Integer sucaiupload(Sucai sucai,String tagname, String width, String heigth,HttpServletRequest request);
 
     Integer shenHeNum(Integer userid);
 

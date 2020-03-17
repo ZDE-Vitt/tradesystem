@@ -78,11 +78,11 @@ public class SucaiListController {
 
     @ResponseBody
     @RequestMapping("/sucaiupload")
-    public Map<String,Integer> sucaiupload(Sucai sucai,String width,String heigth,HttpServletRequest request){
+    public Map<String,Integer> sucaiupload(Sucai sucai,String tagname,String width,String heigth,HttpServletRequest request){
 
         System.out.println("sucai=================>" + sucai);
 
-        Integer row = sucaiListService.sucaiupload(sucai,width,heigth,request);
+        Integer row = sucaiListService.sucaiupload(sucai,tagname,width,heigth,request);
         User user = (User) request.getSession().getAttribute("user");
         Map<String,Integer> map =sucaiListService.getNum(user.getId());
         map.put("row",row);

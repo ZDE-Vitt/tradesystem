@@ -246,6 +246,17 @@
                             limit = data.size;
                             total = data.total;
                             curr = data.current;
+                            $.ajax({
+                                type : "post" ,
+                                url : "/sucailist/getNum" ,
+                                async:false ,
+                                success: function(data){
+                                    vue.shenhenum =  data.shenhenum;
+                                    vue.inpassnum =  data.inpassnum;
+                                    vue.passnum =  data.passnum;
+                                }
+                            })
+
                         }
                     })
                 }

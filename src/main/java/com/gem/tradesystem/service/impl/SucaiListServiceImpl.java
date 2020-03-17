@@ -61,7 +61,7 @@ public class SucaiListServiceImpl implements SucaiListService {
     }
 
     @Override
-    public Integer sucaiupload(Sucai sucai, String width, String heigth , HttpServletRequest request) {
+    public Integer sucaiupload(Sucai sucai,String tagname, String width, String heigth , HttpServletRequest request) {
 
         User user = (User) request.getSession().getAttribute("user");
         sucai.setNum(new SimpleDateFormat("yyMMddHHmm").format(new Date()));
@@ -70,6 +70,7 @@ public class SucaiListServiceImpl implements SucaiListService {
         sucai.setAuthor(user.getUsername());
         sucai.setUserid(user.getId());
         sucai.setStatus(1);
+        sucai.setTagid(tagMapper.getid(tagname));
 
         int index = sucai.getSave().lastIndexOf('.');
         sucai.setSuffix(sucai.getSave().substring(index+1,sucai.getSave().length()));

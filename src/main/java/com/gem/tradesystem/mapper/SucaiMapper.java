@@ -45,7 +45,7 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
     @Select("select typename from tag b where b.pid=(SELECT id from tag a where typename=#{typename})")//获取一级菜单对应下的二级菜单
     List<String> getSubMenu(String typename);
 
-    @Select("select typename from tag b where b.pid!='0'")//获取所有的二级菜单，显示在全部下
+    @Select("select typename from tag where pid!='0'")//获取所有的二级菜单，显示在全部下
     List<String> getAllSubMenu();
 
     @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3")//获取二级菜单下所有的素材
@@ -56,10 +56,10 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
             "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3")//获取一级菜单下所有的素材
     List<Sucai> getMenuList(String typename);
 
-    @Select("select * from sucai where status=3")
+    @Select("select * from sucai where status=3 and del_Flag = 0")
     List<Sucai> getList();//获取全部素材
 
-    @Select("select * from sucai where status=3 limit #{page},#{size}")
+    @Select("select * from sucai where status=3 and del_Flag = 0 limit #{page},#{size}")
     List<Sucai> getPageList(Integer page,Integer size);//分页获取全部素材
 
     @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3 limit #{page},#{size}")//分页获取二级菜单下所有的素材
@@ -70,7 +70,7 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
             "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3 limit #{page},#{size}")//分页获取一级菜单下所有的素材
     List<Sucai> getMenuPageList(String typename,Integer page,Integer size);
 
-    @Select("select count(*) from sucai where status=3")
+    @Select("select count(*) from sucai where status=3 and del_Flag = 0")
     Integer getCount();//所有素材总数
 
     @Select("select count(*) from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3")//获取二级菜单下所有的素材数目

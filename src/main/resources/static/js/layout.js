@@ -414,7 +414,7 @@ function changeLength(obj,lg){
 	if(len.length>=lg){
 		$(obj).next().find("span").text(70);
 		$(obj).next().find("label").text(10);
-		$("#ss_sz").text(50);
+		$("#ss_sz").text(200);
 		$(obj).val(len.substring(0,lg));
 	}
 }
