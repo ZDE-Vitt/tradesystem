@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>详情页</title>
+		<link rel="stylesheet" th:href="@{/css/layout.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}" />
+		<script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bannerslider.js}"></script>
+		<script type="text/javascript" th:src="@{/js/layout.js}"></script>
+	</head>
+
+	<body>
+	<input type="hidden" th:if="${session.user}" th:value="${session.user.username}"/>
+	<input type="hidden" id="user_id" th:if="${session.user}" th:value="${session.user.id}"/>
+	<div th:insert="~{top :: nav}"></div>
+<!--		<div class="top_wrap">-->
+<!--			<div class="top auto">-->
+<!--				<div class="top_logo left"><a href="index.html"><img th:src="@{/img/logo.png}" /></a></div>-->
+<!--				<div class="top_search left">-->
+<!--					<input type="text" class="text_inp" value="请输入关键字" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}"-->
+<!--					 onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />-->
+<!--					<a class="text_but" href="#">确定</a>-->
+<!--				</div>-->
+<!--				<div class="top_list right">-->
+<!--					<ul>-->
+<!--						<li class="gwc_li"><i>购物车</i></li>-->
+<!--						<li class="sc_li"><i>收藏</i></li>-->
+<!--						<li class="zh_li">-->
+<!--							<div class="zh_d">-->
+<!--								<a onclick="javascript:showDiv()">登陆</a>-->
+<!--								<a href="#">/</a>-->
+<!--								<a href="#">注册</a>-->
+<!--							</div>-->
+<!--						</li>-->
+<!--						<li class="xx_li">-->
+<!--							<i>-->
+<!--								<div class="y">-->
+<!--									<p id="xx_id">消息</p>-->
+<!--									<div class="xx_xiala" id="xx_c_id">-->
+<!--										<div><a href="#">注册成功，获得10积分</a></div>-->
+<!--										<div><a href="#">完善个人资料，获得20积分</a></div>-->
+<!--										<div><a href="#">发布素材成功，获得20积分</a></div>-->
+<!--										<div><a href="#">发布素材成功，恭喜你获得20积分积分</a></div>-->
+<!--										<div><a href="#">发布素材成功，恭喜你获得20积分积分</a></div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</i>-->
+<!--							<div class="xx_div">1</div>-->
+<!--						</li>-->
+<!--						<li class="bz_li">-->
+<!--							<i>-->
+<!--								<div class="y">-->
+<!--									<p id="bz_id">帮助</p>-->
+<!--									<div class="bz_xiala">-->
+<!--										<div><a href="#"><span>注册须知</span></a></div>-->
+<!--										<div><a href="#"><span class="bz_xialaz_icon2">积分规则</span></a></div>-->
+<!--										<div><a href="#"><span class="bz_xialaz_icon3">设计师须知</span></a></div>-->
+<!--										<div><a href="#"><span class="bz_xialaz_icon4">发布素材上传规范</span></a></div>-->
+<!--										<div><a href="#"><span class="bz_xialaz_icon5">更多......</span></a></div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</i>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+
+		<!--1200结构-->
+		<div class="pro_wrap auto">
+			<h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > <a href="#" th:href="@{/product/list}">分类</a> <span th:if="${menu}"> > </span> <a href="#" th:text="${menu}" th:href="@{/product/list(menu=${menu})}">一级菜单</a> <span th:if="${submenu}"> > </span> <a href="#" th:if="${submenu}" th:text="${submenu}" th:href="@{/product/list(menu=${menu},submenu=${submenu})}">二级菜单</a> > [[${sucai.name}]]</h2>
+			<div class="pro_detail_wrap">
+				<div class="pro_detail_left left">
+					<h2>[[${sucai.name}]]<span>发布时间：[[${#dates.format(sucai.createtime,"yyyy-MM-dd")}]]</span></h2>
+					<div class="pro_detail_img" id="pic_wrap"><!--加了个id-->
+						<div id="float_box"></div><!--加了个id-->
+						<img th:src="${sucai.picUrl}" />
+					</div>
+					<div class="pro_detail_title" th:text="${sucai.description}">素材说明素材说明素材说明</div>
+					<div class="pro_detail_biaoqian">
+						<ul>
+							<li th:each="tag:${taglist}" th:text="${tag}">标签</li>
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+<!--							<li>标签</li>-->
+						</ul>
+					</div>
+				</div>
+				<!--					图片放大镜-->
+					<div class="fangda_right" id="show">
+					<img src="" th:src="${sucai.picUrl}" id="big_img" mirror>
+				</div>
+				<div class="pro_detail_right right">
+					<script type="text/javascript">
+						$(function(){
+
+							$(".pro_detail_gwc").on("click",
+									function () {
+										var ndiv=$(this);//获取要加入购物车的元素的标签
+										var id=[[${sucai.id}]];
+										var nclazz=ndiv.hasClass("added");//判断是否已加入购物车
+										// console.log(nclazz);
+
+										if(ndiv.hasClass("added")){
+											//已加入 nclazz:true
+											layui.use('layer', function() { //独立版的layer无需执行这一句
+												var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+												//触发事件
+												layui.use('layer', function() { //独立版的layer无需执行这一句
+													var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+													layer.msg('已经加入购物车，不可重复添加哟！');
+												});
+											});
+
+										}else{//未加入购物车，则进行加入操作 nclazz:false
+											$.ajax(
+													{
+														url:contextPath +"/shopCar/add",
+														data:{"sid":id,"flag":nclazz},
+														// dataType:"json",
+														type:"post",
+														success:function(res){
+															// alert(sucai.favnum);
+															if(res){
+																if(res=="success"){//用户不曾下过该素材的订单
+																	ndiv.addClass("added");
+																	// layui.use('layer', function() { //独立版的layer无需执行这一句
+																	// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+																		//触发事件
+																		layui.use('layer', function() { //独立版的layer无需执行这一句
+																			var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+																			layer.msg('以成功添加购物车！可前往购物车查看结算');
+																		});
+																	// });
+																}
+																if(res=="failed"){
+																	// ndiv.addClass("added");
+																	// layui.use('layer', function() { //独立版的layer无需执行这一句
+																	// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+																		//触发事件
+																		layui.use('layer', function() { //独立版的layer无需执行这一句
+																			var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+																			layer.msg('你已经将有该素材相关的订单咯，无需再添加购物车！可前往订单记录中查看详情！');
+																		});
+																	// });
+
+																}
+															}else {
+																// alert(sucai);
+																showDiv();
+															}
+														}
+													}
+											);
+
+										}
+
+									}
+							);
+
+							// pro_detail_sc
+							$(".pro_detail_sc").on("click",
+									function () {
+										var picfav=$(this);//获取当前点赞的元素标签
+										var ndiv=$(".caozuo_sc");
+										var id=[[${sucai.id}]];
+										console.log(id);
+
+										var nclazz=picfav.hasClass("favored");//判断是否已被点赞
+										// 	console.log(nclazz);
+										if(picfav.hasClass("favored")){
+											//已点赞，则取消赞， nclazz:true
+											$.ajax(
+													{
+														url:contextPath+"/product/fav/addfav",
+														data:{"sid":id,"fav":nclazz},
+														// dataType:"json",
+														type:"post",
+														success:function(sucai){
+															// alert(sucai.favnum);
+															ndiv.text("收藏("+sucai.favnum+")");
+															ndiv.removeClass("favored");
+															picfav.removeClass("favored");
+														}
+													}
+											);
+
+										}else{//未被点赞，则进行点赞操作 nclazz:false
+											$.ajax(
+													{
+														url: contextPath +"/product/fav/addfav",
+														data:{"sid":id,"fav":nclazz},
+														// dataType:"json",
+														type:"post",
+														success:function(sucai){
+															// alert(sucai.favnum);
+															if(sucai){
+																ndiv.text("已收藏("+sucai.favnum+")");
+																ndiv.addClass("favored");
+																picfav.addClass("favored");
+															}else {
+																// alert(sucai);
+																showDiv();
+															}
+														}
+													}
+											);
+
+										}
+									}
+							);
+
+							$(".caozuo_sc").on("click",
+									function () {
+										var ndiv=$(this);//获取隐藏div中当前点赞的元素标签
+										var picfav=$(".pro_detail_sc");
+										var id=[[${sucai.id}]];
+										console.log(id);
+
+										var nclazz=ndiv.hasClass("favored");//判断是否已被点赞
+									// 	console.log(nclazz);
+										if(ndiv.hasClass("favored")){
+											//已点赞，则取消赞， nclazz:true
+											$.ajax(
+													{
+														url:contextPath +"/product/fav/addfav",
+														data:{"sid":id,"fav":nclazz},
+														// dataType:"json",
+														type:"post",
+														success:function(sucai){
+															// alert(sucai.favnum);
+															ndiv.text("收藏("+sucai.favnum+")");
+															ndiv.removeClass("favored");
+															picfav.removeClass("favored");
+														}
+													}
+											);
+
+										}else{//未被点赞，则进行点赞操作 nclazz:false
+											$.ajax(
+													{
+														url:contextPath +"/product/fav/addfav",
+														data:{"sid":id,"fav":nclazz},
+														// dataType:"json",
+														type:"post",
+														success:function(sucai){
+															// alert(sucai.favnum);
+															if(sucai){
+																ndiv.text("已收藏("+sucai.favnum+")");
+																ndiv.addClass("favored");
+																picfav.addClass("favored");
+															}else {
+																// alert(sucai);
+																showDiv();
+															}
+														}
+													}
+											);
+
+										}
+									}
+							);
+
+						});
+
+						var pic_wrap = document.getElementById('pic_wrap')//原图
+								float_box = document.getElementById("float_box"),//原图上的放大镜，大小应该和比例有关
+								show = document.getElementById('show');//展示放大图的区域
+						big_img = document.getElementById("big_img");//放大的图 大小应该是原图*比例 目前2倍
+						//鼠标移入事件，让放大镜和放大区显示！
+						pic_wrap.onmouseover = function() {
+							var pich=pic_wrap.offsetHeight;
+							var picw=pic_wrap.offsetWidth;
+							var big_img_w=picw*2;
+							var big_img_h=pich*2;
+							big_img.style.width=big_img_w+"px";
+							big_img.style.height=big_img_h+"px";//设置放大的图的大小
+							var show_h=$("#show").height();
+							var show_w=$("#show").width();
+							var scale_h=(show_h/big_img_h).toFixed(2);
+							var scale_w=(show_w/big_img_w).toFixed(2);
+							float_box.style.height=pich*scale_h+"px";
+							float_box.style.width=picw*scale_w+"px";//设置移块的大小
+							// console.log("pic width:"+picw+"pic height:"+pich);
+							// console.log("show width:"+show_h+"pic height:"+show_h);
+							// console.log("scale_h:"+scale_h+"scale_w:"+scale_w);
+							float_box.style.display = "block";
+							show.style.display = "block";
+						}
+						//鼠标不断移动时触发，实时更新放大镜得到的图片
+						pic_wrap.onmousemove = function(event) {
+							floatMove(float_box, pic_wrap, big_img,show,event);
+							// showPic();
+						}
+						//鼠标移出后，放大镜和放大区隐藏
+						pic_wrap.onmouseout = function() {
+							float_box.style.display = "none";
+							show.style.display = "none";
+						}
+						//运动框架，控制放大镜在原图中的位置！
+						function floatMove(argu1, argu2,argu3,argu4, event) {
+							var fdiv=$(argu1);
+							var picdiv=$(argu2);
+							var offset_pic=picdiv.offset();//图片在页面的偏移
+							var pic_w=picdiv.width();
+							var pic_h=picdiv.height();
+							var float_w=fdiv.width();
+							var float_h=fdiv.height();
+							var x = event.pageX - offset_pic.left-float_w/2;//在容器里的偏移
+							var y = event.pageY - offset_pic.top-float_h/2;
+
+							var minleft=0,mintop=0;//float最小最大的偏移位置
+							var maxleft=pic_w-float_w;
+							var maxtop=pic_h-float_h;
+							var fleft,ftop;
+
+							if(x < minleft){
+								fdiv.offset({"left":offset_pic.left+minleft});
+								fleft=minleft;
+							}else if(x>maxleft){
+								fdiv.offset({"left":offset_pic.left+maxleft});
+								fleft=maxleft;
+							}else {
+								fdiv.offset({"left":offset_pic.left+x});
+								fleft=x;
+							}
+							if(y<mintop){
+								fdiv.offset({"top":offset_pic.top+mintop});
+								ftop=mintop;
+							}else if(y>maxtop){
+								fdiv.offset({"top":offset_pic.top+maxtop});
+								ftop=maxtop;
+							}else {
+								fdiv.offset({"top":offset_pic.top+y});
+								ftop=y;
+							}
+							// console.log("x="+x+",y="+y);
+							// console.log("float_w="+float_w+",float_h="+float_h);
+							// console.log("fleft="+fleft+",ftop="+ftop);
+							var bigpic=$(argu3);//获取大图对象
+							// console.log(bigpic);
+							var showdiv=$(argu4);
+							var show_off_h=showdiv.offset().top;
+							var show_off_w=showdiv.offset().left;
+							// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
+							bigpic.offset({"left":(show_off_w-fleft*2),"top":(show_off_h-ftop*2)});
+							// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
+							// bigpic.offset({"left":(-fleft*2)+"px","top":(-ftop*2)+"px"});
+							// bigpic.offset({"left":fleft*2,"top":ftop*2});
+
+						}
+						//点击下载后，若登录，则跳转，不然就弹出登录框
+						function jumpToDownload(id) {
+							console.log("进入了js方法");
+							// var test="[[${session.user}]]";
+							// console.log(test);
+							if("[[${session.user}]]"){//用户已登录
+								var uid=$("#user_id").val();
+								$.ajax(
+										{
+											url:contextPath +"/product/isPay",
+											data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+											// dataType:"json",
+											type:"post",
+											success:function(flag){
+												console.log(flag);
+												if(flag){//已购买
+													// window.open(`${filePath}?attname=${fileName}`,'_self');
+													//获取下载地址
+													layui.use('layer', function() { //独立版的layer无需执行这一句
+														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+														layer.msg('该素材已经购买，将直接下载！');
+													});
+													$.ajax(
+															{
+																url:contextPath +"/product/getDownUrl",
+																data:{"sid":id},//传递参数：素材id和用户id
+																// dataType:"json",
+																type:"post",
+																success:function(url){
+																	console.log(url);
+																	// console.log(sucai.save+"?attname="+sucai.name+".jpg");
+																	// window.open(sucai.save+"?attname="+sucai.name+".jpg","_self");
+																	window.open(url,"_self");
+																	$.ajax(
+																			{
+																				url:contextPath +"/product/addDownNum",
+																				data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+																				// dataType:"json",
+																				type:"post",
+																				success:function(sucai){
+																					// console.log(sucai);
+																					// alert(url);
+																					$(".caozuo_xz").text("下载("+sucai.downnum+")");
+																				}
+																			}
+																	);
+																}
+															}
+													);
+
+												}else {
+													layui.use('layer', function() { //独立版的layer无需执行这一句
+														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+														layer.msg('该素材还未购买，无法直接进行下载，请先添加购物车进行购买！');
+													});
+												}
+											}
+										}
+								);
+
+
+								// window.location.href=contextPath+"/product/download?id="+id;
+							}else{
+								showDiv();
+							}
+						}
+
+					</script>
+
+					<div class="pro_detail_name">
+						<div class="pro_detail_m left"><img th:src="@{/img/pro_detail_name_img.jpg}" /></div>
+						<div class="pro_detail_n " th:text="${sucai.name}">番茄设计部落</div>
+						<div class="pro_detail_b" th:text="${sucai.author}">原创设计师</div>
+					</div>
+					<div class="pro_detail_price">
+						价格：<span>¥[[${sucai.money}]]</span>
+					</div>
+					<div class="pro_detail_btn">
+						<a class="pro_detail_xz left" th:onclick="jumpToDownload([[${sucai.id}]])">立即下载</a>
+						<script type="text/javascript">
+
+						</script>
+						<a class="pro_detail_gwc left" th:if="${shopcar}" th:classappend="${#lists.contains(shopcar,sucai.id)} ? 'added':''" href="javascript:void(0);"></a><!--加入购物车-->
+						<a class="pro_detail_gwc left" th:unless="${shopcar}" href="javascript:void(0);"></a><!--加入购物车-->
+						<a class="pro_detail_sc left" th:if="${favlist}"  th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" href="javascript:void(0);"></a><!--收藏小图标-->
+						<a class="pro_detail_sc left" th:unless="${favlist}" href="javascript:void(0);"></a><!--收藏小图标-->
+					</div>
+					<div class="pro_detail_caozuo">
+						<div class="pro_detail_czcontent detail_caozuo_wrap">
+							<a class="caozuo_sc" th:if="${favlist}"  th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" href="javascript:void(0);" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_sc" th:unless="${favlist}" href="javascript:void(0);" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_xz" href="#">下载（[[${sucai.downnum}]]）</a>
+<!--							<span class="caozuo_ll" href="#">浏览</span>-->
+						</div>
+					</div>
+					<div class="pro_detail_miaoshu">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td class="pro_detail_td">编号</td>
+								<td colspan="2" th:text="${sucai.num}">1999302</td>
+							</tr>
+<!--							<tr>-->
+<!--								<td class="pro_detail_td">分类</td>-->
+<!--								<td colspan="2">原创-图片素材-DM</td>-->
+<!--							</tr>-->
+							<tr>
+								<td class="pro_detail_td">格式</td>
+								<td colspan="2" th:text="${sucai.suffix}">psd jpg</td>
+							</tr>
+<!--							<tr>-->
+<!--								<td class="pro_detail_td">大小</td>-->
+<!--								<td colspan="2">1998KB</td>-->
+<!--							</tr>-->
+							<tr>
+								<td class="pro_detail_td">尺寸</td>
+								<td class="pro_detail_td2" th:text="${sucai.size}+'像素'">1024*860像素</td>
+<!--								<td><span><a href="#">举报</a></span></td>-->
+							</tr>
+						</table>
+					</div>
+					<div class="pro_detail_joindesinger"><a href="#" th:href="@{/index/register}"><img th:src="@{/img/pro_detail_joindesinger.jpg}" /></a></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+		</div>
+		<!--1200结构end-->
+
+		<!--保障结构-->
+<!--		<div class="baozhang_wrap baozhang_wrap_fbfbfb">-->
+<!--			<div class="baozhang_content auto">-->
+<!--				<div class="baozhang_div">-->
+<!--					<img src="img/aqzf_icon.png" />-->
+<!--					<h2>安全支付</h2>-->
+<!--					<p>通过在线支付或信用卡支付</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div">-->
+<!--					<img src="img/zzjp_icon.png" />-->
+<!--					<h2>致臻精品</h2>-->
+<!--					<p>顶级团队良心打造专业制作经验</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div">-->
+<!--					<img src="img/zxshfw_icon.png" />-->
+<!--					<h2>在线售后服务</h2>-->
+<!--					<p>我们强大的售后团队为您服务</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div baozhang_lastdiv">-->
+<!--					<img src="img/fwzs_icon.png" />-->
+<!--					<h2>服务至上</h2>-->
+<!--					<p>如果您对所购产品不满意，可申请调换</p>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		&lt;!&ndash;保障结构end&ndash;&gt;-->
+
+<!--		<div class="join_designer"><a href="#"></a></div>-->
+
+<!--		&lt;!&ndash;底部结构&ndash;&gt;-->
+<!--		<div class="footer_wrap">-->
+<!--			<div class="footer_content auto">-->
+<!--				<div class="fdiv1">-->
+<!--					<h2>模板</h2>-->
+<!--					<a href="#">网页模板</a>-->
+<!--					<a href="#">品牌设计模板</a>-->
+<!--					<a href="#">CMS模板</a>-->
+<!--					<a href="#">视频</a>-->
+<!--					<a href="#">电子商务模板</a>-->
+<!--					<a href="#">PPT</a>-->
+<!--					<a href="#">画册</a>-->
+<!--				</div>-->
+<!--				<div class="fdiv2">-->
+<!--					<h2>主题</h2>-->
+<!--					<a href="#">影视&音乐</a>-->
+<!--					<a href="#">生活娱乐</a>-->
+<!--					<a href="#">旅游休闲</a>-->
+<!--					<a href="#">设计&摄影</a>-->
+<!--					<a href="#">房产家居</a>-->
+<!--					<a href="#">汽车&摩托车</a>-->
+<!--					<a href="#">动物</a>-->
+<!--				</div>-->
+<!--				<div class="fdiv3">-->
+<!--					<div class="f31">-->
+<!--						<div class="f31_1">-->
+<!--							<h2>公司</h2>-->
+<!--							<a href="#">关于我们</a>-->
+<!--							<a href="#">加盟合作</a>-->
+<!--							<a href="#">联系我们</a>-->
+<!--						</div>-->
+<!--						<div class="f31_2">-->
+<!--							<h2>支持</h2>-->
+<!--							<a href="#">帮助中心</a>-->
+<!--							<a href="#">成为设计师</a>-->
+<!--							<a href="#">常见问题</a>-->
+<!--						</div>-->
+<!--						<div class="clear"></div>-->
+<!--					</div>-->
+<!--					<div class="f32">-->
+<!--						<h2>订阅我们的通讯</h2>-->
+<!--						<p>接受有关新的模板和设计素材信息</p>-->
+<!--						<div class="f32_dy">-->
+<!--							<div class="f32_inp left"><input type="text" value="电子邮箱" onfocus="if(this.value=='电子邮箱'){this.value='';this.style.color='#999999'}"-->
+<!--								 onblur="if(this.value==''){this.value='电子邮箱';this.style.color='#999999'}" /></div>-->
+<!--							<a class="f32_btn right" href="#">订阅</a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="fdiv4">-->
+<!--					<h2>关注我们</h2>-->
+<!--					<ul>-->
+<!--						<li class="wx_li">-->
+<!--							<a href="#"><span>微信</span></a>-->
+<!--							<div class="ewm ewm_position1"><img src="img/weixin_img.png" /></div>-->
+<!--						</li>-->
+<!--						<li class="wb_li">-->
+<!--							<a href="#"><span>微博</span></a>-->
+<!--							<div class="ewm ewm_position2"><img src="img/weixin_img.png" /></div>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		&lt;!&ndash;底部结构end&ndash;&gt;-->
+<!--		<div class="bottom_gray"></div>-->
+
+<!--		&lt;!&ndash;滚动条下拉出现搜索块&ndash;&gt;-->
+<!--	<div class="scroll_wrap">-->
+<!--		<div class="scroll_content auto">-->
+<!--			<div class="scroll_logo left"><a class="totop" href="javascript:;"><img th:src="@{/img/logo.png}" /></a></div>-->
+<!--			<div class="scroll_search right">-->
+<!--				<input type="text" class="text_inp1" value="请输入关键字" th:value="${search}?${search}:'请输入关键字'" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}"-->
+<!--					   onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />-->
+<!--				<script type="text/javascript">-->
+<!--					function jumpToSearch1() {-->
+<!--						// jumpToSearchconsole.log("能进入js函数");-->
+<!--						var searchtext=$(".scroll_search .text_inp1").val();-->
+<!--						if(searchtext=="请输入关键字")-->
+<!--							window.location.href=contextPath+"/product/list";-->
+<!--						else-->
+<!--							window.location.href=contextPath+"/product/list?search="+searchtext;-->
+<!--						// console.log(searchtext);-->
+<!--					}-->
+<!--				</script>-->
+<!--				<a href="#" class="text_but1" onclick="jumpToSearch1()">确定</a>-->
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+<!--	&lt;!&ndash;		<div class="scroll_wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;			<div class="scroll_content auto">&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="scroll_logo left"><a class="totop" href="javascript:;"><img src="img/logo.png" /></a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="scroll_search right">&ndash;&gt;-->
+<!--&lt;!&ndash;					<input type="text" class="text_inp1" value="请输入关键字" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}"&ndash;&gt;-->
+<!--&lt;!&ndash;					 onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />&ndash;&gt;-->
+<!--&lt;!&ndash;					<a href="#" class="text_but1">确定</a>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="clear"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+<!--		&lt;!&ndash;滚动条下拉出现搜索块end&ndash;&gt;-->
+
+<!--		&lt;!&ndash;登陆弹出框&ndash;&gt;-->
+<!--	<div id="popDiv" class="mydiv" style="display:none;">-->
+<!--		<div class="login_tanchu_wrap">-->
+<!--			<div class="login_tanchu_logo"><img th:src="@{/img/logo.png}" /></div>-->
+<!--			<div class="login_tanchu_title">账号登陆</div>-->
+<!--			<div class="login_tanchu_form">-->
+<!--				<form id="loginForm">-->
+<!--					<div class="login_user login_user_inp">登陆账户：<input type="text" name="telephone" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}"-->
+<!--																	   onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />-->
+<!--					</div>-->
+<!--					<div class="login_user login_user_pass">登陆密码：<input type="text" name="password" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value='';this.style.color='#999999';this.type='password'}"-->
+<!--																		onblur="if(this.value==''){this.value='请输入密码';this.style.color='#999999';this.type='text'}" />-->
+<!--					</div>-->
+<!--					<div class="login_phone"><span th:text="用户名或密码错误" style="color: red;margin-right: 120px;visibility:hidden" id="spanLogin"></span><a href="javascript:qiehuan_iphone()">使用手机验证码登陆</a></div>-->
+<!--					<div class="login_btn"><a onclick="login()">立即登陆</a></div>-->
+<!--					<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>-->
+<!--				</form>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<a class="tanchu_close" href="javascript:closeDiv()"></a>-->
+<!--	</div>-->
+<!--	<div id="popDiv1" class="mydiv" style="display:none;">-->
+<!--		<div class="login_tanchu_wrap">-->
+<!--			<div class="login_tanchu_logo"><img th:src="@{/img/logo.png}" /></div>-->
+<!--			<div class="login_tanchu_title">请登陆后继续操作</div>-->
+<!--			<div class="login_tanchu_form">-->
+<!--				<form id="" method="post">-->
+<!--					<div class="login_user login_user_inp">手机号码：<input type="text" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}"-->
+<!--																	   onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />-->
+<!--					</div>-->
+<!--					<div class="login_user login_user_pass">验证码：<input type="text" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value='';this.style.color='#999999'}"-->
+<!--																	   onblur="if(this.value==''){this.value='请输入验证码';this.style.color='#999999'}" />-->
+<!--						<input type="button" id="yanzhengma_gray"class="login_user_yanzhengma" value="获取验证码" onClick="sendCode(this)" />-->
+<!--					</div>-->
+<!--					<script type="text/javascript">-->
+<!--						var clock = '';-->
+<!--						var nums = 60;-->
+<!--						var btn;-->
+<!--						var yzm_disabled = document.getElementById("yanzhengma_gray");-->
+
+<!--						function sendCode(thisBtn) {-->
+<!--							btn = thisBtn;-->
+<!--							btn.disabled = true; //将按钮置为不可点击-->
+<!--							btn.value = nums + '秒后可重新获取';-->
+<!--							clock = setInterval(doLoop, 1000); //一秒执行一次-->
+<!--							yzm_disabled.style.backgroundColor = "#999999";-->
+<!--						}-->
+
+<!--						function doLoop() {-->
+<!--							nums&#45;&#45;;-->
+<!--							if (nums > 0) {-->
+<!--								btn.value = nums + '秒后可重新获取';-->
+<!--							} else {-->
+<!--								clearInterval(clock); //清除js定时器-->
+<!--								btn.disabled = false;-->
+<!--								btn.value = '点击发送验证码';-->
+<!--								nums = 10; //重置时间-->
+<!--								yzm_disabled.style.backgroundColor = "#e83a17";-->
+<!--							}-->
+<!--						}-->
+<!--						function login() {-->
+<!--							console.info($('#loginForm').serialize());-->
+<!--							$.ajax({-->
+<!--								type:"post",-->
+<!--								dataType:"json",-->
+<!--								url:contextPath+"/index/login",//有项目路径需增加以下项目路径-->
+<!--								data:$('#loginForm').serialize(),-->
+<!--								success:function () {-->
+<!--									window.location.reload();-->
+<!--								},-->
+<!--								error:function () {-->
+<!--									$("#spanLogin").css("visibility","visible");-->
+<!--								}-->
+<!--							})-->
+<!--						}-->
+
+<!--					</script>-->
+<!--					<div class="login_phone"><a href="javascript:qiehuan_zhanghao()">使用账号密码登陆</a></div>-->
+<!--					<div class="login_btn"><a href="#">立即登陆</a></div>-->
+<!--					<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>-->
+<!--				</form>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<a class="tanchu_close" href="javascript:closeDiv()"></a>-->
+<!--	</div>-->
+
+<!--	&lt;!&ndash;		<div id="popDiv" class="mydiv" style="display:none;">&ndash;&gt;-->
+<!--&lt;!&ndash;			<div class="login_tanchu_wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_logo"><img src="img/logo.png" /></div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_title">账号登陆</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_form">&ndash;&gt;-->
+<!--&lt;!&ndash;					<form action="" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_user login_user_inp">登陆账户：<input type="text" value="请输入用户名 或 手机号 或 邮箱" onfocus="if(this.value=='请输入用户名 或 手机号 或 邮箱'){this.value='';this.style.color='#999999'}"&ndash;&gt;-->
+<!--&lt;!&ndash;							 onblur="if(this.value==''){this.value='请输入用户名 或 手机号 或 邮箱';this.style.color='#999999'}" />&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_user login_user_pass">登陆密码：<input type="text" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value='';this.style.color='#999999';this.type='password'}"&ndash;&gt;-->
+<!--&lt;!&ndash;							 onblur="if(this.value==''){this.value='请输入密码';this.style.color='#999999';this.type='text'}" />&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_phone"><a href="javascript:qiehuan_iphone()" >使用手机验证码登陆</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_btn"><a href="#">立即登陆</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</form>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+<!--&lt;!&ndash;			<a class="tanchu_close" href="javascript:closeDiv()"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+<!--&lt;!&ndash;		<div id="popDiv1" class="mydiv" style="display:none;">&ndash;&gt;-->
+<!--&lt;!&ndash;			<div class="login_tanchu_wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_logo"><img src="img/logo.png" /></div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_title">请登陆后继续操作</div>&ndash;&gt;-->
+<!--&lt;!&ndash;				<div class="login_tanchu_form">&ndash;&gt;-->
+<!--&lt;!&ndash;					<form action="" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_user login_user_inp">手机号码：<input type="text" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}"&ndash;&gt;-->
+<!--&lt;!&ndash;							 onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_user login_user_pass">验证码：<input type="text" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value='';this.style.color='#999999'}"&ndash;&gt;-->
+<!--&lt;!&ndash;							 onblur="if(this.value==''){this.value='请输入验证码';this.style.color='#999999'}" /><input type="button" id="yanzhengma_gray"&ndash;&gt;-->
+<!--&lt;!&ndash;							 class="login_user_yanzhengma" value="获取验证码" onClick="sendCode(this)" />&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<script type="text/javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;							var clock = '';&ndash;&gt;-->
+<!--&lt;!&ndash;							var nums = 60;&ndash;&gt;-->
+<!--&lt;!&ndash;							var btn;&ndash;&gt;-->
+<!--&lt;!&ndash;							var yzm_disabled = document.getElementById("yanzhengma_gray");&ndash;&gt;-->
+
+<!--&lt;!&ndash;							function sendCode(thisBtn) {&ndash;&gt;-->
+<!--&lt;!&ndash;								btn = thisBtn;&ndash;&gt;-->
+<!--&lt;!&ndash;								btn.disabled = true; //将按钮置为不可点击&ndash;&gt;-->
+<!--&lt;!&ndash;								btn.value = nums + '秒后可重新获取';&ndash;&gt;-->
+<!--&lt;!&ndash;								clock = setInterval(doLoop, 1000); //一秒执行一次&ndash;&gt;-->
+<!--&lt;!&ndash;								yzm_disabled.style.backgroundColor = "#999999";&ndash;&gt;-->
+<!--&lt;!&ndash;							}&ndash;&gt;-->
+
+<!--&lt;!&ndash;							function doLoop() {&ndash;&gt;-->
+<!--&lt;!&ndash;								nums&#45;&#45;;&ndash;&gt;-->
+<!--&lt;!&ndash;								if (nums > 0) {&ndash;&gt;-->
+<!--&lt;!&ndash;									btn.value = nums + '秒后可重新获取';&ndash;&gt;-->
+<!--&lt;!&ndash;								} else {&ndash;&gt;-->
+<!--&lt;!&ndash;									clearInterval(clock); //清除js定时器&ndash;&gt;-->
+<!--&lt;!&ndash;									btn.disabled = false;&ndash;&gt;-->
+<!--&lt;!&ndash;									btn.value = '点击发送验证码';&ndash;&gt;-->
+<!--&lt;!&ndash;									nums = 10; //重置时间&ndash;&gt;-->
+<!--&lt;!&ndash;									yzm_disabled.style.backgroundColor = "#e83a17";&ndash;&gt;-->
+<!--&lt;!&ndash;								}&ndash;&gt;-->
+<!--&lt;!&ndash;							}&ndash;&gt;-->
+<!--&lt;!&ndash;						</script>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_phone"><a href="javascript:qiehuan_zhanghao()">使用账号密码登陆</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_btn"><a href="#">立即登陆</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</form>&ndash;&gt;-->
+<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;			</div>&ndash;&gt;-->
+<!--&lt;!&ndash;			<a class="tanchu_close" href="javascript:closeDiv()"></a>&ndash;&gt;-->
+<!--&lt;!&ndash;		</div>&ndash;&gt;-->
+<!--		<div id="bg" class="bg" style="display:none;"></div>-->
+		<!--登陆弹出框end-->
+	<div th:insert="~{bottom :: nav}"></div>
+	</body>
+</html>

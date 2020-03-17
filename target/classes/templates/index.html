@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>首页</title>
+		<link/>
+		<link rel="stylesheet" th:href="@{/css/layout.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}" />
+		<script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bannerslider.js}"></script>
+		<script type="text/javascript" th:src="@{/js/layout.js}"></script>
+	</head>
+
+	<body>
+	<div th:insert="~{top :: nav}"></div>
+	<input type="hidden" id="user_id" th:if="${session.user}" th:value="${session.user.id}"/>
+		<!--导航结构-->
+		<div class="nav_wrap">
+			<div class="nav_content auto">
+				<ul class="list auto" id="nav_ulwrap">
+						<li th:each="menu , iterStat : ${menulist}">
+							<a href="#" th:href="@{/product/list(menu=${menu})}"><span th:class="'nav_s'+${iterStat.count}" th:text="${menu}">素材</span></a>
+<!--							<div class="down">-->
+<!--								<a class="nav_list left" href="pro_list.html">-->
+<!--									<h2 class="nav_list_b1"><i>节日素材</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<a class="nav_list left" href="#">-->
+<!--									<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--									<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--								</a>-->
+<!--								<div class="clear"></div>-->
+<!--							</div>-->
+						</li>
+<!--					<li>-->
+<!--						<a href="#"><span class="nav_s1">素材</span></a>-->
+<!--						<div class="down">-->
+<!--							<a class="nav_list left" href="pro_list.html">-->
+<!--								<h2 class="nav_list_b1"><i>节日素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<div class="clear"></div>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<a href="#"><span class="nav_s2">模板</span></a>-->
+<!--						<div class="down down_s2">-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b1"><i>节日素材2</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<div class="clear"></div>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<a href="#"><span class="nav_s3">设计</span></a>-->
+<!--						<div class="down down_s3">-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b1"><i>节日素材3</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<div class="clear"></div>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<a href="#"><span class="nav_s4">教程</span></a>-->
+<!--						<div class="down down_s4">-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b1"><i>节日素材4</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<div class="clear"></div>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li>-->
+<!--						<a href="#"><span class="nav_s5">主题</span></a>-->
+<!--						<div class="down down_s5">-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b1"><i>节日素材5</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b2"><i>LOGO</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b3"><i>卡通素材/插画</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b4"><i>摄影图库</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b5"><i>视频素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b6"><i>3D素材</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b7"><i>工业建筑</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<a class="nav_list left" href="#">-->
+<!--								<h2 class="nav_list_b8"><i>服装设计</i><span>1236</span></h2>-->
+<!--								<div class="nav_list_jieshao">包含了大量节日素材，轻松解决节日大量活动广告设计的问题</div>-->
+<!--							</a>-->
+<!--							<div class="clear"></div>-->
+<!--						</div>-->
+<!--					</li>-->
+				</ul>
+			</div>
+		</div>
+		<!--导航结构end-->
+
+<!--		<div class="navside_wrap">-->
+<!--			<div class="navside auto">-->
+<!--				<ul>-->
+<!--					<li><a href="#">会声会影</a></li>-->
+<!--					<li><a href="#">思维导图</a></li>-->
+<!--					<li><a href="#">Adobe Photoshop</a></li>-->
+<!--					<li><a href="#">CAD</a></li>-->
+<!--					<li><a href="#">Coreldraw</a></li>-->
+<!--					<li><a href="#">PPT</a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</div>-->
+
+		<!--banner结构-->
+		<div id="banner_tabs" class="flexslider">
+			<ul class="slides">
+				<li>
+					<a title="" target="_blank" href="#">
+						<img width="1920" height="550" alt="" style="background: url(img/banner1.gif) no-repeat center;" th:src="@{/img/alpha.png}">
+					</a>
+				</li>
+				<li>
+					<a title="" href="#">
+						<img width="1920" height="550" alt="" style="background: url(img/banner1.gif) no-repeat center;" th:src="@{/img/alpha.png}">
+					</a>
+				</li>
+				<li>
+					<a title="" href="#">
+						<img width="1920" height="550" alt="" style="background: url(img/banner1.gif) no-repeat center;" th:src="@{/img/alpha.png}">
+					</a>
+				</li>
+			</ul>
+			<ul class="flex-direction-nav">
+				<li><a class="flex-prev" href="javascript:;">Previous</a></li>
+				<li><a class="flex-next" href="javascript:;">Next</a></li>
+			</ul>左右按钮块
+			<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+				<li class="active"><a>1</a></li>
+				<li><a>2</a></li>
+				<li><a>3</a></li>
+			</ol>
+		</div>
+		<!--banner结构end-->
+
+		<!--内容结构-->
+		<div class="main_content">
+			<h2 class="zcq_title">最畅销&nbsp;&nbsp;<span  style="color: red"><em style="font-style:italic" >top7</em></span><a href="#" th:href="@{/product/list}">全部>></a></h2>
+			<div class="zcq_wrap" id="img_ulwrap">
+				<script type="text/javascript">
+					$(function(){
+						//加入购物车操作 detail_jrgwc
+						$(".detail_jrgwc").on("click",
+								function () {
+									var ndiv=$(this);//获取要加入购物车的元素的标签
+									var str=ndiv.attr("id");
+									var sarr=str.split('_');
+									var id=sarr[2];
+									var nclazz=ndiv.hasClass("added");//判断是否已加入购物车
+									// console.log(nclazz);
+
+									if(ndiv.hasClass("added")){
+										//已加入 nclazz:true
+										// layui.use('layer', function() { //独立版的layer无需执行这一句
+										// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+											//触发事件
+											layui.use('layer', function() { //独立版的layer无需执行这一句
+												var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+												layer.msg('已经加入购物车，不可重复添加哟！');
+											});
+										// });
+
+									}else{//未加入购物车，则进行加入操作 nclazz:false
+										$.ajax(
+												{
+													url:contextPath +"/shopCar/add",
+													data:{"sid":id,"flag":nclazz},
+													// dataType:"json",
+													type:"post",
+													success:function(res){
+														// alert(sucai.favnum);
+														if(res){
+															// console.log(res);
+															// console.log("1111111");
+															if(res=="success"){//用户不曾下过该素材的订单
+																ndiv.addClass("added");
+																// layui.use('layer', function() { //独立版的layer无需执行这一句
+																// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+																	//触发事件
+																	layui.use('layer', function() { //独立版的layer无需执行这一句
+																		var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+																		layer.msg('以成功添加购物车！可前往购物车查看结算');
+																	});
+																// });
+															}
+															if(res=="failed"){
+																// ndiv.addClass("added");
+																// layui.use('layer', function() { //独立版的layer无需执行这一句
+																// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+																	//触发事件
+																	layui.use('layer', function() { //独立版的layer无需执行这一句
+																		var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+																		layer.msg('你已经将有该素材相关的订单咯，无需再添加购物车！可前往订单记录中查看详情！');
+																	});
+																// });
+
+															}
+														}else {
+															// alert(sucai);
+															showDiv();
+														}
+													}
+												}
+										);
+
+									}
+
+								}
+						);
+
+						//点赞操作
+						$(".caozuo_sc").on("click",
+								function () {
+									var ndiv=$(this);//获取隐藏div中当前点赞的元素标签
+									var str=ndiv.attr("id");
+									var sarr=str.split('_');
+									var id=sarr[2];
+									var anoaid="sc_a_"+sarr[2];
+									var ana=$("#"+anoaid);//获取外部div中当前点赞的元素标签
+
+									var nclazz=ndiv.hasClass("favored");//判断是否已被点赞
+									// console.log(nclazz);
+									if(ndiv.hasClass("favored")){
+										//已点赞，则取消赞， nclazz:true
+										$.ajax(
+												{
+													url:contextPath +"/product/fav/addfav",
+													data:{"sid":id,"fav":nclazz},
+													// dataType:"json",
+													type:"post",
+													success:function(sucai){
+														// alert(sucai.favnum);
+														ndiv.text("收藏("+sucai.favnum+")");
+														ndiv.removeClass("favored");
+														ana.text("收藏("+sucai.favnum+")");
+														ana.removeClass("favored");
+													}
+												}
+										);
+
+									}else{//未被点赞，则进行点赞操作 nclazz:false
+										$.ajax(
+												{
+													url:contextPath +"/product/fav/addfav",
+													data:{"sid":id,"fav":nclazz},
+													// dataType:"json",
+													type:"post",
+													success:function(sucai){
+														// alert(sucai.favnum);
+														if(sucai){
+															ndiv.text("已收藏("+sucai.favnum+")");
+															ndiv.addClass("favored");
+															ana.text("已收藏("+sucai.favnum+")");
+															ana.addClass("favored");
+														}else {
+															// alert(sucai);
+															showDiv();
+														}
+													}
+												}
+										);
+
+									}
+								}
+						);
+						$(".sc_a").on("click",
+								function () {
+									var ndiv=$(this);//获取隐藏div中当前点赞的元素标签
+									var str=ndiv.attr("id");
+									var sarr=str.split('_');
+									var id=sarr[2];
+									var anoaid="caozuo_sc_"+sarr[2];
+									var ana=$("#"+anoaid);//获取外部div中当前点赞的元素标签
+
+									var nclazz=ndiv.hasClass("favored");//判断是否已被点赞
+									// console.log(nclazz);
+									if(ndiv.hasClass("favored")){
+										//已点赞，则取消赞， nclazz:true
+										$.ajax(
+												{
+													url:contextPath +"/product/fav/addfav",
+													data:{"sid":id,"fav":nclazz},
+													// dataType:"json",
+													type:"post",
+													success:function(sucai){
+														// alert(sucai.favnum);
+														ndiv.text("收藏("+sucai.favnum+")");
+														ndiv.removeClass("favored");
+														ana.text("收藏("+sucai.favnum+")");
+														ana.removeClass("favored");
+													}
+												}
+										);
+
+									}else{//未被点赞，则进行点赞操作 nclazz:false
+										$.ajax(
+												{
+													url:contextPath +"/product/fav/addfav",
+													data:{"sid":id,"fav":nclazz},
+													// dataType:"json",
+													type:"post",
+													success:function(sucai){
+														// alert(sucai.favnum);
+														if(sucai){
+															ndiv.text("已收藏("+sucai.favnum+")");
+															ndiv.addClass("favored");
+															ana.text("已收藏("+sucai.favnum+")");
+															ana.addClass("favored");
+
+														}else {
+															// alert(sucai);
+															showDiv();
+														}
+													}
+												}
+										);
+
+									}
+								}
+						);
+
+					});
+
+					function jumpToDetail(id) {
+						window.location.href=contextPath +"/product/detail?menu=[[${menu_active}]]&submenu=[[${submenu_active}]]&id="+id;
+					}
+
+					// function jumpToDownload(id) {
+					// 	console.log("进入了js方法");
+					// 	// var test="[[${session.user}]]";
+					// 	// console.log(test);
+					// 	if("[[${session.user}]]"){//用户已登录
+					// 		window.location.href=contextPath+"/product/download?id="+id;
+					// 	}else{
+					// 		showDiv();
+					// 	}
+					// }
+					function jumpToDownload(id) {
+						console.log("进入了js方法");
+
+						// console.log(test);
+						if("[[${session.user}]]"){//用户已登录
+							var uid=$("#user_id").val();
+							$.ajax(
+									{
+										url:contextPath +"/product/isPay",
+										data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+										// dataType:"json",
+										type:"post",
+										success:function(flag){
+											console.log(flag);
+											if(flag){//已购买
+												// window.open(`${filePath}?attname=${fileName}`,'_self');
+												//获取下载地址
+												layui.use('layer', function() { //独立版的layer无需执行这一句
+													var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+													layer.msg('该素材已经购买，将直接下载！');
+												});
+												$.ajax(
+														{
+															url:contextPath +"/product/getDownUrl",
+															data:{"sid":id},//传递参数：素材id和用户id
+															// dataType:"json",
+															type:"post",
+															success:function(url){
+																console.log(url);
+																// console.log(sucai.save+"?attname="+sucai.name+".jpg");
+																// window.open(sucai.save+"?attname="+sucai.name+".jpg","_self");
+																window.open(url,"_self");
+																$.ajax(
+																		{
+																			url:contextPath +"/product/addDownNum",
+																			data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+																			// dataType:"json",
+																			type:"post",
+																			success:function(sucai){
+																				// console.log(sucai);
+																				// alert(url);
+																				$("#caozuo_xz_"+id).text("下载("+sucai.downnum+")");
+																				$("#xz_a_"+id).text("下载("+sucai.downnum+")");
+																			}
+																		}
+																);
+															}
+														}
+												);
+
+											}else {
+												layui.use('layer', function() { //独立版的layer无需执行这一句
+													var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+													layer.msg('该素材还未购买，无法直接进行下载，请先添加购物车进行购买！');
+												});
+											}
+										}
+									}
+							);
+
+
+							// window.location.href=contextPath+"/product/download?id="+id;
+						}else{
+							showDiv();
+						}
+					}
+
+				</script>
+				<div class="zcq_div left" th:each="sucai,iterStat:${topsale}">
+					<div class="zcq_c1">
+						<div class="zc_list">
+							<img th:src="${sucai.picUrl}" th:onclick="jumpToDetail([[${sucai.id}]])" />
+							<!--鼠标滑过图片显示隐藏层结构-->
+							<div class="detail_hidden">
+								<input type="hidden" class="sucaiid" th:value="${sucai.id}"/>
+								<a href="#"><img th:src="${sucai.picUrl}"  th:onclick="jumpToDetail([[${sucai.id}]])"/></a>
+								<div class="detail_hidden_wrap">
+									<!--									<h2 th:text="${sucai.name}">手机移动H5页面模板<span th:text="${sucai.money}">¥398</span></h2>-->
+									<h2 >[[${sucai.name}]]<span th:text="'¥'+${sucai.money}">¥398</span></h2>
+									<div class="detail_user_wrap">
+										<div class="detail_list_img"><a href="#" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}"><img th:src="@{/img/detail_hidden_img.jpg}" /></a></div>
+										<div class="detail_list_name" th:text="${sucai.author}">番茄设计团队</div>
+									</div>
+									<div class="detail_caozuo_wrap">
+										<!--		th:classappend="${#lists.contains(favlist,sucai.id)}? 'favored':''"								-->
+										<!--										<a class="caozuo_sc" href="javascript:void(0);" th:onclick="fav([[${sucai.id}]])" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_xz" href="#" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>-->
+										<a class="caozuo_sc" th:if="${favlist}"  th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" th:id="'caozuo_sc_'+${sucai.id}" href="javascript:void(0);" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a>
+										<a class="caozuo_sc" th:unless="${favlist}" th:id="'caozuo_sc_'+${sucai.id}" href="javascript:void(0);" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a>
+										<a class="caozuo_xz" th:id="'caozuo_xz_'+${sucai.id}" href="javascript:void(0);" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+									</div>
+									<div class="detail_biaoqian_wrap">
+										<ul>
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+										</ul>
+									</div>
+									<div class="detail_btn_wrap">
+										<!--										<a class="detail_xz" href="#"  th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}">立即下载</a><a class="detail_jrgwc" href="#"><img th:src="@{/img/hidden_gwc_white.png}" /></a>-->
+										<a class="detail_xz" href="javascript:void(0);"  th:onclick="jumpToDownload([[${sucai.id}]])">立即下载</a>
+										<a th:if="${shopcar}" th:classappend="${#lists.contains(shopcar,sucai.id)} ? 'added':''" class="detail_jrgwc" th:id="'detail_jrgwc_'+${sucai.id}" href="javascript:void(0);"><img th:src="@{/img/hidden_gwc_white.png}" /></a>
+										<a th:unless="${shopcar}" class="detail_jrgwc" th:id="'detail_jrgwc_'+${sucai.id}" href="javascript:void(0);"><img th:src="@{/img/hidden_gwc_white.png}" /></a>
+									</div>
+								</div>
+							</div>
+							<!--鼠标滑过图片显示隐藏层结构end-->
+						</div>
+					</div>
+					<h2 class="zcq_c2" th:text="${sucai.name}">手机H5页面模板</h2>
+					<div class="zcq_c3">
+						<a class="sc_a" th:if="${favlist}" th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" href="javascript:void(0);" th:id="'sc_a_'+${sucai.id}" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="xz_a" th:id="'xz_a_'+${sucai.id}" th:if="${favlist}" href="javascript:void(0);" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+						<a class="sc_a" th:unless="${favlist}" href="javascript:void(0);" th:id="'sc_a_'+${sucai.id}" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="xz_a" th:id="'xz_a_'+${sucai.id}" href="javascript:void(0);" th:unless="${favlist}" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+					</div>
+				</div>
+				<!--				<div class="zcq_div left">-->
+				<!--					<div class="zcq_c1">-->
+				<!--						<div class="zc_list">-->
+				<!--							<img th:src="@{/img/zcq_img1.gif}" />-->
+				<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构&ndash;&gt;-->
+				<!--							<div class="detail_hidden">-->
+				<!--								<a href="#"><img th:src="@{/img/zcq_img1_big.gif}" /></a>-->
+				<!--								<div class="detail_hidden_wrap">-->
+				<!--									<h2>手机移动H5页面模板<span>¥398</span></h2>-->
+				<!--									<div class="detail_user_wrap">-->
+				<!--										<div class="detail_list_img"><a href="#"><img th:src="@{/img/detail_hidden_img.jpg}" /></a></div>-->
+				<!--										<div class="detail_list_name">番茄设计团队</div>-->
+				<!--									</div>-->
+				<!--									<div class="detail_caozuo_wrap">-->
+				<!--										<a class="caozuo_sc" href="#">收藏（2333）</a><a class="caozuo_xz" href="#">下载（2333）</a>-->
+				<!--									</div>-->
+				<!--									<div class="detail_biaoqian_wrap">-->
+				<!--										<ul>-->
+				<!--											<li>标签</li>-->
+				<!--											<li>标签</li>-->
+				<!--											<li>标签</li>-->
+				<!--											<li>标签</li>-->
+				<!--										</ul>-->
+				<!--									</div>-->
+				<!--									<div class="detail_btn_wrap">-->
+				<!--										<a class="detail_xz" href="#">立即下载</a><a class="detail_jrgwc" href="#"><img th:src="@{/img/hidden_gwc_white.png}" /></a>-->
+				<!--									</div>-->
+				<!--								</div>-->
+				<!--							</div>-->
+				<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构end&ndash;&gt;-->
+				<!--						</div>-->
+				<!--					</div>-->
+				<!--					<h2 class="zcq_c2">手机H5页面模板</h2>-->
+				<!--					<div class="zcq_c3">-->
+				<!--						<a class="sc_a" href="#">收藏（2333）</a><a class="xz_a" href="pro_detail.html">下载（2333）</a>-->
+				<!--					</div>-->
+				<!--				</div>-->
+				<div class="clear"></div>
+			</div>
+
+			<h2 class="zcq_title">热门&nbsp;&nbsp;<span  style="color: red"><em style="font-style:italic" >top7</em></span><a href="#" th:href="@{/product/list}">全部>></a></h2>
+			<div class="zcq_wrap" >
+				<div class="zcq_div left" th:each="sucai,iterStat:${topfav}">
+					<div class="zcq_c1">
+						<div class="zc_list">
+							<img th:src="${sucai.picUrl}" th:onclick="jumpToDetail([[${sucai.id}]])" />
+							<!--鼠标滑过图片显示隐藏层结构-->
+							<div class="detail_hidden">
+								<input type="hidden" class="sucaiid" th:value="${sucai.id}"/>
+								<a href="#"><img th:src="${sucai.picUrl}"  th:onclick="jumpToDetail([[${sucai.id}]])"/></a>
+								<div class="detail_hidden_wrap">
+									<!--									<h2 th:text="${sucai.name}">手机移动H5页面模板<span th:text="${sucai.money}">¥398</span></h2>-->
+									<h2 >[[${sucai.name}]]<span th:text="'¥'+${sucai.money}">¥398</span></h2>
+									<div class="detail_user_wrap">
+										<div class="detail_list_img"><a href="#" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}"><img th:src="@{/img/detail_hidden_img.jpg}" /></a></div>
+										<div class="detail_list_name" th:text="${sucai.author}">番茄设计团队</div>
+									</div>
+									<div class="detail_caozuo_wrap">
+										<!--		th:classappend="${#lists.contains(favlist,sucai.id)}? 'favored':''"								-->
+										<!--										<a class="caozuo_sc" href="javascript:void(0);" th:onclick="fav([[${sucai.id}]])" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_xz" href="#" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>-->
+										<a class="caozuo_sc" th:if="${favlist}"  th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" th:id="'caozuo_sc_'+${sucai.id}" href="javascript:void(0);" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a>
+										<a class="caozuo_sc" th:unless="${favlist}" th:id="'caozuo_sc_'+${sucai.id}" href="javascript:void(0);" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a>
+										<a class="caozuo_xz" th:id="'caozuo_xz_'+${sucai.id}" href="javascript:void(0);" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+									</div>
+									<div class="detail_biaoqian_wrap">
+										<ul>
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+											<!--											<li>标签</li>-->
+										</ul>
+									</div>
+									<div class="detail_btn_wrap">
+										<!--										<a class="detail_xz" href="#"  th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}">立即下载</a><a class="detail_jrgwc" href="#"><img th:src="@{/img/hidden_gwc_white.png}" /></a>-->
+										<a class="detail_xz" href="javascript:void(0);"  th:onclick="jumpToDownload([[${sucai.id}]])">立即下载</a>
+										<a th:if="${shopcar}" th:classappend="${#lists.contains(shopcar,sucai.id)} ? 'added':''" class="detail_jrgwc" th:id="'detail_jrgwc_'+${sucai.id}" href="javascript:void(0);"><img th:src="@{/img/hidden_gwc_white.png}" /></a>
+										<a th:unless="${shopcar}" class="detail_jrgwc" th:id="'detail_jrgwc_'+${sucai.id}" href="javascript:void(0);"><img th:src="@{/img/hidden_gwc_white.png}" /></a>
+									</div>
+								</div>
+							</div>
+							<!--鼠标滑过图片显示隐藏层结构end-->
+						</div>
+					</div>
+					<h2 class="zcq_c2" th:text="${sucai.name}">手机H5页面模板</h2>
+					<div class="zcq_c3">
+						<a class="sc_a" th:if="${favlist}" th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" href="javascript:void(0);" th:id="'sc_a_'+${sucai.id}" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="xz_a" th:id="'xz_a_'+${sucai.id}" th:if="${favlist}" href="javascript:void(0);" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+						<a class="sc_a" th:unless="${favlist}" href="javascript:void(0);" th:id="'sc_a_'+${sucai.id}" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="xz_a" th:id="'xz_a_'+${sucai.id}" href="javascript:void(0);" th:unless="${favlist}" th:href="@{/product/detail(menu=${menu_active},submenu=${submenu_active},id=${sucai.id})}" th:text="'下载('+${sucai.downnum}+')'">下载（2333）</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+
+
+			<!--			<h2 class="zcq_title">最畅销<a href="#">共56660个素材>></a></h2>-->
+<!--			<div class="zcq_wrap" id="img_ulwrap">-->
+<!--				<div class="zcq_div left">-->
+<!--					<div class="zcq_c1">-->
+<!--						<div class="zc_list">-->
+<!--							<img th:src="@{/img/zcq_img1.gif}" />-->
+<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构&ndash;&gt;-->
+<!--							<div class="detail_hidden">-->
+<!--								<a href="pro_detail.html"><img th:src="@{/img/zcq_img1_big.gif}" /></a>-->
+<!--								<div class="detail_hidden_wrap">-->
+<!--									<h2>手机移动H5页面模板<span>¥398</span></h2>-->
+<!--									<div class="detail_user_wrap">-->
+<!--										<div class="detail_list_img"><a href="pro_detail.html"><img th:src="@{/img/detail_hidden_img.jpg}" /></a></div>-->
+<!--										<div class="detail_list_name">番茄设计团队</div>-->
+<!--									</div>-->
+<!--									<div class="detail_caozuo_wrap">-->
+<!--										<a class="caozuo_sc" href="#">收藏（2333）</a><a class="caozuo_xz" href="#">下载（2333）</a>-->
+<!--									</div>-->
+<!--									<div class="detail_biaoqian_wrap">-->
+<!--										<ul>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="detail_btn_wrap">-->
+<!--										<a class="detail_xz" href="pro_detail.html">立即下载</a><a class="detail_jrgwc" href="#"><img th:src="@{/img/hidden_gwc_white.png}" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构end&ndash;&gt;-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<h2 class="zcq_c2">手机H5页面模板</h2>-->
+<!--					<div class="zcq_c3">-->
+<!--						<a class="sc_a" href="#">收藏（2333）</a><a class="xz_a" href="#">下载（2333）</a>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				<div class="zcq_div left">-->
+<!--					<div class="zcq_c1">-->
+<!--						<div class="zc_list">-->
+<!--							<img th:src="@{/img/zcq_img1.gif}" />-->
+<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构&ndash;&gt;-->
+<!--							<div class="detail_hidden">-->
+<!--								<a href="#"><img th:src="@{/img/zcq_img1_big.gif}" /></a>-->
+<!--								<div class="detail_hidden_wrap">-->
+<!--									<h2>手机移动H5页面模板<span>¥398</span></h2>-->
+<!--									<div class="detail_user_wrap">-->
+<!--										<div class="detail_list_img"><a href="#"><img th:src="@{/img/detail_hidden_img.jpg}" /></a></div>-->
+<!--										<div class="detail_list_name">番茄设计团队</div>-->
+<!--									</div>-->
+<!--									<div class="detail_caozuo_wrap">-->
+<!--										<a class="caozuo_sc" href="#">收藏（2333）</a><a class="caozuo_xz" href="#">下载（2333）</a>-->
+<!--									</div>-->
+<!--									<div class="detail_biaoqian_wrap">-->
+<!--										<ul>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--											<li>标签</li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="detail_btn_wrap">-->
+<!--										<a class="detail_xz" href="#">立即下载</a><a class="detail_jrgwc" href="#"><img th:src="@{/img/hidden_gwc_white.png}" /></a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							&lt;!&ndash;鼠标滑过图片显示隐藏层结构end&ndash;&gt;-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<h2 class="zcq_c2">手机H5页面模板</h2>-->
+<!--					<div class="zcq_c3">-->
+<!--						<a class="sc_a" href="#">收藏（2333）</a><a class="xz_a" href="#">下载（2333）</a>-->
+<!--					</div>-->
+<!--				</div>-->
+
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+
+
+<!--			<h2 class="zcq_title rm_title">热门<a href="#">共68965个素材>></a></h2>-->
+<!--			<div class="zcq_wrap">-->
+<!--				<div class="zcq_div left">-->
+<!--					<div class="zcq_c1"><img th:src="@{/img/zcq_img1.gif}" /></div>-->
+<!--					<h2 class="zcq_c2">手机H5页面模板</h2>-->
+<!--					<div class="zcq_c3">-->
+<!--						<a class="sc_a" href="#">收藏（2333）</a><a class="xz_a" href="#">下载（2333）</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div></div>-->
+<!--				<div></div>-->
+<!--				<div></div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+
+<!--			<h2 class="zcq_title pfzg_title">评分最高<a href="#">共2856个素材>></a></h2>-->
+<!--			<div class="zcq_wrap">-->
+<!--				<div class="zcq_div left">-->
+<!--					<div class="zcq_c1"><img th:src="@{/img/zcq_img1.gif}" /></div>-->
+<!--					<h2 class="zcq_c2">网站首页模板素材</h2>-->
+<!--					<div class="zcq_c3">-->
+<!--						<a class="sc_a" href="#">收藏（2333）</a><a class="xz_a" href="#">下载（2333）</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div></div>-->
+<!--				<div></div>-->
+<!--				<div></div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+
+			<div class="chakan_more"><a href="#" th:href="@{/product/list}">查看其它分类</a></div>
+		</div>
+		<!--内容结构-->
+
+		<!--保障结构-->
+<!--		<div class="baozhang_wrap baozhang_wrap_fbfbfb">-->
+<!--			<div class="baozhang_content auto">-->
+<!--				<div class="baozhang_div">-->
+<!--					<img th:src="@{/img/aqzf_icon.png}" />-->
+<!--					<h2>安全支付</h2>-->
+<!--					<p>通过在线支付或信用卡支付</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div">-->
+<!--					<img th:src="@{/img/zzjp_icon.png}" />-->
+<!--					<h2>致臻精品</h2>-->
+<!--					<p>顶级团队良心打造专业制作经验</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div">-->
+<!--					<img th:src="@{/img/zxshfw_icon.png}" />-->
+<!--					<h2>在线售后服务</h2>-->
+<!--					<p>我们强大的售后团队为您服务</p>-->
+<!--				</div>-->
+<!--				<div class="baozhang_div baozhang_lastdiv">-->
+<!--					<img th:src="@{/img/fwzs_icon.png}" />-->
+<!--					<h2>服务至上</h2>-->
+<!--					<p>如果您对所购产品不满意，可申请调换</p>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+		<!--保障结构end-->
+
+<!--		<div class="join_designer"><a href="#"></a></div>-->
+
+		<!--底部结构-->
+<!--		<div class="footer_wrap">-->
+<!--			<div class="footer_content auto">-->
+<!--				<div class="fdiv1">-->
+<!--					<h2>模板</h2>-->
+<!--					<a href="#">网页模板</a>-->
+<!--					<a href="#">品牌设计模板</a>-->
+<!--					<a href="#">CMS模板</a>-->
+<!--					<a href="#">视频</a>-->
+<!--					<a href="#">电子商务模板</a>-->
+<!--					<a href="#">PPT</a>-->
+<!--					<a href="#">画册</a>-->
+<!--				</div>-->
+<!--				<div class="fdiv2">-->
+<!--					<h2>主题</h2>-->
+<!--					<a href="#">影视&音乐</a>-->
+<!--					<a href="#">生活娱乐</a>-->
+<!--					<a href="#">旅游休闲</a>-->
+<!--					<a href="#">设计&摄影</a>-->
+<!--					<a href="#">房产家居</a>-->
+<!--					<a href="#">汽车&摩托车</a>-->
+<!--					<a href="#">动物</a>-->
+<!--				</div>-->
+<!--				<div class="fdiv3">-->
+<!--					<div class="f31">-->
+<!--						<div class="f31_1">-->
+<!--							<h2>公司</h2>-->
+<!--							<a href="#">关于我们</a>-->
+<!--							<a href="#">加盟合作</a>-->
+<!--							<a href="#">联系我们</a>-->
+<!--						</div>-->
+<!--						<div class="f31_2">-->
+<!--							<h2>支持</h2>-->
+<!--							<a href="#">帮助中心</a>-->
+<!--							<a href="#">成为设计师</a>-->
+<!--							<a href="#">常见问题</a>-->
+<!--						</div>-->
+<!--						<div class="clear"></div>-->
+<!--					</div>-->
+<!--					<div class="f32">-->
+<!--						<h2>订阅我们的通讯</h2>-->
+<!--						<p>接受有关新的模板和设计素材信息</p>-->
+<!--						<div class="f32_dy">-->
+<!--							<div class="f32_inp left"><input type="text" value="电子邮箱" onfocus="if(this.value=='电子邮箱'){this.value='';this.style.color='#999999'}"-->
+<!--								 onblur="if(this.value==''){this.value='电子邮箱';this.style.color='#999999'}" /></div>-->
+<!--							<a class="f32_btn right" href="#">订阅</a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="fdiv4">-->
+<!--					<h2>关注我们</h2>-->
+<!--					<ul>-->
+<!--						<li class="wx_li">-->
+<!--							<a href="#"><span>微信</span></a>-->
+<!--							<div class="ewm ewm_position1"><img th:src="@{/img/weixin_img.png}" /></div>-->
+<!--						</li>-->
+<!--						<li class="wb_li">-->
+<!--							<a href="#"><span>微博</span></a>-->
+<!--							<div class="ewm ewm_position2"><img th:src="@{/img/weixin_img.png}" /></div>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+		<!--底部结构end-->
+<!--		<div class="bottom_gray">-->
+<!--			<div class="bottom_gray_content auto">-->
+<!--				<p class="tec bottom_gray_title">特聘法律顾问：江苏政纬律师事务所 宋洪波 | 版权所有 Copyright ©2017 苏州苏杰思网络有限公司旗下网站 苏ICP备14036386号</p>-->
+<!--				<p class="tec bgray">-->
+<!--					<a href="#"><img th:src="@{/img/bottom_gray_img1.png}" /></a>-->
+<!--					<a href="#"><img th:src="@{/img/bottom_gray_img2.png}" /></a>-->
+<!--					<a href="#"><img th:src="@{/img/bottom_gray_img3.png}" /></a>-->
+<!--					<a href="#"><img th:src="@{/img/bottom_gray_img4.png}" /></a>-->
+<!--				</p>-->
+<!--			</div>-->
+<!--		</div>-->
+
+		<!--滚动条下拉出现搜索块-->
+<!--	<div class="scroll_wrap">-->
+<!--		<div class="scroll_content auto">-->
+<!--			<div class="scroll_logo left"><a class="totop" href="javascript:;"><img th:src="@{/img/logo.png}" /></a></div>-->
+<!--			<div class="scroll_search right">-->
+<!--				<input type="text" class="text_inp1" value="请输入关键字" th:value="${search}?${search}:'请输入关键字'" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}"-->
+<!--					   onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />-->
+<!--				<script type="text/javascript">-->
+<!--					function jumpToSearch1() {-->
+<!--						// jumpToSearchconsole.log("能进入js函数");-->
+<!--						var searchtext=$(".scroll_search .text_inp1").val();-->
+<!--						if(searchtext=="请输入关键字")-->
+<!--							window.location.href=contextPath+"/product/list";-->
+<!--						else-->
+<!--							window.location.href=contextPath+"/product/list?search="+searchtext;-->
+<!--						// console.log(searchtext);-->
+<!--					}-->
+<!--				</script>-->
+<!--				<a href="#" class="text_but1" onclick="jumpToSearch1()">确定</a>-->
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+	<!--		<div class="scroll_wrap">-->
+<!--			<div class="scroll_content auto">-->
+<!--				<div class="scroll_logo left"><a class="totop" href="javascript:;"><img th:src="@{/img/logo.png}" /></a></div>-->
+<!--				<div class="scroll_search right">-->
+<!--					<input type="text" class="text_inp1" value="请输入关键字" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}"-->
+<!--					 onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />-->
+<!--					<a href="#" class="text_but1">确定</a>-->
+<!--				</div>-->
+<!--				<div class="clear"></div>-->
+<!--			</div>-->
+<!--		</div>-->
+		<!--滚动条下拉出现搜索块end-->
+
+		<!--登陆弹出框-->
+<!--		<div id="popDiv" class="mydiv" style="display:none;">-->
+<!--			<div class="login_tanchu_wrap">-->
+<!--				<div class="login_tanchu_logo"><img th:src="@{/img/logo.png}" /></div>-->
+<!--				<div class="login_tanchu_title">账号登陆</div>-->
+<!--				<div class="login_tanchu_form">-->
+<!--					<form id="loginForm">-->
+<!--						<div class="login_user login_user_inp">登陆账户：<input type="text" name="telephone" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}"-->
+<!--							 onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />-->
+<!--						</div>-->
+<!--						<div class="login_user login_user_pass">登陆密码：<input type="text" name="password" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value='';this.style.color='#999999';this.type='password'}"-->
+<!--							 onblur="if(this.value==''){this.value='请输入密码';this.style.color='#999999';this.type='text'}" />-->
+<!--						</div>-->
+<!--						<div class="login_phone"><span th:text="用户名或密码错误" style="color: red;margin-right: 120px;visibility:hidden" id="spanLogin"></span><a href="javascript:qiehuan_iphone()">使用手机验证码登陆</a></div>-->
+<!--						<div class="login_btn"><a onclick="login()">立即登陆</a></div>-->
+<!--						<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>-->
+<!--					</form>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<a class="tanchu_close" href="javascript:closeDiv()"></a>-->
+<!--		</div>-->
+<!--		<div id="popDiv1" class="mydiv" style="display:none;">-->
+<!--			<div class="login_tanchu_wrap">-->
+<!--				<div class="login_tanchu_logo"><img th:src="@{/img/logo.png}" /></div>-->
+<!--				<div class="login_tanchu_title">请登陆后继续操作</div>-->
+<!--				<div class="login_tanchu_form">-->
+<!--					<form id="" method="post">-->
+<!--						<div class="login_user login_user_inp">手机号码：<input type="text" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}"-->
+<!--							 onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />-->
+<!--						</div>-->
+<!--						<div class="login_user login_user_pass">验证码：<input type="text" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value='';this.style.color='#999999'}"-->
+<!--							 onblur="if(this.value==''){this.value='请输入验证码';this.style.color='#999999'}" /><input type="button" id="yanzhengma_gray"-->
+<!--							 class="login_user_yanzhengma" value="获取验证码" onClick="sendCode(this)" />-->
+<!--						</div>-->
+<!--						<script type="text/javascript">-->
+<!--							var clock = '';-->
+<!--							var nums = 60;-->
+<!--							var btn;-->
+<!--							var yzm_disabled = document.getElementById("yanzhengma_gray");-->
+
+<!--							function sendCode(thisBtn) {-->
+<!--								btn = thisBtn;-->
+<!--								btn.disabled = true; //将按钮置为不可点击-->
+<!--								btn.value = nums + '秒后可重新获取';-->
+<!--								clock = setInterval(doLoop, 1000); //一秒执行一次-->
+<!--								yzm_disabled.style.backgroundColor = "#999999";-->
+<!--							}-->
+
+<!--							function doLoop() {-->
+<!--								nums&#45;&#45;;-->
+<!--								if (nums > 0) {-->
+<!--									btn.value = nums + '秒后可重新获取';-->
+<!--								} else {-->
+<!--									clearInterval(clock); //清除js定时器-->
+<!--									btn.disabled = false;-->
+<!--									btn.value = '点击发送验证码';-->
+<!--									nums = 10; //重置时间-->
+<!--									yzm_disabled.style.backgroundColor = "#e83a17";-->
+<!--								}-->
+<!--							}-->
+<!--							function login() {-->
+<!--								console.info($('#loginForm').serialize());-->
+<!--								$.ajax({-->
+<!--									type:"post",-->
+<!--									dataType:"json",-->
+<!--									url:contextPath+"/index/login",//有项目路径需增加以下项目路径-->
+<!--									data:$('#loginForm').serialize(),-->
+<!--									success:function () {-->
+<!--										window.location.reload();-->
+<!--									},-->
+<!--									error:function () {-->
+<!--										$("#spanLogin").css("visibility","visible");-->
+<!--									}-->
+<!--								})-->
+<!--							}-->
+
+<!--						</script>-->
+<!--						<div class="login_phone"><a href="javascript:qiehuan_zhanghao()">使用账号密码登陆</a></div>-->
+<!--						<div class="login_btn"><a href="#">立即登陆</a></div>-->
+<!--						<div class="login_reg"><a href="#">注册麦软账号</a> | <a href="#">忘记密码</a></div>-->
+<!--					</form>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<a class="tanchu_close" href="javascript:closeDiv()"></a>-->
+<!--		</div>-->
+<!--		<div id="bg" class="bg" style="display:none;"></div>-->
+		<!--登陆弹出框end-->
+	<div th:insert="~{bottom :: nav}"></div>
+	</body>
+</html>

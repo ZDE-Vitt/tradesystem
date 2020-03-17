@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="top">
+    <nav>
+        <div class="top_wrap">
+            <div class="top auto">
+                <div class="top_logo left"><a th:href="@{/}"><img th:src="@{/img/logo.png}" /></a></div>
+                <div class="top_search left">
+                    <input type="text" class="text_inp" th:value="${search}?${search}:'请输入关键字'" value="请输入关键字" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />
+                    <!--    搜索功能新增 script               -->
+                    <script th:inline="javascript">
+                        var contextPath=[[${#request.getContextPath()}]];
+                    </script>
+                    <script type="text/javascript">
+                        function jumpToSearch() {
+                            // jumpToSearchconsole.log("能进入js函数");
+                            var searchtext=$(".top_search .text_inp").val();
+                            if(searchtext=="请输入关键字")
+                                window.location.href=contextPath+"/product/list";
+                            else
+                                window.location.href=contextPath+"/product/list?search="+searchtext;
+                            // console.log(searchtext);
+                        }
+                    </script>
+                    <!--    搜索功能新增 script结束               -->
+                    <a class="text_but" href="#" onclick="jumpToSearch()">确定</a>
+                </div>
+                <div class="top_list right">
+                    <ul>
+                        <a th:if="${session.user != null}" id="logonOut">
+                            <li class="zh_li">
+                                <div class="zh_d">
+                                    <span th:text="注销"></span>
+                                </div>
+                            </li>
+                        </a>
+                        <script type="text/javascript">
+                            $("#logonOut").click(function () {
+                                $.ajax({
+                                    url:contextPath+"/index/loginOut",
+                                    type:"post",
+                                    success:function () {
+                                        window.location.href=contextPath+"/";
+                                    },
+                                    error:function () {
+                                        window.location.href=contextPath+"/";
+                                    }
+                                })
+                            })
+                        </script>
+                        <div th:if="${session.user != null}">
+                            <a  th:href="@{/center/toCenter}">
+                                <li class="zh_li">
+                                    <div class="zh_d">
+                                        <span th:text="${session.user.getUsername()}"></span>
+                                    </div>
+                                </li>
+                            </a>
+                            <a th:href="@{/cart/toCart}"><li class="gwc_li"><i>购物车</i></li></a>
+                            <a th:href="@{/collect/toCollect}"><li class="sc_li"><i>收藏</i></li></a>
+                        </div>
+
+                        <div th:if="${session.user == null}">
+                            <li class="zh_li" >
+                                <div class="zh_d">
+                                    <span><a onclick="javascript:showDiv()">登陆</a>/<a th:href="@{/index/register}">注册</a></span>
+                                </div>
+                            </li>
+                            <a onclick="javascript:showDiv()"><li class="gwc_li"><i>购物车</i></li></a>
+                            <a onclick="javascript:showDiv()"><li class="sc_li"><i>收藏</i></li></a>
+                        </div>
+          <!--              <li class="xx_li">
+                            <i>
+                                <div class="y">
+                                    <p id="xx_id">消息</p>
+                                    <div class="xx_xiala" id="xx_c_id">
+                                        <div><a href="#">注册成功，获得10积分</a></div>
+                                        <div><a href="#">完善个人资料，获得20积分</a></div>
+                                        <div><a href="#">发布素材成功，获得20积分</a></div>
+                                        <div><a href="#">发布素材成功，恭喜你获得20积分积分</a></div>
+                                        <div><a href="#">发布素材成功，恭喜你获得20积分积分</a></div>
+                                    </div>
+                                </div>
+                            </i>
+                            <div class="xx_div">1</div>
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我的订单-已完成订单</title>
+    <link rel="stylesheet" href="css/layout.css" th:href="@{/css/layout.css}"/>
+    <link rel="stylesheet" href="css/user.css" th:href="@{/css/user.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+    <script type="text/javascript" src="js/bannerslider.js" th:src="@{/js/bannerslider.js}"></script>
+    <script type="text/javascript" src="js/layout.js" th:src="@{/js/layout.js}"></script>
+    <script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+</head>
+
+<body>
+<div th:insert="~{top :: nav}"></div>
+<!--1200结构-->
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 我的订单 > 全部订单</h2>
+</div>
+<!--1200结构end-->
+
+<div class="user_join_designer">
+    <a href="#"></a>
+</div>
+
+<div class="user_center auto">
+    <div class="user_navside left">
+        <ul class="user_navside_ul">
+            <li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+            <li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+            <li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+            <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+            <li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+            <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+            <li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+            <li class="user_active_li"><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a>
+            </li>
+            <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+            <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+            <li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+        </ul>
+    </div>
+
+    <div id="list" class="right">
+        <div class="user_right">
+
+            <div class="mytitle_twozero_wrap myjilu_twozero_wrap dingdan_twozero_wrap">
+                <div class="mytitle_twozero_content qianbao_twozero_wrap">
+                    <div class="mytitle_twozero dingdan_twozero">
+                        <ul class="mytitle_twozero_ul dingdan_twozero_ul">
+                            <li id="all" class="mytitle_twozero_liactive"><a name="alloeder" href="javascript:;"
+                                                                             th:onclick="|allorder()|">全部订单</a></li>
+                            <li id="com"><a href="javascript:;" th:onclick="|complete()|">已付款订单（{{completeNum}}）</a>
+                            </li>
+                            <li id="incom"><a href="javascript:;"
+                                              th:onclick="|incomplete()|">未付款订单（{{incompleteNum}}）</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user_qianbao_wrap">
+                <div v-if="tabledata == null" class="user_qianbao_content">
+                    <span>暂无数据！</span>
+                </div>
+                <div v-if="tabledata != null" class="user_qianbao_content">
+                    <table cellpadding="0" cellspacing="0" class="user_qianbao_table dingdan2_table">
+                        <tr>
+                            <th width="115">订单号</th>
+                            <th width="96">创建时间</th>
+                            <th width="145">名称</th>
+                            <th width="76">类型</th>
+                            <th width="85">定价</th>
+                            <!--<th width="106">实付</th>-->
+                            <th width="61">状态</th>
+                            <th width="85">操作</th>
+                        </tr>
+
+                        <tr v-for="(item,index) of tabledata">
+
+                            <td>{{item.orderid}}</td>
+                            <td>{{item.time}}</td>
+                            <td>
+                                <div class="dingdan_name_div">
+                                    <img :src="item.picUrl" @click="jumpToDetail(item)" width="55" height="40">
+                                </div>
+                                {{item.sucainame}}
+                            </td>
+                            <td>{{item.sucaiType}}</td>
+                            <td>{{item.sucaiMoney}}</td>
+                            <!--<td>¥27.00<p>积分：20积分</p></td>-->
+                            <td>{{item.orderStatusName}}</td>
+                            <td>
+                                <div>
+                                    <button style="background:#E83A17" type="button" @click="deleteorder(index)" class="layui-btn">
+                                        删除订单
+                                    </button>
+                                </div>
+                                <div v-if="item.orderStatus == 1 || item.orderStatus == 2 " style="margin-top: 5px">
+                                    <button style="background:#E83A17" type="button" v-if="item.orderStatus == 1 || item.orderStatus == 2 " @click="payone(index)" class="layui-btn">
+                                        完成支付
+                                    </button>
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <div id="pagination"></div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="dingdan_twozero_jieshi">
+            图释：<span class="dingdan_jieshi_down">下载</span>
+        </div>
+        <!-- 支付框 -->
+        <div id="pay" style="display: none">
+            <div>购买[{{sucainames}}],需要{{sucaiprice}}积分</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div th:insert="~{bottom :: nav}"></div>
+
+<!--订单多文件弹出框结构-->
+<!--<div id="dingdan2_tanchu" class="dingdan2_tanchu" style="display:none;">
+	<h2 class="dingdan2_tanchu_h2">订单详情<a href="javascript:dingdan2_tanchu_close()"></a></h2>
+	<div class="dingdan2_content">
+		<p>订单编号：201083849494940382</p>
+		<p>订单状态：未完成</p>
+		<p>订单总计：<span class="red">¥165.00</span></p>
+		<p>用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户：麦软设计团队</p>
+		<p>支付方式：现金支付</p>
+	</div>
+	<div class="dingdan2_list_wrap">
+		<div class="dingdan2_list_title">清单</div>
+		<div class="dingdan2_list">
+			<table cellpadding="0" cellspacing="0" class="dingdan2_list_table">
+				<tr>
+					<th>名称</th>
+					<th width="160">类型</th>
+					<th width="160">价格</th>
+					<th width="160">操作</th>
+				</tr>
+				<tr>
+					<td>白色带阴影中国风祥云</td>
+					<td>付费资源</td>
+					<td>¥0.01</td>
+					<td><a href="#"><img src="img/dingdan_icon1.png" th:src="@{/img/dingdan_icon1.png}" /></a></td>
+				</tr>
+				<tr>
+					<td>白色带阴影中国风祥云</td>
+					<td>付费资源</td>
+					<td>¥0.01</td>
+					<td><a href="#"><img src="img/dingdan_icon1.png" th:src="@{/img/dingdan_icon1.png}" /></a></td>
+				</tr>
+				<tr>
+					<td>白色带阴影中国风祥云</td>
+					<td>付费资源</td>
+					<td>¥0.01</td>
+					<td><a href="#"><img src="img/dingdan_icon1.png" th:src="@{/img/dingdan_icon1.png}" /></a></td>
+				</tr>
+				<tr>
+					<td>白色带阴影中国风祥云</td>
+					<td>付费资源</td>
+					<td>¥0.01</td>
+					<td><a href="#"><img src="img/dingdan_icon1.png" th:src="@{/img/dingdan_icon1.png}" /></a></td>
+				</tr>
+				<tr>
+					<td>白色带阴影中国风祥云</td>
+					<td>付费资源</td>
+					<td>¥0.01</td>
+					<td><a href="#"><img src="img/dingdan_icon1.png" th:src="@{/img/dingdan_icon1.png}" /></a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="dingdan2_jiesuan">
+			<p>积分使用：-0积分</p>
+			<p>积分抵扣：-¥0.00</p>
+			<p>应付金额总计：¥165.00</p>
+		</div>
+	</div>
+</div>
+<div id="dingdan2_tanchubg" class="dingdan2_tanchubg" style="display:none;"></div>-->
+<!--订单多文件弹出框结构end-->
+
+<!--订单资源过期弹出框-->
+<!--<div id="dingdan2_guoqi_tanchu" class="guoqidelete_tanchu" style="display:none;">
+	<div class="dingdan2_guoqi_title">你购买的资源已过期，如果使用请重新支付</div>
+	<div class="delete_a_wrap dingdan2_guoqi_content">
+		<a href="javascript:dingdan2_guoqi_close()" class="delete_queren">确定</a><a href="javascript:dingdan2_guoqi_close()"
+																				   class="delete_quxiao">取消</a>
+	</div>
+</div>
+<div id="dingdan2_guoqi_tanchubg" class="delete_tanchubg" style="display:none;"></div>-->
+<!--订单资源过期弹出框结构end-->
+
+<!--订单删除弹出框-->
+<div id="dingdan2_shanchu_tanchu" class="guoqidelete_tanchu" style="display:none;">
+    <div class="dingdan2_guoqi_title">您是否要删除订单：<span id="orderspanid"></span>|<span id="orderspanname"></span></div>
+    <div class="delete_a_wrap dingdan2_guoqi_content">
+        <a id="deletea" href="javascript:;" class="delete_queren">确定</a>
+        <a href="javascript:dingdan2_shanchu_close()" class="delete_quxiao">取消</a>
+    </div>
+</div>
+<div id="dingdan2_shanchu_tanchubg" class="delete_tanchubg" style="display:none;"></div>
+<!--订单删除出框结构end-->
+</body>
+<script type="text/javascript">
+
+    function deleteorder(index) {
+        var form = layui.form
+            , layer = layui.layer;
+        document.getElementById('dingdan2_shanchu_tanchu').style.display = 'block';
+        document.getElementById('dingdan2_shanchu_tanchubg').style.display = 'block';
+        document.getElementById('orderspanid').innerText = vue.tabledata[index].orderid;
+        document.getElementById('orderspanname').innerText = vue.tabledata[index].sucainame;
+        $("#deletea").on("click", function () {
+            $.ajax({
+                type: "post",
+                url: "/order/delete",
+                data: {curr: curr, limit: limit, status: status, id: vue.tabledata[index].id},
+                async: false,
+                success: function (data) {
+                    vue.tabledata = data.order;
+                    vue.completeNum = data.completeNum;
+                    vue.incompleteNum = data.incompleteNum;
+                    limit = data.limit;
+                    total = data.total;
+                    curr = data.curr;
+                    layer.msg('删除成功', {
+                        time: 1000
+                    }, function () {
+                        dingdan2_shanchu_close();
+                    })
+                }
+            })
+        });
+    }
+
+
+    var vue = new Vue({
+        el: "#list",
+        data: {
+            tabledata: null,
+            completeNum: 0,
+            incompleteNum: 0,
+            sucainames:null,
+            sucaiprice:0
+        },
+        methods: {
+            payone(id) {
+                this.sucainames = vue.tabledata[id].sucainame;
+                this.sucaiprice = vue.tabledata[id].sucaiMoney;
+                layui.use("layer", function () {
+                    var layer = layui.layer;
+                    layer.open({
+                        id: 1,
+                        type: 1,
+                        title: '结算',
+                        skin: 'layui-layer-rim',
+                        area: ['450px', '200px'],
+                        content: $("#pay")
+                        ,
+                        btn: ['确定购买', '取消'],
+                        btn1: function (index) {
+                            $.ajax({
+                                url: "/order/payone",
+                                type: "post",
+                                traditional: true, //默认false
+                                data: {
+                                    "sucaiMoney": vue.tabledata[id].sucaiMoney,
+                                    "userOrderid" : vue.tabledata[id].id
+                                },
+                                success: function (data) {
+                                    if (data == "error") {
+                                        layer.msg("积分不足,请充值!")
+                                    } else {
+                                        layer.msg("购买成功!");
+                                        layer.close(index);
+                                        get(curr, vue.tabledata[id].status);
+                                    }
+                                }
+                            })
+                        },
+                        btn2: function (index, layero) {
+                            layer.close(index);
+                        }
+                    });
+                })
+            }
+        }
+    });
+
+    var limit = null;
+    var total = null;
+    var curr = null;
+
+
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+        laypage.render({
+            elem: 'pagination',
+            count: total,
+            theme: '#E83A17',
+            limit: limit,
+            curr: curr,
+            jump: function (obj, first) {
+                if (!first) {
+                    get(obj.curr, 0);
+                }
+            }
+        });
+    });
+
+    get();
+
+    //bug 。 导入layui.js有些元素无法使用
+    //导入layui .all.js会导致分页的按钮不加载，但是点击异步刷新后会加载
+    //这段函数的作用就是页面一加载完就执行点击事件
+
+    $().ready(function () {
+        $("#alloeder").click(allorder());
+    })
+
+
+    function complete() {
+
+        document.getElementById("all").className = '';
+        document.getElementById("com").className = 'mytitle_twozero_liactive';
+        document.getElementById("incom").className = '';
+
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: vue.completeNum,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump: function (obj) {
+                    get(obj.curr, 4);
+                }
+            });
+        });
+    }
+
+    function incomplete() {
+
+        document.getElementById("all").className = '';
+        document.getElementById("com").className = '';
+        document.getElementById("incom").className = 'mytitle_twozero_liactive';
+
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: vue.incompleteNum,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump: function (obj) {
+                    get(obj.curr, 1);
+                }
+            });
+        });
+    }
+
+    function allorder() {
+
+        document.getElementById("all").className = 'mytitle_twozero_liactive';
+        document.getElementById("com").className = '';
+        document.getElementById("incom").className = '';
+
+        layui.use('laypage', function () {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                theme: '#E83A17',
+                count: total,
+                limit: limit,
+                curr: curr,
+                jump: function (obj) {
+                    get(obj.curr, 0);
+                }
+            });
+        });
+    }
+
+    function get(curr, status) {
+        $.ajax({
+            type: "post",
+            url: "/order/toorder",
+            data: {curr: curr, limit: limit, status: status},
+            async: false,
+            success: function (data) {
+                vue.tabledata = data.order;
+                vue.completeNum = data.completeNum;
+                vue.incompleteNum = data.incompleteNum;
+                limit = data.limit;
+                total = data.total;
+                curr = data.curr;
+            }
+        })
+    }
+
+</script>
+
+</html>

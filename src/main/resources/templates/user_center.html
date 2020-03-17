@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>用户中心</title>
+		<link rel="stylesheet" href="/css/layout.css" />
+		<link rel="stylesheet" href="/css/user.css" />
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/css/view.css}"/>
+		<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/js/bannerslider.js"></script>
+		<script type="text/javascript" src="/js/layout.js"></script>
+		<script type="text/javascript" th:src="@{/assets/layui.js}"></script>
+		<script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+	</head>
+
+	<body>
+	<div th:insert="~{top :: nav}"></div>
+		<!--1200结构-->
+		<div class="pro_wrap user_pro_wrap  auto">
+			<h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 用户中心</h2>
+		</div>
+		<!--1200结构end-->
+
+		<div class="user_join_designer">
+			<a href="#"></a>
+		</div>
+
+		<div class="user_center auto">
+			<div class="user_navside left">
+				<ul class="user_navside_ul">
+					<li class="user_active_li"><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+					<li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+					<li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+					<li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+					<li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+					<li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+					<li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+					<li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+					<li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+					<!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+					<li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+				</ul>
+			</div>
+				<!--用户中心-->
+				<div class="user_right right" id="userCenterCol">
+					<div class="user_home">
+						<div class="user_home_img left"><img th:src="${session.user.avatar}" style="width: 100px"/></div>
+						<div class="user_home_xinxi left">
+							<div class="user_name">欢迎！<span th:text="${session.user.username}"></span></div>
+							<div class="user_biaoqian">网页设计师</div>
+							<div class="user_jfcz">我的积分：<span th:text="${session.user.account}==null?'0积分':${session.user.account}+'积分'"></span></div>
+						</div>
+						<div class="user_chongzhi right"><a th:href="@{/center/wallet/jifeng}">我要充值</a></div>
+					</div>
+					<div class="user_shoucang">最近收藏</div>
+					<!--收藏产品列表结构-->
+					<div class="main_content user_pro_content" >
+						<div class="zcq_wrap">
+							<div class="zcq_div user_sc_div left" v-for="item in favData" >
+								<div class="zcq_c1">
+									<div class="zc_list">
+										<img :src="item.picUrl" @click="jumpToDetail(item)"/>
+
+									</div>
+								</div>
+								<h2 class="zcq_c2">{{item.name}}</h2>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<!--收藏产品列表结构end-->
+					<div class="user_baobei">购物车<span>{{cartCount}}</span>件未付款宝贝<a th:href="@{/cart/toCart}">去结算>></a></div>
+				</div>
+			<div class="clear"></div>
+		</div>
+		<script>
+			layui.use("layer",function () {
+				var layer = layui.layer;
+			})
+			var vue = new Vue({
+				el: "#userCenterCol",
+				data: {
+					favData: null,
+					flag: true,
+					cartCount:0,
+				},
+				methods:{
+					jumpToDetail(item){
+						window.location.href=contextPath +"/product/detail?id="+item.id;
+					}
+				}
+			})
+			paginationFav();
+			function paginationFav(){
+				$.ajax({
+					type:"post",
+					url:"/center/showCollect",
+					async:false,
+					success:function (data) {
+						vue.favData = data.data;
+						if (data.cartCount!=0){
+							vue.cartCount = data.cartCount;
+						}
+					}
+				})
+			}
+		</script>
+	<div th:insert="~{bottom :: nav}"></div>
+	</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"
+          th:href="@{/back/assets/images/favicon.png}">
+    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css"
+          th:href="@{/back/assets/node_modules/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" th:href="@{/back/css/style.css}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/default.css" th:href="@{/back/css/colors/default.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layui.css" th:href="@{/back/layui/css/layui.css}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+<div class="card">
+    <div class="card-body">
+        <form class="layui-form" id="form" post="unset">
+            <div class="form-group">
+                <label class="col-md-12">用户名</label>
+                <div class="col-md-12">
+                    <input type="text" name="username" lay-verify="username" placeholder="输入用户名" class="form-control form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">姓名</label>
+                <div class="col-md-12">
+                    <input type="text" name="name" lay-verify="name" placeholder="输入姓名" class="form-control form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="example-email" class="col-md-12">邮箱</label>
+                <div class="col-md-12">
+                    <input type="email" name="email" required lay-verify="email" placeholder="输入邮箱"
+                           class="form-control form-control-line" id="example-email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">密码</label>
+                <div class="col-md-12">
+                    <input type="password" placeholder="******" name="password" required lay-verify="password"
+                           class="form-control form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">确认密码</label>
+                <div class="col-md-12">
+                    <input type="password" placeholder="******" name="confirmPwd" required lay-verify="confirmPwd"
+                           class="form-control form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-12">电话号码</label>
+                <div class="col-md-12">
+                    <input type="text" name="mobile" lay-verify="mobile" placeholder="123 456 7890" class="form-control form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-12">选择角色</label>
+                <div class="col-sm-12">
+                    <select name="roleName" class="form-control form-control-line" lay-filter="role">
+                        <option value="1">超级管理员</option>
+                        <option value="2">审核员</option>
+                        <option value="3">人员管理</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button class="btn btn-success" lay-submit lay-filter="save">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../assets/node_modules/jquery/jquery.min.js"
+        th:src="@{/back/assets/node_modules/jquery/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="../assets/node_modules/bootstrap/js/popper.min.js"
+        th:src="@{/back/assets/node_modules/bootstrap/js/popper.min.js}"></script>
+<script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"
+        th:src="@{/back/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="js/perfect-scrollbar.jquery.min.js" th:src="@{/back/js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script src="js/waves.js" th:src="@{/back/js/waves.js}"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js" th:src="@{/back/js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script src="js/custom.min.js" th:src="@{/back/js/custom.min.js}"></script>
+<!-- jQuery peity -->
+<script src="../assets/node_modules/peity/jquery.peity.min.js"
+        th:src="@{/back/assets/node_modules/peity/jquery.peity.min.js}"></script>
+<script src="../assets/node_modules/peity/jquery.peity.init.js"
+        th:src="@{/back/assets/node_modules/peity/jquery.peity.init.js}"></script>
+<script src="../assets/layui.all.js" th:src="@{/back/layui/layui.all.js}"></script>
+</body>
+<script type="text/javascript">
+    layui.use(['form'], function () {
+        var form = layui.form
+            , layer = layui.layer;
+        form.verify({
+            password: function (value, item) {
+                if (!new RegExp("^[\\S]{6,12}$").test(value)) {
+                    return "密码必须6到12位，且不能出现空格";
+                }
+            },
+            confirmPwd: function (value, item) {
+                var pwd = $('input[name = password]').val();
+                if (pwd != value) {
+                    return "两次输入密码不一致，请重新输入！";
+                }
+            },
+            email: function (value, item) {
+                if (!new RegExp("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$").test(value)) {
+                    return "邮箱格式不正确";
+                }
+            },
+            username: function (value, item) {
+                if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+                    return '用户名不能有特殊字符';
+                }
+
+                if(/(^\_)|(\__)|(\_+$)/.test(value)){
+                    return '用户名首尾不能出现下划线\'_\'';
+                }
+                if(/^\d+\d+\d$/.test(value)){
+                    return '用户名不能全为数字';
+                }
+            },
+            name: function (value, item) {
+                if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
+                    return '姓名不能有特殊字符';
+                }
+
+                if(/(^\_)|(\__)|(\_+$)/.test(value)){
+                    return '姓名首尾不能出现下划线\'_\'';
+                }
+                if(/^\d+\d+\d$/.test(value)){
+                    return '姓名不能全为数字';
+                }
+            }
+        });
+
+        form.on('submit(save)', function (data) {
+            var data = $("#form").serialize();
+                $.ajax({
+                    url: '[[${#request.getContextPath()}]]' + "/user/insert",
+                    type: "post",
+                    data: data,
+                    dataType: 'text',
+                    success: function (msg) {
+                        if (msg == 'success') {
+                            layer.msg("添加成功" ,{
+                                time:1000
+                            }, function () {
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                                window.parent.location.reload();
+                            })
+                        } else {
+                            layer.alert("失败");
+                        }
+                    }
+                });
+            return false;
+        })
+    });
+</script>
+</html>

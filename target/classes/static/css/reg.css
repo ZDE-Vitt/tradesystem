@@ -1,0 +1,55 @@
+.reg_title{
+	float:left;
+	font-size: 20px;
+	margin-top:50px;
+	font-weight: bold;
+}
+.reg_content{
+	margin-top:50px;
+	margin-bottom: 30px;
+}
+.reg_content table{
+	margin:0 auto;
+}
+.reg_content table .fir{
+	font-size:15px;
+	font-weight: bold;
+	color:#333333;
+	text-align: right;
+}
+.reg_in{
+	width:425px;
+	height: 50px;
+	border:1px #dedede solid;
+}
+.fis{
+	padding-left:10px;
+}
+.reg_insmall{
+	width:315px;
+	height: 50px;
+	border:1px #dedede solid;
+	float:left;
+}
+.reg_yzm{
+	display: inline-block;
+	width:100px;
+	height: 50px;
+	border:1px #dedede solid;
+	float:left;
+	background: #f2f2f2;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 50px;
+	margin-left:10px;
+}
+.reg_btn:link{
+	display: block;
+	width:427px;
+	height: 52px;
+	background: #ff2e00;
+	font-size:20px;
+	color:white;
+	text-align: center;
+	line-height: 52px;
+}

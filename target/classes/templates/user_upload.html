@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户中心-发布-编辑发布</title>
+        <link rel="stylesheet" href="css/layout.css" th:href="@{/css/layout.css}" />
+        <link rel="stylesheet" href="css/user.css" th:href="@{/css/user.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}" ></script>
+        <script type="text/javascript" src="js/bannerslider.js" th:src="@{/js/bannerslider.js}" ></script>
+        <script type="text/javascript" src="js/layout.js" th:src="@{/js/layout.js}" ></script>
+        <script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+        <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+    </head>
+    <body>
+    <div th:insert="~{top :: nav}"></div>
+
+    <!--1200结构-->
+    <div class="pro_wrap user_pro_wrap  auto">
+        <h2 class="weizhi_title">位置：<a href="#">首页</a> > 素材</h2>
+    </div>
+    <!--1200结构end-->
+
+    <div class="user_join_designer">
+        <a href="#"></a>
+    </div>
+
+    <div class="user_center auto">
+        <div class="user_navside left">
+                    <ul class="user_navside_ul">
+                        <li><a href="#"><span class="user_icon1" th:href="@{/center/toCenter}">用户中心</span></a></li>
+                        <li class="user_active_li"><a  th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+                        <li><a id="shenHea" th:href="@{/sucailist/sucaialllist}"><span class="user_icon2">我的素材</span></a></li>
+                        <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+                        <li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+                        <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+                        <li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+                        <li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+                        <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+                        <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+                        <li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+                    </ul>
+        </div>
+        <div class="user_fabu_right right">
+
+            <div class="mytitle_twozero_wrap" id="numlist">
+                <div class="mytitle_twozero_content">
+                    <div class="mytitle_twozero">
+                        <ul class="mytitle_twozero_ul">
+                            <li class="mytitle_twozero_liactive" id="upload"><a th:href="@{/publish/Uploadform}">上传</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <form class="layui-form" id="form" post="unset">
+            <div style="display: block" id="uploadform" class="user_fabu_content user_fabu_twozero">
+
+                <div class="fabu_twozero_warp">
+                    <div class="fabu_twozero_img left"><img /></div>
+                    <div class="fabu_twozero_title left">
+                        <div class="layui-input-block">
+                            <div id="queue">
+                                <input type="hidden" name="picUrl" id="picUrl">
+                                <img style="display:none" width="240px" id="queue_img" height="240px" >
+                            </div><br>
+                            <button style="background:#E83A17" type="button" class="layui-btn" id="sucai-pic">
+                                <i class="layui-icon">&#xe67c;</i>上传预览图
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="fabu_twozero_title left">
+                        <div class="layui-input-block">
+                            <div id="queue2">
+                                <input type="hidden" name="save" id="save">
+                                <img style="display:none" width="240px" id="queue_img2" height="240px" >
+                            </div><br>
+                            <button style="background:#E83A17" type="button" class="layui-btn" id="sucai-pic2">
+                                <i class="layui-icon">&#xe67c;</i>上传下载原图
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--<div class="fabu_twozero_cha">
+                        <a class="fabu_twozero_guanbi" href="#"></a>
+                    </div>-->
+                </div>
+                <div class="fabu_twozero_bitian margin916">必填</div>
+
+                <form method="post" action="">
+                <!--发布内容结构-->
+                <div class="fabu_twozero_kuang">
+
+                    <table class="fabu_twozero_table1" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="fabu_twozero_td1 fabu_twozero_tdtop" style="letter-spacing:1px;">素材名称：</td>
+                            <td class="fabu_twozero_td2">
+                                <input onkeyup="changenameLength(this,10)" type="text" name="name" />
+                                <div class="fabu_twozero_shengyu">
+                                    发布素材名称，10字以内（<label id="sn_sz">0</label>/10）
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="fabu_twozero_td1 fabu_twozero_tdtop">设置价格：</td>
+                            <td class="fabu_twozero_td2">
+                                <input type="text" name="money" />元
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="fabu_twozero_td1 fabu_twozero_tdtop">大小：</td>
+                            <td class="fabu_twozero_td2">
+                                <input type="text" name="width" />&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" name="heigth" />
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <!--发布内容结构-->
+
+                <div class="fabu_twozero_bitian margin916">选填</div>
+
+                <!--发布内容结构-->
+                <div class="fabu_twozero_kuang">
+                    <table class="fabu_twozero_table1" cellpadding="5px" cellspacing="0" style="border:1px solid #E9E9E9 ">
+                        <tr>
+                            <td class="fabu_twozero_td1" width="100px"><span id="prea" style="display: block" >素材标签：</span></td>
+                            <td class="fabu_twozero_td2" >
+                                <select name="tagid">
+                                    <option value="0" selected></option>
+                                    <option th:each="tag , iterStat: ${tags} " th:value="${iterStat.count}">[[${tag}]]</option>
+<!--                                    <option value="5">春节</option>-->
+<!--                                    <option value="6">重阳</option>-->
+<!--                                    <option value="7">清明</option>-->
+<!--                                    <option value="8">电脑</option>-->
+<!--                                    <option value="9">园林</option>-->
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="fabu_twozero_table1" cellpadding="0" cellspacing="0">
+                        <tr><td><br/></td></tr>
+                        <tr>
+                            <td class="fabu_twozero_td1 fabu_twozero_tdtop" width="100px">素材描述：</td>
+                            <td>
+                                <textarea name="description" class="fabu_twozero_textarea1 fabu_twozero_textarea1sm" onkeyup="changeLength(this,50)"></textarea>
+                                <div class="fabu_twozero_shengyu">
+                                    素材内容说明：最多50字（<label id="ss_sz">0</label>/50）
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fabu_twozero_td1"></td>
+                            <td><button class="btn fabu_twozero_tjshbtn" lay-submit lay-filter="save">提交审核</button></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <!--发布内容结构-->
+                </form>
+            </div>
+            </form>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div th:insert="~{bottom :: nav}"></div>
+</body>
+<script >
+
+    //select标签不显示
+    layui.use('form', function(){
+        var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+
+        //……
+
+        //但是，如果你的HTML是动态生成的，自动渲染就会失效
+        //因此你需要在相应的地方，执行下述方法来手动渲染，跟这类似的还有 element.init();
+        form.render();//在最后添加这句代码
+    });
+
+    //编辑发布页textarea剩余字数JS
+    function changenameLength(obj,lg){
+        var len = $(obj).val();
+        $(obj).next().find("span").text(len.length);
+        $(obj).next().find("label").text(len.length);
+        //$(obj).next().find("span").text(lg-len.length);//剩余字数
+        if(len.length>=lg){
+            $(obj).next().find("span").text(70);
+            $(obj).next().find("label").text(10);
+            $("#sn_sz").text(10);
+            $(obj).val(len.substring(0,lg));
+        }
+    }
+
+
+    function get(curr,status){
+        $.ajax({
+            type : "post" ,
+            url : "/sucailist/list" ,
+            data : {curr: curr, limit: limit , status : status} ,
+            async:false ,
+            success: function(data){
+                vuelist.tabledata = data.records;
+                limit = data.size;
+                total = data.total;
+                curr = data.current;
+            }
+        })
+    }
+
+    layui.use(['form'], function () {
+        var form = layui.form
+            , layer = layui.layer;
+
+        form.on('submit(save)', function (data) {
+            var data = $("#form").serialize();
+            $.ajax({
+                url: '[[${#request.getContextPath()}]]' + "/sucailist/sucaiupload",
+                type: "post",
+                data: data,
+                async: false,
+                success: function (data) {
+                    if (data.row == '1') {
+                        layer.msg('保存成功', {icon: 1},function () {
+                            $().ready(function() {
+                                document.getElementById("shenHea").click();
+                            })
+                        })
+                    } else {
+                        layer.alert("失败");
+                    }
+                }
+            });
+            return false;
+        })
+        form.render();
+    });
+
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#sucai-pic' //绑定元素
+            ,url: '[[${#request.getContextPath()}]]' + '/sucailist/file' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+                //将图片路径放到film实体的图片路径属性中
+                console.log("success" + res.url);
+                $("#picUrl").val(res.url);
+                //将图片路径放到img标签中
+                $("#queue_img").css("display","block");
+                $("#queue_img").attr("src", res.url);
+            }
+            ,error: function(res){
+                //请求异常回调
+                console.log("error" + res.url);
+            }
+        });
+    });
+
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#sucai-pic2' //绑定元素
+            ,url: '[[${#request.getContextPath()}]]' + '/sucailist/file2' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+                //将图片路径放到film实体的图片路径属性中
+                console.log("success" + res.url);
+                $("#save").val(res.url);
+                //将图片路径放到img标签中
+                $("#queue_img2").css("display","block");
+                $("#queue_img2").attr("src", res.iurl);
+            }
+            ,error: function(res){
+                //请求异常回调
+                console.log("error" + res.url);
+            }
+        });
+    });
+
+
+</script>
+</html>

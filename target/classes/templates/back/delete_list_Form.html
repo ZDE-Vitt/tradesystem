@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"
+          th:href="@{/back/assets/images/favicon.png}">
+    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css"
+          th:href="@{/back/assets/node_modules/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" th:href="@{/back/css/style.css}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/default.css" th:href="@{/back/css/colors/default.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layui.css" th:href="@{/back/layui/css/layui.css}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+<div class="card">
+    <div class="card-body">
+        <form class="layui-form" id="form" post="unset">
+
+            <div class="form-group">
+                <label class="col-md-12">选择日期范围</label>
+                <div class="col-md-12">
+                    从
+                    <input type="text" lay-verify="dateStart" name="dateStart" placeholder="20200101" class="form-control form-control-line">
+                    至
+                    <input type="text" lay-verify="dateEnd" name="dateEnd" placeholder="20200101" class="form-control form-control-line">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-12">输入素材编号（选填）</label>
+                <div class="col-md-12">
+                    <input type="text" lay-verify="sucaiId" name="sucaiId" placeholder="970701000" class="form-control form-control-line">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-12">输入用户编号（选填）</label>
+                <div class="col-md-12">
+                    <input type="text" lay-verify="userId" name="userId" placeholder="970701000" class="form-control form-control-line">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label id="list" style="display: none" class="col-md-12">将删除以下信息</label>
+                <div id="tablediv" class="col-md-12">
+                    <table id="table" style="display: none" class="table layui-form">
+                        <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>用户编号</th>
+                            <th>素材编号</th>
+                            <th>下单时间</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tab_list">
+                        <tr v-for = "order in order" >
+                            <td>{{order.orderid}}</td>
+                            <td>{{order.userid}}</td>
+                            <td>{{order.sucaiid}}</td>
+                            <td>{{order.time}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button id="check1" class="btn btn-success" lay-submit lay-filter="save">确定</button>
+                    <button id="check2" style="display: none" class="btn btn-success" lay-submit lay-filter="check">确定删除</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="../assets/node_modules/jquery/jquery.min.js"
+        th:src="@{/back/assets/node_modules/jquery/jquery.min.js}"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="../assets/node_modules/bootstrap/js/popper.min.js"
+        th:src="@{/back/assets/node_modules/bootstrap/js/popper.min.js}"></script>
+<script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"
+        th:src="@{/back/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="js/perfect-scrollbar.jquery.min.js" th:src="@{/back/js/perfect-scrollbar.jquery.min.js}"></script>
+<!--Wave Effects -->
+<script src="js/waves.js" th:src="@{/back/js/waves.js}"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js" th:src="@{/back/js/sidebarmenu.js}"></script>
+<!--Custom JavaScript -->
+<script src="js/custom.min.js" th:src="@{/back/js/custom.min.js}"></script>
+<!-- jQuery peity -->
+<script src="../assets/node_modules/peity/jquery.peity.min.js"
+        th:src="@{/back/assets/node_modules/peity/jquery.peity.min.js}"></script>
+<script src="../assets/node_modules/peity/jquery.peity.init.js"
+        th:src="@{/back/assets/node_modules/peity/jquery.peity.init.js}"></script>
+<script src="../assets/layui.all.js" th:src="@{/back/layui/layui.all.js}"></script>
+<script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+</body>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:'#tablediv',
+        data: {
+            order : null
+        }
+    });
+
+    layui.use(['form'], function () {
+        var form = layui.form
+            , layer = layui.layer;
+        form.verify({
+            dateStart: function (value, item) {
+                if (!new RegExp("(?<!\\d)\\d{8}(?!\\d)").test(value)) {
+                    return "请按照20200101的格式输入日期";
+                }
+            },
+            dateEnd: function (value, item) {
+                if (!new RegExp("(?<!\\d)\\d{8}(?!\\d)").test(value)) {
+                    return "请按照20200101的格式输入日期";
+                }
+            },
+            sucaiId: function (value, item) {
+                if (value != '' && value != null && !new RegExp("^[1-9]\\d*$").test(value)) {
+                    return "请输入正确的编号";
+                }
+            },
+            userId: function (value, item) {
+                if (value != '' && value != null && !new RegExp("^[1-9]\\d*$").test(value)) {
+                    return "请输入正确的编号";
+                }
+            }
+        });
+
+        form.on('submit(save)', function (data) {
+            var data = $("#form").serialize();
+                $.ajax({
+                    url: '[[${#request.getContextPath()}]]' + "/backorder/seleteDeleteList",
+                    type: "post",
+                    data: data,
+                    async: false,
+                    success: function (data) {
+                        if (data != null && data != '') {
+                                document.getElementById("check1").style.display="none";
+                                document.getElementById("check2").style.display="block";
+                                document.getElementById("list").style.display="block";
+                                document.getElementById("table").style.display="block";
+                                vue.order =data;
+                        } else {
+                            layer.msg("无此数据" ,{
+                                time:1000
+                            }, function () {
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                                window.parent.location.reload();
+                            })
+                        }
+                    }
+                });
+                return false;
+        })
+
+        form.on('submit(check)', function (data) {
+            var data = $("#form").serialize();
+            $.ajax({
+                url: '[[${#request.getContextPath()}]]' + "/backorder/deleteList",
+                type: "post",
+                data: data,
+                async: false,
+                success: function (data) {
+                    if (data == 'success') {
+                        layer.msg("删除成功" ,{
+                            time:1000
+                        }, function () {
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                            window.parent.location.reload();
+                        })
+                    } else {
+                        layer.msg("删除失败" ,{
+                            time:1000
+                        },function () {
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                            window.parent.location.reload();
+                        })
+                    }
+                }
+            });
+            return false;
+        })
+    });
+
+
+</script>
+</html>

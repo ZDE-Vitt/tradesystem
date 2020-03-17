@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>我的钱包-积分充值</title>
+		<link rel="stylesheet" th:href="@{/css/layout.css}" />
+		<link rel="stylesheet" th:href="@{/css/user.css}" />
+		<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bannerslider.js}"></script>
+		<script type="text/javascript" th:src="@{/js/layout.js}"></script>
+	</head>
+
+	<body>
+
+	<div th:insert="~{top :: nav}"></div>
+
+		<!--1200结构-->
+		<div class="pro_wrap user_pro_wrap  auto">
+			<h2 class="weizhi_title">位置：<a href="#">首页</a> > 我的钱包 > 积分充值</h2>
+		</div>
+		<!--1200结构end-->
+
+		<div class="user_join_designer">
+			<a href="#"></a>
+		</div>
+
+		<div class="user_center auto">
+			<div class="user_navside left">
+				<ul class="user_navside_ul">
+					<li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+					<li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+					<li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon2">我的素材</span></a></li>
+					<li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+					<li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+					<li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+					<li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+					<li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+					<li class="user_active_li"><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+					<li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+				</ul>
+			</div>
+
+
+			   <div class="chongzhi_wrap right">
+				<ul class="zf_ul">
+					<li>
+						<div class="chongzhi_jifeng">我的积分：
+							<span th:text="${session.user.account}==null?'0积分':${session.user.account}+'积分'"></span>
+							<div>
+					</li>
+				</ul>
+				<div class="chongzhi_list">
+					<ul class="chongzhi_list_ul">
+						<li class="chongzhi_active_li"><a th:href="@{/center/wallet/jifeng}">积分充值</a></li>
+					</ul>
+				</div>
+				<!--积分-->
+					<dl class="chongzhi_dl" >
+						<dd class="down_dd_active" th:each="jifeng:${jifenglist}" id="recharge">
+						<div class="down_dd_dqprice">
+							<h2>¥<span id="total_amount" name="total_amount" th:text="${jifeng.price}"></span></h2>
+							<div>充值<a  id="jifeng" name="jifeng" th:text="${jifeng.value}"></a>积分</div>
+						</div>
+
+					</dd>
+					</dl>
+
+					<div class="user_jiesuan_fangshi auto" id="zhifujifengchongzhi_id" style="width:915px; padding:0; border:0;">
+						<h2>支付方式</h2>
+						<dl class="jiesuan_dl">
+							<dd class="jisuan_active_dd"><img th:src="@{/img/jiesuan_img1.png}" /></dd>
+						</dl>
+					</div>
+				 <!--支付-->
+				    <div class="chongzhi_btn">
+					 <a  id="topay">去支付</a>
+				   </div>
+
+			   </div>
+
+			<div class="clear"></div>
+		</div>
+
+	<div th:insert="~{bottom :: nav}"></div>
+	</body>
+	<script type="text/javascript">
+       var money ;
+       var jifeng;
+		$(function() {
+			$("dl.chongzhi_dl dd").click(function() {
+				$("dl.chongzhi_dl dd").removeClass("down_dd_active");
+				$(this).addClass("down_dd_active");
+				money = $(this).find("span").text();
+				jifeng = $(this).find("a").text();
+			    /*alert(money + jifeng);*/
+			});
+
+		});
+
+		$(function() {
+			$("#topay").click(function () {
+				window.location.href="/alipay/toPay?moneyandjifeng="+money+"-"+jifeng;
+			})
+		});
+
+
+	</script>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户中心-发布-编辑发布</title>
+        <link rel="stylesheet" href="css/layout.css" th:href="@{/css/layout.css}" />
+        <link rel="stylesheet" href="css/user.css" th:href="@{/css/user.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}" ></script>
+        <script type="text/javascript" src="js/bannerslider.js" th:src="@{/js/bannerslider.js}" ></script>
+        <script type="text/javascript" src="js/layout.js" th:src="@{/js/layout.js}" ></script>
+        <script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+        <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+    </head>
+    <body>
+    <div th:insert="~{top :: nav}"></div>
+
+    <!--1200结构-->
+    <div class="pro_wrap user_pro_wrap  auto">
+        <h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 素材</h2>
+    </div>
+    <!--1200结构end-->
+
+    <div class="user_join_designer">
+        <a href="#"></a>
+    </div>
+
+    <div class="user_center auto">
+        <div class="user_navside left">
+                    <ul class="user_navside_ul">
+                        <li><a href="#"><span class="user_icon1" th:href="@{/center/toCenter}">用户中心</span></a></li>
+                        <li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+                        <li class="user_active_li"><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+                        <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+                        <li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+                        <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+                        <li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+                        <li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+                        <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+                        <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+                        <li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+                    </ul>
+        </div>
+        <div class="user_fabu_right right">
+
+            <div class="mytitle_twozero_wrap" id="numlist">
+                <div class="mytitle_twozero_content">
+                    <div class="mytitle_twozero">
+                        <ul class="mytitle_twozero_ul">
+                            <li class="mytitle_twozero_liactive" id="shenHe"><a id="shenHea" href="javascript:;" th:onclick="|shenHe()|">审核中（{{shenhenum}}）</a></li>
+                            <li id="notPass"><a id="notPassa" href="javascript:;" th:onclick="|notPass()|">未通过（{{inpassnum}}）</a></li>
+                            <li id="pass"><a id="passa" href="javascript:;" th:onclick="|pass()|">已发布（{{passnum}}）</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user_qianbao_wrap" id="sucaitable">
+                <div v-if="tabledata == null" class="user_qianbao_content" >
+                    <span>暂无数据！</span>
+                </div>
+
+                <div v-if="tabledata != null" class="user_qianbao_content" >
+                    <table cellpadding="0" cellspacing="0" class="user_qianbao_table dingdan2_table" >
+                        <tr>
+                            <th width="115">素材编号</th>
+                            <th width="96">上传时间</th>
+                            <th width="145">名称</th>
+                           <!-- <th width="76">类型</th>-->
+                            <th width="85">定价</th>
+                            <!--<th width="106">实付</th>-->
+                            <th width="85">操作</th>
+                        </tr>
+
+                        <tr v-for = "(item,index) of tabledata" >
+                            <td>{{item.num}}</td>
+                            <td>{{item.formatTime}}</td>
+                            <td>
+                                <div class="dingdan_name_div">
+                                    <img :src="item.picUrl" @click="jumpToDetail(item)" width="55" height="40">
+                                </div>
+                                {{item.name}}
+                            </td>
+                            <!--<td>{{item.sucaiType}}</td>-->
+                            <td>{{item.money}}</td>
+                            <!--<td>¥27.00<p>积分：20积分</p></td>-->
+                            <td>
+                                <!--										<a class="dingdan_chakan" href="javascript:dingdan2_tanchu_show()">查看</a>-->
+                                <button style="background:#E83A17" type="button" @click="deletesucai(index)" class="layui-btn">
+                                    删除
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="pagination"></div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div th:insert="~{bottom :: nav}"></div>
+</body>
+<script >
+    var vue = new Vue({
+        el : "#numlist",
+        data : {
+            shenhenum : null ,
+            passnum : null ,
+            inpassnum : null ,
+        }
+    })
+
+    var vuelist = new Vue({
+        el : "#sucaitable",
+        data : {
+            tabledata : null
+        }
+    })
+
+    var limit = null;
+    var total = null;
+    var curr = null;
+
+
+    $.ajax({
+        type : "post" ,
+        url : "/sucailist/getNum" ,
+        async:false ,
+        success: function(data){
+            vue.shenhenum =  data.shenhenum;
+            vue.inpassnum =  data.inpassnum;
+            vue.passnum =  data.passnum;
+        }
+    })
+
+    function shenHe(){
+        document.getElementById("shenHe").className="mytitle_twozero_liactive";
+        document.getElementById("notPass").className="";
+        document.getElementById("pass").className="";
+
+        layui.use('laypage', function() {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: vue.shenhenum,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump:function(obj) {
+                    get(obj.curr,1);
+                }
+            });
+        });
+    }
+
+    function notPass(){
+        document.getElementById("shenHe").className="";
+        document.getElementById("notPass").className="mytitle_twozero_liactive";
+        document.getElementById("pass").className="";
+
+        layui.use('laypage', function() {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: vue.inpassnum,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump:function(obj) {
+                    get(obj.curr,2);
+                }
+            });
+        });
+    }
+
+    function pass(){
+        document.getElementById("shenHe").className="";
+        document.getElementById("notPass").className="";
+        document.getElementById("pass").className="mytitle_twozero_liactive";
+
+        layui.use('laypage', function() {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: vue.passnum,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump:function(obj) {
+                    get(obj.curr,3);
+                }
+            });
+        });
+    }
+
+    get();
+
+    //bug 。 导入layui.js有些元素无法使用
+    //导入layui .all.js会导致分页的按钮不加载，但是点击异步刷新后会加载
+    //这段函数的作用就是页面一加载完就执行点击事件
+
+    $().ready(function() {
+        $("#shenHea").click(shenHe());
+    })
+
+    function get(curr,status){
+        $.ajax({
+            type : "post" ,
+            url : "/sucailist/list" ,
+            data : {curr: curr, limit: limit , status : status} ,
+            async:false ,
+            success: function(data){
+                vuelist.tabledata = data.records;
+                limit = data.size;
+                total = data.total;
+                curr = data.current;
+            }
+        })
+    }
+
+    function deletesucai(index){
+        var form = layui.form;
+        var layer = layui.layer;
+        layui.use('laypage', function() {
+            var laypage = layui.laypage;
+            laypage.render({
+                elem: 'pagination',
+                count: total,
+                theme: '#E83A17',
+                limit: limit,
+                curr: curr,
+                jump:function(obj) {
+                    $.ajax({
+                        type : "post" ,
+                        url : "/sucailist/delete" ,
+                        data : {curr: obj.curr, limit: limit ,id : vuelist.tabledata[index].id ,status : vuelist.tabledata[index].status} ,
+                        async:false ,
+                        success: function(data){
+                            layer.msg('删除成功',{
+                                time:1000
+                            })
+                            vuelist.tabledata = data.records;
+                            limit = data.size;
+                            total = data.total;
+                            curr = data.current;
+                        }
+                    })
+                }
+            });
+        });
+    }
+
+
+</script>
+</html>

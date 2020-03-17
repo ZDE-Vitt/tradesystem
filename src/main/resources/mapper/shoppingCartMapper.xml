@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gem.tradesystem.mapper.ShoppingCartMapper">
+    <delete id="deleteByIds" parameterType="java.util.List">
+        delete from shopcar where sucaiid
+        in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+    <insert id="moveToBuyHistory" parameterType="com.gem.tradesystem.entity.UserOrder">
+        insert into user_order (userid,sucaiid,createTime,order_Status,orderid) values
+        <foreach collection="list" item="userOrder" separator=",">
+            (#{userOrder.userid},#{userOrder.sucaiid},#{userOrder.createtime},#{userOrder.orderStatus},#{userOrder.orderid})
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>结算</title>
+<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/user.css" />
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/bannerslider.js"></script>
+<script type="text/javascript" src="js/layout.js"></script>
+<script type="text/javascript">
+//function showDiv(){
+//document.getElementById('wxDiv').style.display='block';
+//document.getElementById('wx_bg').style.display='block';
+//}
+function closewzDiv(){
+document.getElementById('wxDiv').style.display='none';
+document.getElementById('wx_bg').style.display='none';
+}
+</script>
+<style type="text/css">
+/*微信支付弹出层的STYLE*/
+.mydiv_wx{
+	background:#ffffff;
+	z-index:99;
+	width: 986px;
+	height: 592px;
+	left:50%;/*FF IE7*/
+	top: 50%;/*FF IE7*/
+	
+	margin-left:-493px!important;/*FF IE7 该值为本身宽的一半 */
+	margin-top:-296px!important;/*FF IE7 该值为本身高的一半*/
+	
+	margin-top:0px;
+	
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+	
+	_top:expression(eval(document.compatMode &&
+		 document.compatMode=='CSS1Compat') ?
+		 documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+		 document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+.wx_bg{
+	background:#000000;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;/*FF IE7*/
+	filter:alpha(opacity=50);/*IE*/
+	opacity:0.5;/*FF*/
+	z-index:1;
+	
+	position:fixed!important;/*FF IE7*/
+	position:absolute;/*IE6*/
+	
+	_top:expression(eval(document.compatMode &&
+		 document.compatMode=='CSS1Compat') ?
+		 documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/
+		 document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/
+}
+.wx_tanchu_close{
+	display:block;
+	width:16px;
+	height:16px;
+	background:url(img/login_tanchu_icon.png) no-repeat;
+	position:absolute;
+	right:18px;
+	top:18px;
+}
+.wx_tanchu_title{
+	height:53px;
+	background:#e9e9e9;
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#333333;
+	line-height:53px;
+	padding-left:30px;	
+}
+.wx_zhifu_tanchu_content{
+	width:986px;
+	height:491px;
+	background:url(img/wx_zhifu_tanchu_bg.gif) no-repeat;
+}
+.wx_zhifu_tanchu_content div{
+	padding-top:48px;
+	margin-left:159px;
+	height:300px;
+	width:300px;
+}
+.wx_zhifu_tanchu_content div img{
+	border:1px #dddddd solid;
+}
+
+/*The END*/
+</style>
+</head>
+
+<body>
+<div th:insert="~{top :: nav}"></div>
+
+<!--1200结构-->
+<div class="pro_wrap user_pro_wrap  auto">
+	<h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 结算</h2>
+</div>
+<!--1200结构end-->
+
+<div class="user_join_designer">
+	<a href="#"></a>
+</div>
+
+<div class="user_jiesuan_fangshi auto" id="userjiesuan_id">
+	<h2>支付方式</h2>
+    <dl class="jiesuan_dl">
+    	<dd class="jisuan_active_dd"><img src="img/jiesuan_img1.png" /></dd>
+        <dd><img src="img/jiesuan_img2.png" /></dd>
+        <dd><img src="img/jiesuan_img3.png" /></dd>
+        <dd><img src="img/jiesuan_img4.png" /></dd>
+    </dl>
+</div>
+
+<div class="user_jiesuan_fangshi auto">
+	<h2>支付清单</h2>
+    <div class="jiesuan_qingdan">
+    	<table cellpadding="0" cellspacing="0">
+        	<tr>
+            	<th class="qingdan_th">商品</th>
+                <th>定价</th>
+            </tr>
+            <tr>
+            	<td>
+                	<div class="qingdan_div"><img src="img/user_fabu_smallimg.gif" /><span>手机UI 设计展示模板</span></div>
+                </td>
+                <td>¥ 0.30</td>
+            </tr>
+            <tr>
+            	<td>
+                	<div class="qingdan_div"><img src="img/user_fabu_smallimg.gif" /><span>手机UI 设计展示模板</span></div>
+                </td>
+                <td>¥ 0.30</td>
+            </tr> 
+        </table>
+        <div class="qingdan_jifen_wrap">
+            <div class="qingdan_jifen_btn">
+                <p><span class="jifen_btn_down" id="jifen_btn">使用积分抵扣</span></p>
+            </div>
+            <div class="qingdan_jifen_hidden" id="jifen_hidden" style="display:none;">
+            	<div class="qingdan_jifen_h1">
+                	<input type="checkbox" />本次使用<input class="jifen_h1_input" value="3" type="text" />积分支付
+                    <div>当前积分30，本次可用3，已使用3，抵扣现金/余额<span>0.03</span>元</div>
+                </div>
+                <div class="qingdan_jifen_h2">金额抵用：¥ 0.03</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="jiesuan_total_wrap">
+    	<h2>
+        	<span class="jiesuan_span1">2</span>件商品，总价格：<span class="jiesuan_span2">¥24.00</span><br />
+            积分抵扣：<span class="jiesuan_span2">-¥0.12</span><br />
+            优惠券：<span class="jiesuan_span2">¥0.00</span>
+        </h2>
+        <div class="jiesuan_total_tijiao">
+            <a href="#">提交订单</a>
+            <div class="jiesuan_jine">应付金额：<span>¥23.88</span></div>
+        </div>
+    </div>
+    
+</div>
+
+<!--保障结构-->
+<div class="baozhang_wrap baozhang_wrap_fbfbfb">
+	<div class="baozhang_content auto">
+    	<div class="baozhang_div">
+        	<img src="img/aqzf_icon.png" />
+            <h2>安全支付</h2>
+            <p>通过在线支付或信用卡支付</p>
+        </div>
+        <div class="baozhang_div">
+        	<img src="img/zzjp_icon.png" />
+            <h2>致臻精品</h2>
+            <p>顶级团队良心打造专业制作经验</p>
+        </div>
+        <div class="baozhang_div">
+        	<img src="img/zxshfw_icon.png" />
+            <h2>在线售后服务</h2>
+            <p>我们强大的售后团队为您服务</p>
+        </div>
+        <div class="baozhang_div baozhang_lastdiv">
+        	<img src="img/fwzs_icon.png" />
+            <h2>服务至上</h2>
+            <p>如果您对所购产品不满意，可申请调换</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--保障结构end-->
+
+<div class="join_designer"><a href="#"></a></div>
+
+<!--底部结构-->
+<div class="footer_wrap">
+	<div class="footer_content auto">
+    	<div class="fdiv1">
+        	<h2>模板</h2>
+            <a href="#">网页模板</a>
+            <a href="#">品牌设计模板</a>
+            <a href="#">CMS模板</a>
+            <a href="#">视频</a>
+            <a href="#">电子商务模板</a>
+            <a href="#">PPT</a>
+            <a href="#">画册</a>
+        </div>
+        <div class="fdiv2">
+        	<h2>主题</h2>
+            <a href="#">影视&音乐</a>
+            <a href="#">生活娱乐</a>
+            <a href="#">旅游休闲</a>
+            <a href="#">设计&摄影</a>
+            <a href="#">房产家居</a>
+            <a href="#">汽车&摩托车</a>
+            <a href="#">动物</a>
+        </div>
+        <div class="fdiv3">
+        	<div class="f31">
+            	<div class="f31_1">
+                	<h2>公司</h2>
+                    <a href="#">关于我们</a>
+                    <a href="#">加盟合作</a>
+                    <a href="#">联系我们</a>
+                </div>
+                <div class="f31_2">
+                	<h2>支持</h2>
+                    <a href="#">帮助中心</a>
+                    <a href="#">成为设计师</a>
+                    <a href="#">常见问题</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="f32">
+            	<h2>订阅我们的通讯</h2>
+                <p>接受有关新的模板和设计素材信息</p>
+                <div class="f32_dy">
+                	<div class="f32_inp left"><input type="text" value="电子邮箱" onfocus="if(this.value=='电子邮箱'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='电子邮箱';this.style.color='#999999'}" /></div>
+                    <a class="f32_btn right" href="#">订阅</a>
+                </div>
+            </div>
+        </div>
+        <div class="fdiv4">
+        	<h2>关注我们</h2>
+            <ul>
+            	<li class="wx_li">
+                	<a href="#"><span>微信</span></a>
+                    <div class="ewm ewm_position1"><img src="img/weixin_img.png" /></div>
+                </li>
+                <li class="wb_li">
+                	<a href="#"><span>微博</span></a>
+                    <div class="ewm ewm_position2"><img src="img/weixin_img.png" /></div>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--底部结构end-->
+<div class="bottom_gray"></div>
+
+<!--滚动条下拉出现搜索块-->
+<div class="scroll_wrap">
+	<div class="scroll_content auto">
+    	<div class="scroll_logo left"><a class="totop" href="javascript:;"><img src="img/logo.png" /></a></div>
+        <div class="scroll_search right">
+            <input type="text" class="text_inp1" value="请输入关键字" onfocus="if(this.value=='请输入关键字'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='请输入关键字';this.style.color='#999999'}" />
+            <a href="#" class="text_but1">确定</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!--滚动条下拉出现搜索块end-->
+
+<!--登录弹出框-->
+<div id="popDiv" class="mydiv" style="display:none;">
+    <div class="login_tanchu_wrap">
+    	<div class="login_tanchu_logo"><img src="img/logo.png" /></div>
+        <div class="login_tanchu_title">账号登陆</div>
+        <div class="login_tanchu_form">
+        	<form action="" method="post">
+            	<div class="login_user login_user_inp">登陆账户：<input type="text" value="请输入用户名 或 手机号 或 邮箱" onfocus="if(this.value=='请输入用户名 或 手机号 或 邮箱'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='请输入用户名 或 手机号 或 邮箱';this.style.color='#999999'}" />
+                </div>
+                <div class="login_user login_user_pass">登陆密码：<input type="text" value="请输入密码" onfocus="if(this.value=='请输入密码'){this.value='';this.style.color='#999999';this.type='password'}" onblur="if(this.value==''){this.value='请输入密码';this.style.color='#999999';this.type='text'}" />
+                </div>
+                <div class="login_phone"><a href="javascript:qiehuan_iphone()" href="#">使用手机验证码登陆</a></div>
+                <div class="login_btn"><a href="#">立即登录</a></div>
+                <div class="login_reg"><a href="#">注册账号</a> | <a href="#">忘记密码</a></div>
+            </form>
+        </div>
+    </div>
+    <a class="tanchu_close" href="javascript:closeDiv()"></a>
+</div>
+<div id="popDiv1" class="mydiv" style="display:none;">
+    <div class="login_tanchu_wrap">
+    	<div class="login_tanchu_logo"><img src="img/logo.png" /></div>
+        <div class="login_tanchu_title">请登陆后继续操作</div>
+        <div class="login_tanchu_form">
+        	<form action="" method="post">
+            	<div class="login_user login_user_inp">手机号码：<input type="text" value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='请输入手机号';this.style.color='#999999'}" />
+                </div>
+                <div class="login_user login_user_pass">验证码：<input type="text" value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value='';this.style.color='#999999'}" onblur="if(this.value==''){this.value='请输入验证码';this.style.color='#999999'}" /><input type="button" id="yanzhengma_gray" class="login_user_yanzhengma" value="获取验证码" onClick="sendCode(this)" />
+                </div>
+                <script type="text/javascript">
+					var clock = '';
+					var nums = 60;
+					var btn;
+					var yzm_disabled = document.getElementById("yanzhengma_gray");
+					function sendCode(thisBtn)
+					{ 
+						btn = thisBtn;
+						btn.disabled = true; //将按钮置为不可点击
+						btn.value = nums+'秒后可重新获取';
+						clock = setInterval(doLoop, 1000); //一秒执行一次
+						yzm_disabled.style.backgroundColor="#999999";
+					}
+					function doLoop()
+					{
+						nums--;
+						if(nums > 0){
+							btn.value = nums+'秒后可重新获取';
+						}else{
+							clearInterval(clock); //清除js定时器
+							btn.disabled = false;
+							btn.value = '点击发送验证码';
+							nums = 10; //重置时间
+							yzm_disabled.style.backgroundColor="#e83a17";
+						}
+					}
+				</script>
+                <div class="login_phone"><a href="javascript:qiehuan_zhanghao()">使用账号密码登陆</a></div>
+                <div class="login_btn"><a href="#">立即登录</a></div>
+                <div class="login_reg"><a href="#">注册账号</a> | <a href="#">忘记密码</a></div>
+            </form>
+        </div>
+    </div>
+    <a class="tanchu_close" href="javascript:closeDiv()"></a>
+</div>
+<div id="bg" class="bg" style="display:none;"></div>
+<!--登录弹出框end-->
+
+
+<div id="wxDiv" class="mydiv_wx" style="display:block;">
+    <div class="wx_tanchu_title">微信支付</div>
+    <div class="wx_zhifu_tanchu_content">
+    	<div><img src="img/wx_zhifu_ewm.jpg" /></div>
+    </div>
+    <a class="wx_tanchu_close" href="javascript:closewzDiv()"></a>
+</div>
+<div id="wx_bg" class="wx_bg" style="display:block;"></div>
+<!--<a onclick="javascript:showDiv()">登录</a>-->
+
+</body>
+</html>

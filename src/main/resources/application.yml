@@ -1,0 +1,5 @@
+#springboot
+spring:
+ profiles:
+  active: dev
+

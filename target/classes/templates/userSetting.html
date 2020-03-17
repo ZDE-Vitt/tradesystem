@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>用户中心-设计师主页-基本资料</title>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/user.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/view.css}"/>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/bannerslider.js"></script>
+    <script type="text/javascript" src="/js/layout.js"></script>
+    <script type="text/javascript" th:src="@{/assets/layui.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+</head>
+
+<body>
+<div th:insert="~{top :: nav}"></div>
+
+<!--1200结构-->
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 用户中心</h2>
+</div>
+<!--1200结构end-->
+
+<div class="user_join_designer">
+    <a href="#"></a>
+</div>
+
+<div class="user_center auto">
+    <div class="user_navside left">
+        <ul class="user_navside_ul">
+            <li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+            <li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+            <li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+            <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+            <li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+            <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+            <li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+            <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+            <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+            <li class="user_active_li"><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="user_designer_ziliao_wrap">
+        <div class="user_designer_ziliao_left left">
+            <div class="layui-tab">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">资料卡</li>
+                    <li>修改头像</li>
+                    <li>修改密码</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <!--用户信息设置-->
+                    <div class="layui-form layui-form-pane layui-tab-item layui-show">
+                        <form method="post">
+                            <div class="layui-form-item">
+                                <label for="L_email" class="layui-form-label">手机号</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="L_email" name="email" required lay-verify="email"
+                                           autocomplete="off" value="" class="layui-input" th:placeholder="${session.user.telephone}+'(已绑定)'" readonly>
+                                </div>
+
+                            </div>
+                            <div class="layui-form-item">
+                                <label for="L_username" class="layui-form-label">昵称</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="L_username" name="username" required lay-verify="required"
+                                           autocomplete="off" value=""
+                                           class="layui-input" th:placeholder="${session.user.username}" readonly>
+                                </div>
+								<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-top: 5px" onclick="changeUsername()">
+									<i class="layui-icon">修改</i>
+								</button>
+                            </div>
+                            <div class="layui-form-item">
+                                <label for="L_city" class="layui-form-label">注册时间</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="L_city" name="city" autocomplete="off" value=""
+                                           class="layui-input" th:placeholder="${#dates.format(session.user.regTime, 'yyyy-MM-dd HH:mm')}" readonly>
+                                </div>
+                            </div>
+							<div class="layui-form-item">
+								<label for="L_city" class="layui-form-label">当前积分</label>
+								<div class="layui-input-inline">
+									<input type="text" name="city" autocomplete="off" value=""
+										   class="layui-input" th:placeholder="${session.user.account}" readonly>
+								</div>
+								<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" style="margin-top: 5px" >
+									<a th:href="@{/center/wallet/jifeng}"><i class="layui-icon">充值</i></a>
+								</button>
+							</div>
+                        </form>
+                    </div>
+                    <!--上传头像-->
+                    <div class="layui-form layui-form-pane layui-tab-item">
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="avatarPic">上传头像</button>
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="picCallBack" style="width: 160px">
+                            </div>
+                        </div>
+                    </div>
+                    <!--修改密码-->
+					<div class="layui-form layui-form-pane layui-tab-item">
+						<form>
+							<div class="layui-form-item">
+								<label for="L_nowpass" class="layui-form-label">当前密码</label>
+								<div class="layui-input-inline">
+									<input type="password" id="L_nowPass" name="nowpass" required lay-verify="required" autocomplete="off" class="layui-input">
+								</div>
+                                <button type="button" class="layui-btn layui-btn-danger" onclick="confirmPass()">验证</button>
+							</div>
+							<div class="layui-form-item">
+								<label for="L_pass" class="layui-form-label">新密码</label>
+								<div class="layui-input-inline">
+									<input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+								</div>
+								<div class="layui-form-mid layui-word-aux">6到16个字符</div>
+							</div>
+							<div class="layui-form-item">
+								<label for="L_repass" class="layui-form-label">确认密码</label>
+								<div class="layui-input-inline">
+									<input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+								</div>
+								<!--<div class="layui-form-mid layui-word-aux">辅助文字</div>-->
+							</div>
+							<div class="layui-form-item">
+								<button class="layui-btn layui-btn-danger" type="button" onclick="modifyPassword()">确认修改</button>
+							</div>
+						</form>
+					</div>
+                </div>
+            </div>
+			<div id="changeUsernameForm" style="display: none">
+				<label class="layui-form-label">请输入新的用户名:</label>
+				<div class="layui-input-inline" >
+					<input type="text" name="username" required lay-verify="required" id="uNameChange" onblur="confirmUsername()"
+						   autocomplete="off" value="" style="margin-top: 10px"
+						   class="layui-input">
+                    <div class="layui-form-mid layui-word-aux" style="display: none" id="usm_confirm"><span style="color:red;">用户名已重复</span></div>
+				</div>
+			</div>
+
+            <script th:inline="javascript">
+                //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+                layui.use('element', function () {
+                    var element = layui.element;
+
+                    //…
+                })
+                //验证当前密码是否正确
+                var confirmResult=false;
+                $("#L_pass").click(function () {
+                    if (confirmResult==false){
+                        layer.msg("请验证后再输入")
+                    }
+                })
+                $("#L_repass").click(function () {
+                    if (confirmResult==false){
+                        layer.msg("请验证后再输入")
+                    }
+                })
+                function confirmPass() {
+                    var password = $("#L_nowPass").val();
+                    $.ajax({
+                        url:"/userSetting/confirmPass",
+                        type:"post",
+                        data:{password:password},
+                        success:function (data) {
+
+                            if (data){
+                                layer.msg("校验成功!")
+                                confirmResult=true;
+                                $("#L_pass").removeAttr("readonly")
+                                $("#L_repass").removeAttr("readonly")
+                            }else {
+                                layer.msg("校验错误,请检查后重新输入!")
+                            }
+                        },
+                        error:function () {
+                            alert("error")
+                        }
+                    })
+                }
+                function modifyPassword(){
+                    var password = $("#L_repass").val();
+                    if ($("#L_pass").val()!=$("#L_repass").val()){
+                        layer.msg("密码前后输入不一致!")
+                    }else if (password==null||password==""){
+                        layer.msg("请将信息填写完整!")
+                    }else{
+                        $.ajax({
+                            url:"/userSetting/modifyPassword",
+                            type:"post",
+                            data:{password:password},
+                            success:function (data) {
+                                if (data){
+                                    layer.msg("修改成功!")
+                                }
+
+                            },
+                            error:function () {
+                                layer.msg("出现了未知小bug!")
+                            }
+                        })
+                    }
+                }
+
+                //验证用户名是否重复
+                function confirmUsername() {
+                    var username = $("#uNameChange").val();
+                    $.ajax({
+                        url:"/userSetting/confirmUsername",
+                        type:"post",
+                        data:{username:username},
+                        success:function (data) {
+                            if (data>0){
+                                $("#usm_confirm").css("display","");
+                            }else{
+                                $("#usm_confirm").css("display","none");
+                            }
+                        }
+                    })
+                }
+                //更改用户名
+				function changeUsername() {
+					layui.use("layer",function () {
+						var layer = layui.layer;
+						layer.open({
+							id:1,
+							type: 1,
+							title:'修改用户名',
+							skin:'layui-layer-rim',
+							area:['450px', '200px'],
+							content: $("#changeUsernameForm")
+							,
+							btn:['保存','取消'],
+							btn1: function (index,layero) {
+                                var username =$("#uNameChange").val();
+							    if (username==null||username==""||$("#usm_confirm").css("display")!="none"){
+                                    layer.msg('请填写正确信息!');
+                                }else{
+                                    var id = [[${session.user.id}]];
+                                    var param = {
+                                        id: id,
+                                        username: username,
+                                    };
+                                    $.ajax({
+                                        type:"post",
+                                        url:"/userSetting/modifyUsername",
+                                        data:param,
+                                        async: false,
+                                        success:function (data) {
+                                            if (data>0){
+                                                layer.msg('修改成功');
+                                                layer.close(index);
+                                                window.location.reload();
+                                            }
+                                        },
+                                        error:function () {
+                                            layer.msg('出现错误');
+                                        }
+                                    })
+                                }
+
+							},
+							btn2:function (index,layero) {
+								layer.close(index);
+							}
+						});
+					})
+				}
+
+                //上传头像
+                layui.use('upload', function(){
+                    var $ = layui.jquery
+                        ,upload = layui.upload;
+                    //普通图片上传
+                    var uploadInst = upload.render({
+                        elem: '#avatarPic'
+                        ,url: '/userSetting/uploadAvatar' //改成您自己的上传接口
+                        ,before: function(obj){
+                            //预读本地文件示例，不支持ie8
+                            obj.preview(function(index, avatar, result){
+                                $('#picCallBack').attr('src', result); //图片链接（base64）
+                            });
+                        }
+                        ,done: function(res){
+                            //如果上传失败
+                            if(res.code > 0){
+                                return layer.msg('上传失败');
+                            }
+                            layer.msg('上传成功');
+                            //上传成功
+                        }
+                        ,error: function(){
+                            layer.msg('上传成功');
+                        }
+                    })});
+            </script>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <!--基本资料结构end-->
+
+</div>
+<div class="clear"></div>
+</div>
+
+<div th:insert="~{bottom :: nav}"></div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" th:href="@{/back/assets/images/favicon.png}">
+    <title>AdminWrap - Easy to Customize Bootstrap 4 Admin Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" th:href="@{/back/assets/node_modules/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" th:href="@{/back/css/style.css}" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/default.css" th:href="@{/back/css/colors/default.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layui.css" th:href="@{/back/layui/css/layui.css}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header card-no-border fix-sidebar">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">后台管理</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" th:src="@{/back/assets/images/logo-icon.png}" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" th:src="@{/back/assets/images/logo-light-icon.png}" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" th:src="@{/back/assets/images/logo-text.png}" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" th:src="@{/back/assets/images/logo-light-text.png}" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="fa fa-times"></i></a> </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" th:src="@{/back/assets/images/users/1.jpg}" alt="user" class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;</span> </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!--<li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">个人中心</span></a>
+                        </li>-->
+                        <li> <a th:href="@{/user/list}" class="waves-effect waves-dark" href="user_list.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">管理员列表</span></a>
+                        </li>
+                        <li> <a th:href="@{/backorder/list}" class="waves-effect waves-dark" href="user_list.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">订单列表</span></a>
+                        </li>
+                        <!--<li> <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i class="fa fa-smile-o"></i><span class="hide-menu">Icons</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i class="fa fa-globe"></i><span class="hide-menu">Map</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i class="fa fa-bookmark-o"></i><span class="hide-menu">Blank</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu">404</span></a>
+                        </li>-->
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">管理员列表</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">主页</a></li>
+                            <li class="breadcrumb-item active">管理员列表</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-left m-t-10">
+                                    <input type="text" th:value="${likename}" name="likename" class="form-control form-control-line">
+                                </div>
+                                <div class="text-left m-t-10">
+                                    <a href="javascript:;" th:onclick="|select()|" class="btn waves-effect waves-light btn-info ">搜索</a>
+                                    <a href="javascript:;" th:onclick="|add()|" class="btn waves-effect waves-light btn-info ">新增</a>
+                                </div>
+<!--                                <h4 class="card-title">搜索：</h4>-->
+<!--                                <h6 class="card-subtitle">Add class <code>.table</code></h6>-->
+                                <div class="table-responsive">
+                                    <table class="table layui-form">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>用户名</th>
+                                                <th>邮箱</th>
+                                                <th>电话</th>
+                                                <th>角色</th>
+                                                <th>状态</th>
+                                                <th>修改</th>
+                                                <th>删除</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tab_list">
+                                            <tr th:each="user:${userList}">
+                                                <td><input type="hidden" th:value="${user.id}" ><i class="fa fa-id-card" /></td>
+                                                <td th:text="${user.username}">Deshmukh</td>
+                                                <td th:text="${user.email}">Prohaska</td>
+                                                <td th:text="${user.mobile}">@Genelia</td>
+                                                <td th:text="${user.roleName}">@Genelia</td>
+
+                                                <td th:if="${user.status}==1">
+                                                    <a th:href="${#request.getContextPath()} + '/user/status?curr=' + ${current} + '&id=' + ${user.id} + '&status=2' + '&likename=' + ${likename} " th:text="${#dict.getDictLable('userStatus',user.status)}"></a></i>
+                                                </td>
+
+                                                <td th:if="${user.status}==2">
+                                                    <a th:href="${#request.getContextPath()} + '/user/status?curr=' + ${current} + '&id=' + ${user.id} + '&status=1' + '&likename=' + ${likename} " th:text="${#dict.getDictLable('userStatus',user.status)}"></a></i>
+                                                </td>
+
+                                                <td><a class="waves-effect waves-dark" href="javascript:;" th:onclick="|update(${user.id})|"  aria-expanded="false"> <i class="fa fa-eraser"/></a></td>
+                                                <td><a class="waves-effect waves-dark" href="index.html" th:href="${#request.getContextPath()} + '/user/delete?curr=' + ${current} + '&id=' + ${user.id} + '&likename=' + ${likename} " aria-expanded="false"><i class="fa fa-scissors"/></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer"> © 2018 Adminwrap by wrappixe - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/node_modules/jquery/jquery.min.js" th:src="@{/back/assets/node_modules/jquery/jquery.min.js}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/node_modules/bootstrap/js/popper.min.js" th:src="@{/back/assets/node_modules/bootstrap/js/popper.min.js}"></script>
+    <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js" th:src="@{/back/assets/node_modules/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/perfect-scrollbar.jquery.min.js" th:src="@{/back/js/perfect-scrollbar.jquery.min.js}"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js" th:src="@{/back/js/waves.js}"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js" th:src="@{/back/js/sidebarmenu.js}"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js" th:src="@{/back/js/custom.min.js}"></script>
+    <!-- jQuery peity -->
+    <script src="../assets/node_modules/peity/jquery.peity.min.js" th:src="@{/back/assets/node_modules/peity/jquery.peity.min.js}"></script>
+    <script src="../assets/node_modules/peity/jquery.peity.init.js" th:src="@{/back/assets/node_modules/peity/jquery.peity.init.js}"></script>
+    <script src="../assets/layui.all.js" th:src="@{/back/layui/layui.all.js}"></script>
+</body>
+<script type="text/javascript">
+    layui.use(['laypage','layer','form'], function() {
+        var laypage = layui.laypage,layer = layui.layer;
+        var likename = $('input[name = likename]').val();
+        laypage.render({
+            elem: 'pagination',
+            count: [[${total}]],
+            limit: [[${size}]],
+            curr: [[${current}]],
+            jump:function(obj,first) {
+                if(!first) {
+                    window.location.href = '[[${#request.getContextPath()}]]'+ "/user/list?curr=" + obj.curr + "&limit=" + obj.limit + "&likename=" + likename;
+                }
+            }
+        });
+    });
+
+
+    function add() {
+            var form = layui.form,layer = layui.layer;
+
+            layer.open({
+                type:2,
+                area: ['666px', '750px'],
+                content: '[[${#request.getContextPath()}]]' + '/user/insert_form?curr=' + '[[${current}]]'
+            });
+            layer.config({
+                skin: 'demo-class',
+                anim: 3
+            })
+        }
+
+    function update(id) {
+        var form = layui.form,layer = layui.layer;
+
+        layer.open({
+            type:2,
+            area: ['666px', '750px'],
+            content: '[[${#request.getContextPath()}]]' + '/user/update_form?curr=' + '[[${current}]]' + '&id=' + id
+        });
+        layer.config({
+            skin: 'demo-class',
+            anim: 3
+        })
+    }
+
+    function select() {
+        var likename = $('input[name = likename]').val();
+        $.ajax({
+            url: '[[${#request.getContextPath()}]]' + "/user/list",
+            type:'post',
+            async:false,
+            data: {likename : likename} ,
+            success:
+                layui.use(['laypage','layer','form'], function() {
+                    var laypage = layui.laypage,layer = layui.layer;
+                    laypage.render({
+                        elem: 'pagination',
+                        count: [[${total}]],
+                        limit: [[${size}]],
+                        curr: [[${current}]],
+                        jump:function(obj,first) {
+                                window.location.href = '[[${#request.getContextPath()}]]'+ "/user/list?curr=" + obj.curr + "&limit=" + obj.limit + "&likename=" + likename;
+                        }
+                    });
+                })
+        });
+    }
+
+</script>
+
+</html>

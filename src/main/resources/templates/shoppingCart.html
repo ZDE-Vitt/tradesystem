@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/user.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/view.css}"/>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/bannerslider.js"></script>
+    <script type="text/javascript" src="/js/layout.js"></script>
+    <script type="text/javascript" th:src="@{/assets/layui.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+</head>
+
+<body>
+<div th:insert="~{top :: nav}"></div>
+
+<!--1200结构-->
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > 购物车</h2>
+</div>
+<!--1200结构end-->
+
+<div class="user_join_designer">
+    <a href="#"></a>
+</div>
+
+<div class="user_center auto">
+    <div class="user_navside left">
+        <ul class="user_navside_ul">
+            <li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+            <li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+            <li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+            <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+            <li class="user_active_li"><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+            <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+            <li><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+            <li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+            <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+            <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+            <li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+        </ul>
+    </div>
+    <div class="user_right right">
+        <div class="user_gouwuche_wrap">
+            <div class="user_gouwuche_content" id="shoppingcarContainer">
+
+                <div v-if="flag">
+                    购物车为空
+                </div>
+                <div v-else>
+                    <table class="layui-table" id="tab_cart">
+                        <thead>
+                        <tr>
+                            <th><input type="checkbox" v-model="AllChecked" @click="checkAll"></th>
+                            <th style="width:463px; padding-left:154px;">商品</th>
+                            <th>定价</th>
+                            <th style="text-align:center;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(item,index) in shoppingCarData" :index="item.id">
+                            <td><input type="checkbox" name="cartBox" v-model="item.isChecked"></td>
+                            <td class="gouwuche_td">
+                                <div class="gouwuche_img">
+                                    <img :src="item.picUrl" @click="jumpToDetail(item)"/>
+                                </div>
+                                <div class="gouwuche_title"><span>{{item.name}}</span></div>
+                            </td>
+                            <td><span>{{item.money}}</span></td>
+                            <td style="text-align:center;">
+                                <button type="button" class="layui-btn layui-btn-primary layui-btn-sm"
+                                        @click="moveOne(item)">
+                                    <i class="layui-icon">&#xe640;</i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--分页导航-->
+                    <div class="gouwuche_jiesuan" style="margin-top: 10px">
+                        <div class="gouwuche_jiesuan_left left">
+                            <div class="layui-btn-group">
+                                <button type="button" class="layui-btn layui-btn-primary" @click="moveSome()">移除选中素材</button>
+                                <button type="button" class="layui-btn layui-btn-primary" @click="moveToCollect()">移到收藏夹</button>
+                            </div>
+                        </div>
+                        <div class="gouwuche_jiesuan_right right">
+                            <a class="gouwuche_jiesuan_a right" @click="payAll()">去结算</a>
+                            <div class="gouwuche_jiesuan_xq right">已选中<span class="red">{{getTotal}}</span>件商品，商品总价：<span
+                                    class="red red18">{{totalPrice}}积分</span></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="pay" style="display: none">
+                        <div>共{{getTotal}}件素材,需要{{totalPrice}}积分</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+<script>
+    layui.use("layer",function () {
+        var layer = layui.layer;
+    })
+    var vue = new Vue({
+        el: "#shoppingcarContainer",
+        data: {
+            shoppingCarData: null,
+            flag: true,
+            totalPrice:0,
+            AllChecked: false,
+            total:0,
+            moveIds:[]
+        },
+        methods: {
+            moveOne(item) {
+                var suCaiId = item.id;
+                $.ajax({
+                    url: "/cart/deleteBySid?suCaiId=" + suCaiId,
+                    type: "delete",
+                    success: function () {
+                        pagination();
+                    },
+                    error: function () {
+                        alert("error")
+                    }
+                });
+            },
+            moveSome(){
+                if(this.moveIds==null||this.moveIds==''){
+                    layer.msg("请选择要移出的素材!")
+                }else{
+                    $.ajax({
+                        url:"/cart/moveByIds",
+                        type:"post",
+                        data:"ids="+this.moveIds,
+                        success:function () {
+                            pagination();
+                        }
+                    })
+                }
+            },
+            payAll(){
+                var ids=this.moveIds;
+                var account=this.totalPrice
+                layui.use("layer",function () {
+                    var layer = layui.layer;
+                    layer.open({
+                        id:1,
+                        type: 1,
+                        title:'结算',
+                        skin:'layui-layer-rim',
+                        area:['450px', '200px'],
+                        content: $("#pay")
+                        ,
+                        btn:['确定购买','取消'],
+                        btn1: function (index,layero) {
+                            console.log(ids[0])
+                            $.ajax({
+                                url:"/cart/pay",
+                                type:"post",
+                                traditional:true, //默认false
+                                data:{
+                                    "ids":ids,
+                                    "account":account
+                                },
+                                success:function (data) {
+                                    if (data.status==false){
+                                        layer.msg("积分不足,请充值!")
+                                    }else{
+                                        layer.msg("购买成功!");
+                                        layer.close(index);
+                                        pagination();
+                                    }
+                                }
+                            })
+
+                        },
+                        btn2:function (index,layero) {
+                            layer.close(index);
+                        }
+                    });
+                })
+            },
+            checkAll() {
+                let list = this.shoppingCarData;
+                if (this.total === list.length) {
+                    list.forEach(element => {
+                        element.isChecked = false;
+                    });
+                } else {
+                    list.forEach(element => {
+                        element.isChecked = true;
+                    });
+                }
+            },
+            moveToCollect(){
+                if(this.moveIds==null||this.moveIds==''){
+                    layer.msg("请选择要移出的素材!")
+                }else{
+                    $.ajax({
+                        url:"/cart/moveToCollect",
+                        type:"post",
+                        data:"ids="+this.moveIds,
+                        success:function () {
+                            pagination();
+                        }
+                    })
+                }
+            },
+            jumpToDetail(item){
+                window.location.href=contextPath +"/product/detail?id="+item.id;
+            }
+        },
+        computed:{
+            getTotal(){
+                let count =0,
+                    totalPrice = 0,
+                    moveIds = []
+                    list = this.shoppingCarData;
+                list.forEach(element=>{
+                    if (element.isChecked){
+                        count++;
+                        totalPrice+=element.money;
+                        moveIds.push(element.id);
+                    }
+                });
+                this.totalPrice=totalPrice;
+                this.total=count;
+                this.AllChecked = count === this.shoppingCarData.length;
+                this.moveIds = moveIds;
+                return count;
+            }
+        }
+    });
+    var totalCount = 0;//总;记录数
+    pagination()
+
+    function pagination() {
+        $.ajax({
+            type: "post",
+            url: "/cart/getShoppingCarData",
+            async: false,
+            success: function (data) {
+                if (data.data != null) {
+                    vue.flag = false;
+                }
+                vue.shoppingCarData = data.data;
+                vue.shoppingCarData.forEach(function (res) {
+                    Vue.set(res,"isChecked",false);
+                })
+                totalCount = data.count;
+            }
+        })
+    }
+
+
+
+
+
+</script>
+<div th:insert="~{bottom :: nav}"></div>
+</body>
+</html>

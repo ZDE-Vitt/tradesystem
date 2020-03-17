@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>购买记录</title>
+    <link rel="stylesheet" href="/css/layout.css"/>
+    <link rel="stylesheet" href="/css/user.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/view.css}"/>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/bannerslider.js"></script>
+    <script type="text/javascript" src="/js/layout.js"></script>
+    <script type="text/javascript" th:src="@{/assets/layui.js}"></script>
+    <script th:src="@{https://cdn.staticfile.org/vue/2.2.2/vue.min.js}"></script>
+</head>
+
+<body>
+<div th:insert="~{top :: nav}"></div>
+
+<!--1200结构-->
+<div class="pro_wrap user_pro_wrap  auto">
+    <h2 class="weizhi_title">位置：<a href="#">首页</a> > 购买记录</h2>
+</div>
+<!--1200结构end-->
+
+<div class="user_join_designer">
+    <a href="#"></a>
+</div>
+
+<div class="user_center auto">
+    <div class="user_navside left">
+		<ul class="user_navside_ul">
+            <li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
+            <li><a th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
+            <li><a th:href="@{/sucailist/sucaialllist}"><span class="user_icon11">我的素材</span></a></li>
+            <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
+            <li><a th:href="@{/cart/toCart}"><span class="user_icon4">我的购物车</span></a></li>
+            <li><a th:href="@{/downHistory/toDownHistory}"><span class="user_icon6">下载记录</span></a></li>
+            <li class="user_active_li"><a th:href="@{/buyHistory/toBuyHistory}"><span class="user_icon7">购买记录</span></a></li>
+            <li><a href="#" th:href="@{/order/list}"><span class="user_icon8">我的订单</span></a></li>
+            <li><a th:href="@{/center/wallet/jifeng}"><span class="user_icon9">我的钱包</span></a></li>
+            <!--<li><a href="#"><span class="user_icon10">消息中心</span></a></li>-->
+            <li><a th:href="@{/userSetting/toUserSetting}"><span class="user_icon11">个人设置</span></a></li>
+		</ul>
+    </div>
+    <div class="user_right user_goumai_right right" id="buyContainer">
+        <div v-if="buyFlag">
+            <div class="mytitle_twozero_wrap myjilu_twozero_wrap">
+                <div class="mytitle_twozero_content">
+                    <div class="mytitle_twozero left">
+                        <ul class="mytitle_twozero_ul">
+                            <li class="mytitle_twozero_liactive"><a href="#">购买记录</a></li>
+                        </ul>
+                    </div>
+                    <div class="myjilu_title right">共有<span>“{{totalCount}}”</span>项纪录</div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <div class="mytitle_twozero_wrap myjilu_twozero_wrap">
+                <div class="mytitle_twozero_content">
+                    <div class="mytitle_twozero left">
+                        <ul class="mytitle_twozero_ul">
+                            <li><a href="#">购买记录</a></li>
+                        </ul>
+                    </div>
+                    <div class="myjilu_title right">共有<span>“{{totalCount}}”</span>项纪录</div>
+                </div>
+            </div>
+            <!--收藏产品列表结构-->
+            <div class="main_content user_pro_content">
+                <div class="zcq_wrap">
+                    <div class="zcq_div user_sc_div left" v-for="item in data">
+                        <div class="zcq_c1">
+                            <div class="zc_list">
+                                <img :src="item.picUrl" @click="jumpToDetail(item)"/>
+
+                            </div>
+                        </div>
+                        <h2 class="zcq_c2">{{item.name}}</h2>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <!--收藏产品列表结构end-->
+    </div>
+    <div class="clear"></div>
+
+    <script>
+        var vue = new Vue({
+            el: "#buyContainer",
+            data: {
+                data: null,
+                totalCount:0,
+                buyFlag:true
+            },
+            methods:{
+                jumpToDetail(item){
+                    window.location.href=contextPath +"/product/detail?id="+item.id;
+                }
+            }
+        });
+        var totalCount = 0;//总记录数
+        pagination();
+        function pagination(){
+            $.ajax({
+                type:"post",
+                url:"/buyHistory/getBuyHistoryData",
+                async:false,
+                success:function (data) {
+                    if (data.data!=null){
+                        vue.buyFlag=false;
+                    }
+                    vue.data = data.data;
+                    vue.totalCount = data.count;
+                    totalCount = data.count;
+                }
+            })
+        }
+
+        // }))
+
+    </script>
+</div>
+
+<div th:insert="~{bottom :: nav}"></div>
+</body>
+</html>

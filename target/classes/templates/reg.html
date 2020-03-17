@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>注册</title>
+		<link rel="stylesheet" href="/css/layout.css" />
+		<link rel="stylesheet" href="/css/reg.css" />
+		<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/js/bannerslider.js"></script>
+		<script type="text/javascript" src="/js/layout.js"></script>
+		<script type="text/javascript">
+
+		</script>
+	</head>
+
+	<body>
+		<div class="top_wrap">
+			<div class="top auto">
+				<div class="top_logo top_logo_qiandao left" style="margin-right:20px;"><a th:href="@{/}"><img src="/img/logo.png" /></a></div>
+				<div class="reg_title">用户注册</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div class="reg_content" >
+			<form id="loginForm">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<td class="fir">手机号：</td>
+							<td><input type="text" class="reg_in" name="telephone" id="verifyTel"/></td>
+							<td class="fis" id="telResult">请输入手机号码</td>
+						</tr>
+						<tr style="height: 17px;">
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="fir">用户名：</td>
+							<td><input type="text" class="reg_in" name="username" id="verifyUsername"/></td>
+							<td class="fis" id="usernameResult">请输入用户名</td>
+						</tr>
+						<tr style="height: 17px;">
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="fir">设置密码：</td>
+							<td><input type="password" class="reg_in" name="password" id="psw"/></td>
+							<td class="fis" id="passResult">请设置密码</td>
+						</tr>
+						<tr style="height: 17px;">
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="fir">确认密码：</td>
+							<td><input type="password" class="reg_in" id="verifyPsw"/></td>
+							<td class="fis" id="pswResult">请确认密码</td>
+						</tr>
+						<tr style="height: 17px;">
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="fir">手机验证码：</td>
+							<td>
+								<input type="text" class="reg_insmall" placeholder="此处暂时不用填写"/>
+								<a class="reg_yzm" href="#">获取验证码</a>
+								<div class="clear"></div>
+							</td>
+							<td class="fis">请填写验证码</td>
+						</tr>
+						<tr style="height: 17px;">
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<a class="reg_btn" href="javascript:return false;" id="loginNow">立即注册</a>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+			</form>
+		</div>
+
+		<!--底部结构-->
+		<div class="footer_wrap">
+			<div class="footer_content auto">
+				<div class="fdiv1">
+					<h2>模板</h2>
+					<a href="#">网页模板</a>
+					<a href="#">品牌设计模板</a>
+					<a href="#">CMS模板</a>
+					<a href="#">视频</a>
+					<a href="#">电子商务模板</a>
+					<a href="#">PPT</a>
+					<a href="#">画册</a>
+				</div>
+				<div class="fdiv2">
+					<h2>主题</h2>
+					<a href="#">影视&音乐</a>
+					<a href="#">生活娱乐</a>
+					<a href="#">旅游休闲</a>
+					<a href="#">设计&摄影</a>
+					<a href="#">房产家居</a>
+					<a href="#">汽车&摩托车</a>
+					<a href="#">动物</a>
+				</div>
+				<div class="fdiv3">
+					<div class="f31">
+						<div class="f31_1">
+							<h2>公司</h2>
+							<a href="#">关于我们</a>
+							<a href="#">加盟合作</a>
+							<a href="#">联系我们</a>
+						</div>
+						<div class="f31_2">
+							<h2>支持</h2>
+							<a href="#">帮助中心</a>
+							<a href="#">成为设计师</a>
+							<a href="#">常见问题</a>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="f32">
+						<h2>订阅我们的通讯</h2>
+						<p>接受有关新的模板和设计素材信息</p>
+						<div class="f32_dy">
+							<div class="f32_inp left"><input type="text" value="电子邮箱" onfocus="if(this.value=='电子邮箱'){this.value='';this.style.color='#999999'}"
+								 onblur="if(this.value==''){this.value='电子邮箱';this.style.color='#999999'}" /></div>
+							<a class="f32_btn right" href="#">订阅</a>
+						</div>
+					</div>
+				</div>
+				<div class="fdiv4">
+					<h2>关注我们</h2>
+					<ul>
+						<li class="wx_li">
+							<a href="#"><span>微信</span></a>
+							<div class="ewm ewm_position1"><img src="/img/weixin_img.png" /></div>
+						</li>
+						<li class="wb_li">
+							<a href="#"><span>微博</span></a>
+							<div class="ewm ewm_position2"><img src="/img/weixin_img.png" /></div>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--底部结构end-->
+		<div class="bottom_gray">
+			<div class="bottom_gray_content auto">
+				<p class="tec bottom_gray_title">特聘法律顾问：江苏政纬律师事务所 宋洪波 | 版权所有 Copyright ©2017 苏州苏杰思网络有限公司旗下网站 苏ICP备14036386号</p>
+				<p class="tec bgray">
+					<a href="#"><img src="/img/bottom_gray_img1.png" /></a>
+					<a href="#"><img src="/img/bottom_gray_img2.png" /></a>
+					<a href="#"><img src="/img/bottom_gray_img3.png" /></a>
+					<a href="#"><img src="/img/bottom_gray_img4.png" /></a>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$("#verifyTel").blur(function () {
+			var telephone=$("#verifyTel").val();
+			if (telephone==null||telephone==""){
+				$("#telResult").html("请填写手机号");
+				$("#telResult").css("color","red");
+			}else{
+				$.ajax({
+					type:"post",
+					dataType:"json",
+					url:"/reg/verifyTel",
+					data:{"telephone":telephone},
+					success:function (data) {
+						if (data==false){
+							$("#telResult").html("×该手机号已经被注册");
+							$("#telResult").css("color","red");
+						}else{
+							$("#telResult").html("√");
+							$("#telResult").css("color","green");
+						}
+					}
+				})
+			}
+		})
+
+
+		$("#verifyUsername").blur(function () {
+			var username=$("#verifyUsername").val();
+			if (username==null||username==""){
+				$("#usernameResult").html("请输入用户名");
+				$("#usernameResult").css("color","red");
+			}else{
+				$.ajax({
+					type:"post",
+					dataType:"json",
+					url:"/reg/verifyUsername",
+					data:{"username":username},
+					success:function (data) {
+						if (data==false){
+							$("#usernameResult").html("×该用户名已经被注册");
+							$("#usernameResult").css("color","red");
+						}else{
+							$("#usernameResult").html("√");
+							$("#usernameResult").css("color","green");
+						}
+					}
+				})
+			}
+		})
+		$("#verifyPsw").blur(function () {
+			var psw = $("#psw").val();
+			var verifyPsw = $("#verifyPsw").val();
+			if (psw!=verifyPsw||verifyPsw==null||verifyPsw==""){
+				$("#pswResult").html("×密码前后不一致");
+				$("#pswResult").css("color","red");
+			}else{
+				$("#pswResult").html("√");
+				$("#pswResult").css("color","green");
+				$("#passResult").html("√");
+				$("#passResult").css("color","green");
+			}
+
+		})
+		$("#loginNow").click(function () {
+			var pawResult=$("#pswResult").html();
+			var usernameResult=$("#usernameResult").html();
+			var telResult=$("#telResult").html();
+			if (telResult == "√" && usernameResult == "√" && pawResult == "√"){
+				$.ajax({
+					url:"/reg/register",
+					data:$("#loginForm").serialize(),
+					dataType:"json",
+					type:"post",
+					success:function (data) {
+						if (data){
+							window.location.href="/reg/loginJump";
+						}else{
+							alert(data)
+						}
+					}
+				})
+			}else{
+				alert("请将信息填写完整")
+			}
+		})
+	</script>
+</html>
