@@ -28,7 +28,7 @@
     <div class="user_center auto">
         <div class="user_navside left">
                     <ul class="user_navside_ul">
-                        <li><a href="#"><span class="user_icon1" th:href="@{/center/toCenter}">用户中心</span></a></li>
+                        <li><a th:href="@{/center/toCenter}"><span class="user_icon1">用户中心</span></a></li>
                         <li class="user_active_li"><a  th:href="@{/publish/Uploadform}"><span class="user_icon2">发布</span></a></li>
                         <li><a id="shenHea" th:href="@{/sucailist/sucaialllist}"><span class="user_icon2">我的素材</span></a></li>
                         <li><a th:href="@{/collect/toCollect}"><span class="user_icon3">我的收藏</span></a></li>
@@ -149,7 +149,7 @@
                             <td>
                                 <textarea name="description" class="fabu_twozero_textarea1 fabu_twozero_textarea1sm" onkeyup="changeLength(this,200)"></textarea>
                                 <div class="fabu_twozero_shengyu">
-                                    素材内容说明：最多100字（<label id="ss_sz">0</label>/200）
+                                    素材内容说明：最多200字（<label id="ss_sz">0</label>/200）
                                 </div>
                             </td>
                         </tr>

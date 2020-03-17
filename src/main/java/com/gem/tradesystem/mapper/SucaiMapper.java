@@ -30,13 +30,13 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
     @Select("select * from sucai where id=#{id}")//根据id获取素材
     Sucai getOneById(Integer id);
 
-    @Select("select * from sucai where name like CONCAT('%',#{search},'%') and status=3")//根据输入的素材名称模糊查询
+    @Select("select * from sucai where name like CONCAT('%',#{search},'%') and status=3 and del_Flag = 0")//根据输入的素材名称模糊查询
     List<Sucai> getSearchList(String search);
 
-    @Select("select count(*) from sucai where name like CONCAT('%',#{search},'%') and status=3")//获取输入的素材名称模糊查询的素材数目
+    @Select("select count(*) from sucai where name like CONCAT('%',#{search},'%') and status=3 and del_Flag = 0")//获取输入的素材名称模糊查询的素材数目
     Integer getSearchCount(String search);
 
-    @Select("select * from sucai where name like CONCAT('%',#{search},'%') and status=3 limit #{page},#{size}")//根据输入的素材名称模糊分页查询
+    @Select("select * from sucai where name like CONCAT('%',#{search},'%') and status=3 and del_Flag = 0 limit #{page},#{size}")//根据输入的素材名称模糊分页查询
     List<Sucai> getSearchPageList(String search,Integer page,Integer size);
 
     @Select("select distinct typename from tag where pid='0'")//获取一级菜单
@@ -48,12 +48,12 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
     @Select("select typename from tag where pid!='0'")//获取所有的二级菜单，显示在全部下
     List<String> getAllSubMenu();
 
-    @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3")//获取二级菜单下所有的素材
+    @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3 and del_Flag = 0")//获取二级菜单下所有的素材
     List<Sucai> getSubMenuList(String typename);
 
     @Select("SELECT * from sucai where id in(" +
             "SELECT sucaiid from tagjb where tagid in " +
-            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3")//获取一级菜单下所有的素材
+            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3 and del_Flag = 0")//获取一级菜单下所有的素材
     List<Sucai> getMenuList(String typename);
 
     @Select("select * from sucai where status=3 and del_Flag = 0")
@@ -62,23 +62,23 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
     @Select("select * from sucai where status=3 and del_Flag = 0 limit #{page},#{size}")
     List<Sucai> getPageList(Integer page,Integer size);//分页获取全部素材
 
-    @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3 limit #{page},#{size}")//分页获取二级菜单下所有的素材
+    @Select("select * from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3 and del_Flag = 0 limit #{page},#{size}")//分页获取二级菜单下所有的素材
     List<Sucai> getSubMenuPageList(String typename,Integer page,Integer size);
 
     @Select("SELECT * from sucai where id in(" +
             "SELECT sucaiid from tagjb where tagid in " +
-            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3 limit #{page},#{size}")//分页获取一级菜单下所有的素材
+            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3 and del_Flag = 0 limit #{page},#{size}")//分页获取一级菜单下所有的素材
     List<Sucai> getMenuPageList(String typename,Integer page,Integer size);
 
     @Select("select count(*) from sucai where status=3 and del_Flag = 0")
     Integer getCount();//所有素材总数
 
-    @Select("select count(*) from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3")//获取二级菜单下所有的素材数目
+    @Select("select count(*) from sucai where id in(select sucaiid from tagjb where tagid in(select id from tag where typename=#{typename})) and status=3 and del_Flag = 0")//获取二级菜单下所有的素材数目
     Integer getSubMenuCount(String typename);
 
     @Select("SELECT count(*) from sucai where id in(" +
             "SELECT sucaiid from tagjb where tagid in " +
-            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3")//获取一级菜单下所有的素材数目
+            "(select id from tag where pid=(SELECT id from tag where typename=#{typename}))) and status=3 and del_Flag = 0")//获取一级菜单下所有的素材数目
     Integer getMenuCount(String typename);
 
     @Select("SELECT typename from tag where id in(SELECT tagid from tagjb where sucaiid=#{sucaiid})")//获取素材的标签列表
@@ -93,10 +93,10 @@ public interface SucaiMapper extends BaseMapper<Sucai> {
     @Select("select sucaiid from shopcar where userid=#{id}")//获取用户购物车中的素材id集合
     List<Integer> getUserShoppingCar(Integer id);
 
-    @Select("SELECT * from sucai where status=3 ORDER BY downnum DESC LIMIT 0,7")//获取最畅销的素材，前三
+    @Select("SELECT * from sucai where status=3 and del_Flag = 0 ORDER BY downnum DESC LIMIT 0,7")//获取最畅销的素材，前三
     List<Sucai> getTopSale();
 
-    @Select("SELECT * from sucai where status=3 ORDER BY favnum DESC LIMIT 0,7")//获取最畅销的素材，前三
+    @Select("SELECT * from sucai where status=3 and del_Flag = 0 ORDER BY favnum DESC LIMIT 0,7")//获取最畅销的素材，前三
     List<Sucai> getTopFav();
 
     @Select("SELECT id from user_order where userid=#{userid} and sucaiid=#{sucaiid} and order_Status in(3,4)")//查询是否存在用户xxx的xxxx的素材的购买记录
