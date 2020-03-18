@@ -157,10 +157,10 @@ public class ProductController {
 
 //        Cookie cookie=new Cookie("downloadToken",downloadToken);
 
-        System.out.println("pageNum"+pageNum);
-        System.out.println("pageSize"+pageSize);
-        System.out.println("current"+current);
-        System.out.println("total"+count);
+//        System.out.println("pageNum"+pageNum);
+//        System.out.println("pageSize"+pageSize);
+//        System.out.println("current"+current);
+//        System.out.println("total"+count);
 //        System.out.println("current"+current);
 
         //尝试进行点赞操作，暂时写死用户

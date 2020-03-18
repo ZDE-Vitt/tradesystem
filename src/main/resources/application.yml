@@ -1,5 +1,5 @@
 #springboot
 spring:
  profiles:
-  active: dev
+  active: prod
 

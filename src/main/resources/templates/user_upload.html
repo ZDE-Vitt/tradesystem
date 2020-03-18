@@ -244,6 +244,7 @@
 
     layui.use('upload', function(){
         var upload = layui.upload;
+        var layer = layui.layer;
 
         //执行实例
         var uploadInst = upload.render({
@@ -252,11 +253,16 @@
             ,done: function(res){
                 //上传完毕回调
                 //将图片路径放到film实体的图片路径属性中
-                console.log("success" + res.url);
-                $("#picUrl").val(res.url);
-                //将图片路径放到img标签中
-                $("#queue_img").css("display","block");
-                $("#queue_img").attr("src", res.url);
+                if(res.status == 'ok'){
+                    $("#picUrl").val(res.url);
+                    //将图片路径放到img标签中
+                    $("#queue_img").css("display","block");
+                    $("#queue_img").attr("src", res.url);
+                }else{
+                    layer.msg(res.msg,{
+                        time:3000
+                    })
+                }
             }
             ,error: function(res){
                 //请求异常回调
@@ -275,11 +281,16 @@
             ,done: function(res){
                 //上传完毕回调
                 //将图片路径放到film实体的图片路径属性中
-                console.log("success" + res.url);
-                $("#save").val(res.url);
-                //将图片路径放到img标签中
-                $("#queue_img2").css("display","block");
-                $("#queue_img2").attr("src", res.iurl);
+                if(res.status == 'ok'){
+                    $("#save").val(res.url);
+                    //将图片路径放到img标签中
+                    $("#queue_img2").css("display","block");
+                    $("#queue_img2").attr("src", res.iurl);
+                }else{
+                    layer.msg(res.msg,{
+                        time:3000
+                    })
+                }
             }
             ,error: function(res){
                 //请求异常回调
