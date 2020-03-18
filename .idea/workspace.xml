@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84c9313e-5227-49e3-97b2-f311ba399f89" name="Default Changelist" comment="zde:第一次提交">
+    <list default="true" id="84c9313e-5227-49e3-97b2-f311ba399f89" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/SucaiListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/SucaiListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/mapper/SucaiMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/mapper/SucaiMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/SucaiListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/SucaiListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_sucai.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_sucai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/SucaiMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/SucaiMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user_sucai.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_sucai.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_upload.html" afterDir="false" />
     </list>
@@ -116,10 +112,6 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.gem.tradesystem.service" />
-      <recent name="com.gem.tradesystem.mapper" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.gem.tradesystem.service" />
       <recent name="com.gem.tradesystem.mapper" />
@@ -134,12 +126,19 @@
       <recent name="com.gem.tradesystem.service.impl" />
       <recent name="com.gem.tradesystem" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\static\img" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service\impl" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\static\img" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\utils" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gem.tradesystem.back.mapper" />
@@ -148,12 +147,9 @@
       <recent name="com.gem.tradesystem.config" />
       <recent name="com.gem.tradesystem.controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service\impl" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\mapper" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gem.tradesystem.service" />
+      <recent name="com.gem.tradesystem.mapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TradesystemApplication">
@@ -324,7 +320,10 @@
       <workItem from="1584411177526" duration="2487000" />
       <workItem from="1584414773664" duration="386000" />
       <workItem from="1584415352359" duration="2288000" />
-      <workItem from="1584418237571" duration="9354000" />
+      <workItem from="1584418237571" duration="13559000" />
+      <workItem from="1584451261792" duration="755000" />
+      <workItem from="1584494256874" duration="1212000" />
+      <workItem from="1584496844520" duration="1681000" />
     </task>
     <task id="LOCAL-00001" summary="xzz-2-19:第一次提交">
       <created>1582074635277</created>
@@ -452,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584421863401</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="zde:修改上传描述和名称的字数限制&#10;修改素材列表会读取del_Flag 值为1的素材&#10;修改插入时标签的bug">
+      <created>1584429622658</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1584429622658</updated>
+    </task>
+    <task id="LOCAL-00020" summary="zde:修改素材列表二级菜单会读取del_Flag 值为1的素材&#10;修改了用户中心跳转的bug">
+      <created>1584450995612</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1584450995612</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +526,9 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -535,7 +550,9 @@
     <MESSAGE value="xzz-2-25:第一次提交" />
     <MESSAGE value="xzz-2-26:第一次提交" />
     <MESSAGE value="zde:第一次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="zde:第一次提交" />
+    <MESSAGE value="zde:修改上传描述和名称的字数限制&#10;修改素材列表会读取del_Flag 值为1的素材&#10;修改插入时标签的bug" />
+    <MESSAGE value="zde:修改素材列表二级菜单会读取del_Flag 值为1的素材&#10;修改了用户中心跳转的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="zde:修改素材列表二级菜单会读取del_Flag 值为1的素材&#10;修改了用户中心跳转的bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Inspections" timestamp="1582679594978">
@@ -592,21 +609,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584003794894" />
-    <state x="516" y="102" key="CommitChangelistDialog2" timestamp="1584424344801">
+    <state x="92" y="82" width="1150" height="821" key="CommitChangelistDialog2" timestamp="1584450993942">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="516" y="98" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582686581921" />
-    <state x="516" y="102" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1584424344801" />
+    <state x="92" y="82" width="1150" height="821" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1584450993942" />
     <state x="136" y="146" width="1536" height="855" key="DiffContextDialog" timestamp="1584418734750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="136" y="141" width="1536" height="855" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582689034553" />
     <state x="136" y="146" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584418734750" />
-    <state x="1152" y="331" key="FileChooserDialogImpl" timestamp="1584423618026">
+    <state x="1152" y="331" key="FileChooserDialogImpl" timestamp="1584494333739">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="915" y="327" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582963073819" />
-    <state x="1152" y="331" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584423618026" />
+    <state x="1152" y="331" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584494333738" />
     <state x="795" y="361" key="Gitee.ShareDialog" timestamp="1584422743490">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -615,46 +632,46 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="806" y="285" width="286" height="292" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584423935094" />
-    <state width="1243" height="219" key="GridCell.Tab.0.bottom" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.0.bottom" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1243" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.0.center" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
+    <state width="1242" height="387" key="GridCell.Tab.0.center" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1243" height="219" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.0.left" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
+    <state width="1242" height="387" key="GridCell.Tab.0.left" timestamp="1584500966079">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1243" height="219" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.0.right" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966079" />
+    <state width="1242" height="387" key="GridCell.Tab.0.right" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1243" height="219" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.1.bottom" timestamp="1584429193125">
+    <state width="1242" height="387" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
+    <state width="1242" height="387" key="GridCell.Tab.1.bottom" timestamp="1584500966081">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1243" height="219" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193125" />
-    <state width="1243" height="219" key="GridCell.Tab.1.center" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966081" />
+    <state width="1242" height="387" key="GridCell.Tab.1.center" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1243" height="219" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.1.left" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
+    <state width="1242" height="387" key="GridCell.Tab.1.left" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1243" height="219" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
-    <state width="1243" height="219" key="GridCell.Tab.1.right" timestamp="1584429193124">
+    <state width="1242" height="387" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
+    <state width="1242" height="387" key="GridCell.Tab.1.right" timestamp="1584500966080">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1243" height="219" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584429193124" />
+    <state width="1242" height="387" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584500966080" />
     <state width="1442" height="313" key="GridCell.Tab.2.bottom" timestamp="1583850147149">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -688,28 +705,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="669" y="216" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584422586696" />
-    <state x="138" y="188" key="SettingsEditor" timestamp="1584423812883">
+    <state x="138" y="188" key="SettingsEditor" timestamp="1584451423512">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="752" y="189" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582354272877" />
-    <state x="138" y="188" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1584423812883" />
+    <state x="138" y="188" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1584451423512" />
     <state x="550" y="297" key="SpringBootCustomization" timestamp="1583225504402">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="550" y="297" key="SpringBootCustomization/0.0.1920.1080@0.0.1920.1080" timestamp="1583225504402" />
-    <state x="503" y="271" key="Vcs.Push.Dialog.v2" timestamp="1584424358683">
+    <state x="503" y="271" key="Vcs.Push.Dialog.v2" timestamp="1584500954712">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="404" y="444" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582686586700" />
-    <state x="503" y="271" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1584424358683" />
+    <state x="503" y="271" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1584500954712" />
     <state x="759" y="317" key="chooseDestDirectoryDialog" timestamp="1583460501536">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="759" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583460501536" />
-    <state x="763" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1584418239645">
+    <state x="763" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1584494257130">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="763" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584418239645" />
+    <state x="763" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584494257129" />
     <state x="565" y="151" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583238183765">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
