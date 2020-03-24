@@ -148,9 +148,9 @@ public class SucaiListServiceImpl implements SucaiListService {
         if (tagName != null){
             sucai.setTagid(tagMapper.getid(tagName));
         }
+        sucai.setStatus(1);
         QueryWrapper<Sucai> queryWrapper =new QueryWrapper<>();
         queryWrapper.eq("id",sucai.getId());
-//        System.out.println("=========================>" + sucai);
         return sucaiMapper.update(sucai,queryWrapper);
     }
 }

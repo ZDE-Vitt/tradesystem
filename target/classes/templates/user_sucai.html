@@ -85,10 +85,12 @@
                             <td>{{item.money}}</td>
                             <!--<td>¥27.00<p>积分：20积分</p></td>-->
                             <td>
-                                <!--										<a class="dingdan_chakan" href="javascript:dingdan2_tanchu_show()">查看</a>-->
-                                <button style="background:#E83A17" type="button" @click="deletesucai(index)" class="layui-btn">
-                                    删除
-                                </button>
+                                <div>
+                                    <button style="background:#E83A17" type="button" @click="jumpToDetail(index)" class="layui-btn">编辑</button>
+                                </div>
+                                <div v-if="item.status == 1 || item.status == 3 " style="margin-top: 5px">
+                                    <button style="background:#E83A17" type="button" @click="deletesucai(index)" class="layui-btn">删除</button>
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -135,6 +137,10 @@
             vue.passnum =  data.passnum;
         }
     })
+
+    function jumpToDetail(index) {
+        window.location.href=contextPath +"/product/detail?menu=[[${menu_active}]]&submenu=[[${submenu_active}]]&id="+vuelist.tabledata[index].id;
+    }
 
     function shenHe(){
         document.getElementById("shenHe").className="mytitle_twozero_liactive";

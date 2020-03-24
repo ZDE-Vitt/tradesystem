@@ -18,15 +18,15 @@ mybatis:
 #七牛云-有效期3-23
 upload:
   qiniu:
-    domain: http://q638natxm.bkt.clouddn.com
-    access-key: iuurc9l3zpW5qEIn_yU4BC-3nqx8xiTZ7XOF7uQI
-    secret-key: 14Wik517ZD7FpIBrdXLR-vtlCvNmP1rTLg0zdtP5
-    bucket: themebox
+    domain: http://q7ocdbt5r.bkt.clouddn.com
+    access-key: r86JnyMZ2C_s_z34kyqswzmzkmk82v0x4Lo5_QKb
+    secret-key: _jm7Hb-aS1hBc1-F0Nqxgk48TY6RLjmZ6wvUd3P5
+    bucket: openpicspace
 qi:
-  domain: http://q6rklxhce.bkt.clouddn.com
-  accessKey: iuurc9l3zpW5qEIn_yU4BC-3nqx8xiTZ7XOF7uQI
-  secretKey: 14Wik517ZD7FpIBrdXLR-vtlCvNmP1rTLg0zdtP5
-  bucket: picuploading
+  domain: http://q7djhi4ia.bkt.clouddn.com
+  accessKey: r86JnyMZ2C_s_z34kyqswzmzkmk82v0x4Lo5_QKb
+  secretKey: _jm7Hb-aS1hBc1-F0Nqxgk48TY6RLjmZ6wvUd3P5
+  bucket: btzespace
 
 #mybatis plus配置
 mybatis-plus:
@@ -69,3 +69,9 @@ mybatis-plus:
 #    #配置JdbcTypeForNull, oracle数据库必须配置
 #    jdbc-type-for-null: 'null'
 
+#百度图片识别审核
+
+baiduimagecensor:
+  appid: 18916164
+  apikey: bY8cUrOOyBjmUtkGCE49cXPF
+  secretkey: zmQG87ROjMvHKtuRlOXGiWlWCmNcKNoQ
