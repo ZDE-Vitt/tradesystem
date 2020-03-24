@@ -1,20 +1,1252 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84c9313e-5227-49e3-97b2-f311ba399f89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="84c9313e-5227-49e3-97b2-f311ba399f89" name="Default Changelist" comment="zde:添加百度审核图片">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/designTrade.iml" beforeDir="false" afterPath="$PROJECT_DIR$/designTrade.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/config/UserLoginAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/config/UserLoginAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/SucaiListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/controller/SucaiListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/entity/Sucai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/entity/Sucai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/mapper/TagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/mapper/TagMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/SucaiListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/SucaiListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gem/tradesystem/service/impl/SucaiServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bottom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bottom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pro_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pro_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pro_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pro_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reg.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/SucaiListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/SucaiListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/designTrade.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alipay.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/TradesystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/controller/BackOrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/BackSysDict.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/SysMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/SysRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/SysUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/entity/SysUserCustom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/mapper/BackDictMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/mapper/BackOrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/mapper/BackSucaiMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/BackDictService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/BackOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/impl/BackDictServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/impl/BackOrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/back/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/AlipayConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/DialectConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/DownloadProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/SecurityConfiger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/UploadProperties$Local.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/UploadProperties$Qiniu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/UploadProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/UserLoginAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/config/UserLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/AlipayController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/BuyHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/CollectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/DownHistoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/DownloadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/IndexShowController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/OrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/PublishController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/RegController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/ShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/ShoppingCartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/SucaiListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/UserCenterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/UserRechargeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/UserSettingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/controller/WalletController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/dialect/DictDialect$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/dialect/DictDialect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/ChongzhiOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/Flow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/Jifeng.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/Sucai.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/SysDict.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/UserOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/UserOrderCustom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/entity/shopCar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/BuyHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/CollectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/DictMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/DownHistoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/IndexMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/JifengMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/RegMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/ShoppingCartMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/SucaiMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/TagMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/UserCenterMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/UserOrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/mapper/UserSettingMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/BuyHistorySerive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/CollectService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/DictService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/DownHistoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/IndexService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/JifengService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/RegService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/ShoppingCartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/SucaiListService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/SucaiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/UploadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/UserCenterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/UserOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/UserSettingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/BuyHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/CollectServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/DictServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/DownHistoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/IndexServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/JifengServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/RegServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/ShoppingCartServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/SucaiListServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/SucaiServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/UploadFileQiniu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/UserCenterServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/UserOrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/service/impl/UserSettingServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/utils/DictUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gem/tradesystem/utils/SrcUrl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/shoppingCartMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/admin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/layui.mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/view.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/ai.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/ai.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/ai.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/ai.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/14.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/15.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/16.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/17.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/18.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/19.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/20.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/21.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/22.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/23.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/24.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/25.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/26.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/27.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/28.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/29.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/30.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/31.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/32.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/33.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/34.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/35.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/36.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/37.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/38.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/39.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/40.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/41.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/42.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/43.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/44.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/45.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/46.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/47.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/48.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/49.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/51.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/52.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/53.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/54.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/55.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/56.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/57.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/58.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/59.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/60.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/61.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/62.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/63.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/64.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/65.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/66.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/67.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/68.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/69.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/70.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/71.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/face/9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/element.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/layedit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/laypage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/laytpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/lay/modules/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/layui.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/big/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/big/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/custom-select.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/logo-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/logo-light-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/logo-light-text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/logo-text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/images/users/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/bootstrap/js/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.bmp.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.circleci/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/c3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/c3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/c3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/codecov.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/component.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/chart-bubble/bubble.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/chart-bubble/c3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/chart-bubble/c3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/chart-bubble/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/exporter/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/exporter/phantom-exporter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/exporter/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/extensions/js/c3ext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/css/c3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test2_ts.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/data/c3_test_ts.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/c3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/extensions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/require.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/samples/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/samples/requirejs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/js/samples/zoom_reduction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_axis_label.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_axis_range.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_data_colors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_flow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_flow_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_legend.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_tooltip_show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_transform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_xgrid_lines.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/api_ygrid_lines.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/area_zerobased.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_padding.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_range.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_extent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_localtime.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_range_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_tick_culling.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_tick_fit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_tick_rotate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_x_tick_values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_y2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/axes_y_default.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/bar_zerobased.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/bindto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/categorized.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area_spline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area_spline_stacked.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area_stacked.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area_step.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_area_step_stacked.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_bar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_bar_space.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_bar_stacked.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_combination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_donut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_gauge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_pie.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_pie_sort.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_scatter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_spline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_step.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/chart_step_category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/custom_x_categorized.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/custom_x_scale.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/custom_xs_scale.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_columned.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_hide.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_json.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_label.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_label_format.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_load.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_load_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_region.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_region_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_rowed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/data_url.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/different_category_datasets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/domain_y.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/element.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/emptydata.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/grid_focus.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/grid_x_lines.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/grid_x_lines_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/grids.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/grids_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/interaction_enabled.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/legend.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/padding.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/padding_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/plugin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/point_r.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/point_show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/regions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/regions_timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/requirejs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/selection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/simple.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/subchart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/subchart_onbrush.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/timeseries.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/timeseries_date.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/timeseries_descendent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/timeseries_raw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/tooltip_grouped.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/tooltip_show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/zoom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/zoom_category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/zoom_onzoom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/htdocs/samples/zoom_reduction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/rollup.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.axis-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.data-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.focus-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.grid-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.load-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.region-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/api.zoom-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/arc-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/axis-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/c3-helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/c3-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/class-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/core-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/data-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/data.convert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/domain-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/grid-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/interaction-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/legend-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/shape.bar-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/shape.line-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/svg-helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/title-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/tooltip-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/type-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/spec/zoom-spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.focus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.legend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.load.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.region.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.selection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.show.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.transform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.x.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/api.zoom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/arc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/class-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/class.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/clip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/data.convert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/data.load.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/domain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/drag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/format.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/interaction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/legend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/region.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/arc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/area.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/axis.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/bar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/brush.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/chart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/focus.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/legend.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/line.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/point.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/region.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/select_drag.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/title.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/scss/tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/selection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/shape.bar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/shape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/shape.line.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/size.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/subchart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/text.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/title.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/ua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/c3-master/src/zoom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/CHANGES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/d3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/d3.min-v4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/d3/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/gmaps.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/gmaps.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/jquery.gmaps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.controls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.geofences.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.geometry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.layers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.map_types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.markers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.native_extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.overlays.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.static.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.streetview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/gmaps/lib/gmaps.utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/.bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/bower.travis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/_template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/area-as-line.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/area.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/bar-colors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/bar-no-axes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/bar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/days.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/decimal-custom-hover.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/diagonal-xlabels-bar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/diagonal-xlabels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/donut-colors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/donut-formatter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/donut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/dst.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/goals.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/lib/example.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/lib/example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/months-no-smooth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/negative.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/no-grid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/non-continuous.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/non-date.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/quarters.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/resize.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/stacked_bars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/timestamps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/updating.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/weeks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/examples/years.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/less/morris.core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.area.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.bar.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.donut.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.grid.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.hover.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/lib/morris.line.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/morris.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/morris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/area/area_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/bar/bar_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/bar/colours.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/commas_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/donut/donut_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/grid/auto_grid_lines_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/grid/set_data_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/grid/y_label_format_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/hover_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/label_series_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/line/line_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/pad_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/lib/parse_time_spec.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/specs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/support/placeholder.coffee" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/examples.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/exemplary/area0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/exemplary/bar0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/exemplary/line0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/exemplary/stacked_bar0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/morrisjs/spec/viz/visual_specs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/peity/jquery.peity.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/peity/jquery.peity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/js/perfect-scrollbar.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/js/perfect-scrollbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/perfect-scrollbar/js/perfect-scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/.bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/dev/amdDev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/dev/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/dev/require.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/raphael-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/node_modules/raphael/raphael.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/assets/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/colors/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/fontawesome-all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/icons/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/icons/font-awesome/old/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/bootstrap-switch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/breadcrumb-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/card-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/chat-app-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/common.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/contact-app-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/dashboard1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/easy-pie-chart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/error-pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/file-upload.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/float-chart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/floating-label.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/footable-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/form-icheck.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/form-pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/google-vector-map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/icon-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/inbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/login-register-lock.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/other-pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/perfect-scrollbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/pricing-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/progressbar-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/ribbon-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/stylish-tooltip.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/tab-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/table-pages.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/timeline-vertical-horizontal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/ui-bootstrap-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/user-card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/pages/widget-page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/spinners.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/canva_moving_effect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/dashboard1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/flot-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/jquery.slimscroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/perfect-scrollbar.jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/prepros-6.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/sidebarmenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/js/waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/layui.mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/font/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/14.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/15.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/16.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/17.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/18.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/19.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/20.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/21.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/22.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/23.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/24.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/25.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/26.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/27.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/28.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/29.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/30.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/31.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/32.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/33.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/34.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/35.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/36.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/37.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/38.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/39.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/40.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/41.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/42.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/43.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/44.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/45.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/46.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/47.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/48.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/49.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/50.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/51.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/52.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/53.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/54.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/55.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/56.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/57.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/58.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/59.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/60.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/61.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/62.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/63.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/64.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/65.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/66.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/67.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/68.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/69.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/70.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/71.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/images/face/9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/code.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/colorpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/element.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/laydate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/layedit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/laypage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/laytpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/rate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/transfer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/upload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/lay/modules/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/layui.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/layui/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/colors/default.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/.bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont-old.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/extras.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/spinning.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_extras.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_spinning.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/old/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/icons/font-awesome/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/bootstrap-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/breadcrumb-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/button-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/card-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/chat-app-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/common.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/contact-app-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/dashboard1.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/easy-pie-chart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/error-pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/file-upload.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/float-chart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/floating-label.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/footable-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/form-icheck.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/form-pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/google-vector-map.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/icon-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/other-pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/perfect-scrollbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/pricing-page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/stylish-tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/pages/table-pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/prepros-6.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/sidebar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/variable.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/activity.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/blog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/chat-widget.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/comment.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/common-widget.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/contact.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/feed.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/msg-box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/product-review.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/profile.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/social.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/steamline.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/to-do.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/topbar-mail.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/weather-widget.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/scss/widgets/widgets.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/back/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/down.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/reg.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/user.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/88.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ad_ctr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/alpha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/alpha1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/alpha2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/alpha3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/aqzf_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bangzhu_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bangzhu_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bank_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/banner1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bottom_gray_img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bottom_gray_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bottom_gray_img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bottom_gray_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bz_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bz_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bz_icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bz_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/bz_icon5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/chongzhi_jifeng_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/chongzhi_yue_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_bg_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_chenggong_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_chenggong_icon1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_icon_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_user_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_weixin_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_zhifubao_ewm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dashang_zhifubao_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dd_active_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dd_active_none_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_close_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_shangchuan_anli_add.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_shangchuan_anli_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_shangchuan_btnimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_shangchuan_shanchu_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_show_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_show_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/designer_show_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/detail_hidden_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/detail_shipin_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dianzan_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dianzan_icon_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dingdan_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dingdan_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dingdan_pro_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_fukuan_img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_fukuan_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_fukuan_img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_fukuan_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_jubao_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/down_zhifu_icon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/erweima.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_two_slttmicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_cha_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_ddicon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_moredown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_moreup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fabu_twozero_sucai_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/footer_icon6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ftlist_li_active_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/fwzs_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/gouwuche_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/gouwuche_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/guangbiao.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/help_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/hidden_gwc_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiebang_down_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiebang_up_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_duigou_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jiesuan_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jifen_jinxingzhong_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jifen_wancheng_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/join_banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/jubao_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/lingdang_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/lingdang_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ll_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_after_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_after_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_after_icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_after_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_after_icon5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/login_tanchu_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/me_edit_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/me_edit_icon_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/men.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon1_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon1_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon2_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon2_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon3_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon3_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon4_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon4_line1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon4_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon4_nor1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon5_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon5_line1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon5_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/nav_icon5_nor1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pingfen_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_gwcimg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_gwcimg_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_joindesinger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_name_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_scimg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_detail_scimg_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_duigou.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_duigou10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/pro_list_sexi_img9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qiandao_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qiandao_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qiandao_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qiandao_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qidai_btn.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qidai_img.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qingdan_jifen_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/qingdan_jifen_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/remen_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sanjiao_line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sanjiao_nor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/saoma_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sc_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sc_icon_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/search_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_duigou.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_duigou10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img11.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img12.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img13.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img5.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img6.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sexi_img9.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/shenfengzheng_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/shenfengzheng_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/shoucang_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/shoucang_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_icon8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/sucai_tanchuli_active_sanjiao.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/szprice_add_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/szprice_sub_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_chenggong_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_k2_add_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_k2_add_bg_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_k2_sub_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_k2_sub_bg_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_shenhe_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_shibai_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_yinhangka_black_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_yinhangka_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tixian_zhifubao_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_aqsz_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_genghuan_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_home_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_home_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_zhanshi_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_designer_ziliao_touxiang_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_fabu_bigimg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_fabu_smallimg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_fabudown.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_fabuup.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon10_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon11_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon1_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon2_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon3_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon4_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon5_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon6_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon7_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon8_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_icon9_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_join.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_join_banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_mynew_img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_mynew_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_mynew_img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_mynew_img4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/user_name_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/weibo_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/weixin_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/weixin_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/weizhi_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/women_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/wx_zhifu_ewm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/wx_zhifu_tanchu_bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xz_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xz_icon_hover.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yidashang_img1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yinhangka_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yzm_cuowu_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yzm_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/yzm_zhengque_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zcq_img1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zcq_img1_big.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zcq_img1_big_no.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zhanghu_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zhanghu_icon_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zhifubao_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ziliao_men_active_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ziliao_men_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ziliao_women_active_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/ziliao_women_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zuichangxiao_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zxshfw_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zxshfw_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zzjp_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/zzjp_icon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/bannerslider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/birthday.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/down.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery-1.11.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/xiazai.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/back/delete_list_Form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/back/order_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/back/update_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/back/user_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/back/user_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/beian.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bottom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/buyHistory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/collect.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/downHistory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/down_jifenbuzu_yuezu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/loginJump.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pro_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pro_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reg.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shoppingCart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/top.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userSetting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_center.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_dingdan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_jiesuan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_jiesuan_wxzhifu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_sucai.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_zhifu_jifenchongzhi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/TradesystemApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/back/mapper/BackOrderMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/back/service/impl/BackOrderServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/mapper/JifengMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/mapper/SucaiMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/mapper/UserOrderMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/service/SucaiListServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/service/impl/SucaiListServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gem/tradesystem/service/impl/UserOrderServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +1336,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cms-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -117,6 +1349,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gem.tradesystem.service" />
+      <recent name="com.gem.tradesystem.mapper" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.gem.tradesystem.service" />
       <recent name="com.gem.tradesystem.mapper" />
@@ -131,19 +1367,12 @@
       <recent name="com.gem.tradesystem.service.impl" />
       <recent name="com.gem.tradesystem" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\static\img" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service\impl" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\static\img" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
       <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\utils" />
-      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gem.tradesystem.back.mapper" />
@@ -152,9 +1381,12 @@
       <recent name="com.gem.tradesystem.config" />
       <recent name="com.gem.tradesystem.controller" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.gem.tradesystem.service" />
-      <recent name="com.gem.tradesystem.mapper" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\static\img" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\controller" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\resources\templates" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service\impl" />
+      <recent name="D:\cjam\workspace\IdeaProjects\designTrade\src\main\java\com\gem\tradesystem\service" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.TradesystemApplication">
@@ -329,7 +1561,12 @@
       <workItem from="1584451261792" duration="755000" />
       <workItem from="1584494256874" duration="1212000" />
       <workItem from="1584496844520" duration="4546000" />
-      <workItem from="1584524495789" duration="8159000" />
+      <workItem from="1584524495789" duration="8545000" />
+      <workItem from="1584662504596" duration="4801000" />
+      <workItem from="1584848390514" duration="8908000" />
+      <workItem from="1584876118577" duration="1588000" />
+      <workItem from="1584941152726" duration="1494000" />
+      <workItem from="1585013680587" duration="19017000" />
     </task>
     <task id="LOCAL-00001" summary="xzz-2-19:第一次提交">
       <created>1582074635277</created>
@@ -478,7 +1715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584501073982</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="zde:添加百度审核图片">
+      <created>1584537626245</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1584537626245</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +1813,8 @@
     <MESSAGE value="zde:修改上传描述和名称的字数限制&#10;修改素材列表会读取del_Flag 值为1的素材&#10;修改插入时标签的bug" />
     <MESSAGE value="zde:修改素材列表二级菜单会读取del_Flag 值为1的素材&#10;修改了用户中心跳转的bug" />
     <MESSAGE value="zde:修改首页轮播图" />
-    <option name="LAST_COMMIT_MESSAGE" value="zde:修改首页轮播图" />
+    <MESSAGE value="zde:添加百度审核图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="zde:添加百度审核图片" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Inspections" timestamp="1582679594978">
@@ -584,11 +1829,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="416" y="397" width="412" height="246" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583221920571" />
-    <state x="168" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1584359715804">
+    <state x="168" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1585037416344">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583138221537" />
-    <state x="168" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1584359715804" />
+    <state x="168" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1585037416344" />
     <state x="690" y="295" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1583137864093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -626,21 +1871,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584003794894" />
-    <state x="92" y="82" width="1467" height="821" key="CommitChangelistDialog2" timestamp="1584501071415">
+    <state x="92" y="82" width="1467" height="821" key="CommitChangelistDialog2" timestamp="1585039419180">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="516" y="98" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582686581921" />
-    <state x="92" y="82" width="1467" height="821" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1584501071415" />
+    <state x="92" y="82" width="1467" height="821" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1585039419180" />
     <state x="136" y="146" width="1536" height="855" key="DiffContextDialog" timestamp="1584418734750">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="136" y="141" width="1536" height="855" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582689034553" />
     <state x="136" y="146" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584418734750" />
-    <state x="1152" y="331" key="FileChooserDialogImpl" timestamp="1584537467192">
+    <state x="1152" y="331" key="FileChooserDialogImpl" timestamp="1584878012376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="915" y="327" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582963073819" />
-    <state x="1152" y="331" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584537467192" />
+    <state x="1152" y="331" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584878012376" />
     <state x="795" y="361" key="Gitee.ShareDialog" timestamp="1584422743490">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -649,46 +1894,46 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="806" y="285" width="286" height="292" key="Github.ShareDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584423935094" />
-    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1585039227857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227857" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1585039227856">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1584537356552">
+    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227856" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1585039227856">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356552" />
-    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227856" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1585039227857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182806" />
-    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.1.bottom" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227857" />
+    <state width="1877" height="232" key="GridCell.Tab.1.bottom" timestamp="1585039227858">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1877" height="284" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.1.center" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227858" />
+    <state width="1877" height="232" key="GridCell.Tab.1.center" timestamp="1585039227857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1877" height="284" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.1.left" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227857" />
+    <state width="1877" height="232" key="GridCell.Tab.1.left" timestamp="1585039227857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1877" height="284" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
-    <state width="1877" height="284" key="GridCell.Tab.1.right" timestamp="1584537356553">
+    <state width="1877" height="232" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227857" />
+    <state width="1877" height="232" key="GridCell.Tab.1.right" timestamp="1585039227857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="243" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583142182807" />
-    <state width="1877" height="284" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584537356553" />
+    <state width="1877" height="232" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585039227857" />
     <state width="1442" height="313" key="GridCell.Tab.2.bottom" timestamp="1583850147149">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -731,27 +1976,27 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="550" y="297" key="SpringBootCustomization/0.0.1920.1080@0.0.1920.1080" timestamp="1583225504402" />
-    <state x="503" y="271" key="Vcs.Push.Dialog.v2" timestamp="1584501325044">
+    <state x="503" y="271" key="Vcs.Push.Dialog.v2" timestamp="1584537637857">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="404" y="444" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582686586700" />
-    <state x="503" y="271" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1584501325044" />
+    <state x="503" y="271" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1584537637857" />
     <state x="759" y="317" key="chooseDestDirectoryDialog" timestamp="1583460501536">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="759" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1583460501536" />
-    <state x="763" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1584524494575">
+    <state x="763" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1585013720349">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="763" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584524494575" />
+    <state x="763" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585013720349" />
     <state x="565" y="151" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583238183765">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="565" y="151" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1583238183765" />
-    <state x="687" y="240" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1584418759932">
+    <state x="687" y="240" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1585039344236">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="687" y="240" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584418759932" />
+    <state x="687" y="240" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585039344236" />
     <state x="752" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584424348921">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -782,16 +2027,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="702" y="147" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582963251107" />
-    <state x="616" y="249" key="run.anything.popup" timestamp="1584536820232">
+    <state x="616" y="249" key="run.anything.popup" timestamp="1584867232690">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582184566013" />
-    <state x="616" y="249" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584536820232" />
-    <state x="623" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1584165720123">
+    <state x="616" y="249" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584867232690" />
+    <state x="623" y="234" width="672" height="705" key="search.everywhere.popup" timestamp="1585016930364">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582685503432" />
-    <state x="623" y="234" width="672" height="705" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584165720123" />
+    <state x="623" y="234" width="672" height="705" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1585016930364" />
     <state x="226" y="203" key="spring file set editor" timestamp="1583224582256">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

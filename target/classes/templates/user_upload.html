@@ -113,7 +113,7 @@
                         <tr>
                             <td class="fabu_twozero_td1 fabu_twozero_tdtop">大小：</td>
                             <td class="fabu_twozero_td2">
-                                <input type="text" name="width" />&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" name="heigth" />
+                                <input type="text" readonly id="width" name="width" />&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" readonly id="heigth" name="heigth" />
                             </td>
                         </tr>
 
@@ -244,6 +244,7 @@
 
     layui.use('upload', function(){
         var upload = layui.upload;
+        var layer = layui.layer;
 
         //执行实例
         var uploadInst = upload.render({
@@ -252,11 +253,16 @@
             ,done: function(res){
                 //上传完毕回调
                 //将图片路径放到film实体的图片路径属性中
-                console.log("success" + res.url);
-                $("#picUrl").val(res.url);
-                //将图片路径放到img标签中
-                $("#queue_img").css("display","block");
-                $("#queue_img").attr("src", res.url);
+                if(res.status == 'ok'){
+                    $("#picUrl").val(res.url);
+                    //将图片路径放到img标签中
+                    $("#queue_img").css("display","block");
+                    $("#queue_img").attr("src", res.url);
+                }else{
+                    layer.msg(res.msg,{
+                        time:3000
+                    })
+                }
             }
             ,error: function(res){
                 //请求异常回调
@@ -264,6 +270,20 @@
             }
         });
     });
+
+    // 获取图片真实高度
+    function getImageWidth(url,callback) {
+        var img = new Image();
+        img.src = url;
+        // 如果图片被缓存，则直接返回缓存数据
+        if (img.complete) {
+            callback(img.width, img.height);
+        } else {
+            img.onload = function () {
+                callback(img.width, img.height);
+            }
+        }
+    }
 
     layui.use('upload', function(){
         var upload = layui.upload;
@@ -275,11 +295,24 @@
             ,done: function(res){
                 //上传完毕回调
                 //将图片路径放到film实体的图片路径属性中
-                console.log("success" + res.url);
-                $("#save").val(res.url);
-                //将图片路径放到img标签中
-                $("#queue_img2").css("display","block");
-                $("#queue_img2").attr("src", res.iurl);
+                if(res.status == 'ok'){
+                    $("#save").val(res.url);
+                    //将图片路径放到img标签中
+                    $("#queue_img2").css("display","block");
+                    $("#queue_img2").attr("src", res.iurl);
+                    $(function(){
+                        getImageWidth(res.iurl,function(w,h){
+                            $("#width").val(w);
+                            // $("#width").attr("text" , w);
+                            $("#heigth").val(h);
+                            // $("#heigth").attr("text" , w);
+                        });
+                    });
+                }else{
+                    layer.msg(res.msg,{
+                        time:3000
+                    })
+                }
             }
             ,error: function(res){
                 //请求异常回调

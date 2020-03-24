@@ -21,6 +21,7 @@ public class UserLoginAdapter implements WebMvcConfigurer {
                 .excludePathPatterns("/index/login")//排除用户点击登录按钮
                 .excludePathPatterns("/reg/**")//排除注册页面
                 .excludePathPatterns("/index/register")//跳转到注册页面
-                .excludePathPatterns("/product/**");//排除素材展示页面
+                .excludePathPatterns("/product/**")//排除素材展示页面
+                .excludePathPatterns("/shopCar/**");//排除未登录点击购物车
     }
 }

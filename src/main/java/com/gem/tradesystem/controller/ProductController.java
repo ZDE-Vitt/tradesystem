@@ -3,6 +3,7 @@ package com.gem.tradesystem.controller;
 import com.gem.tradesystem.entity.Sucai;
 import com.gem.tradesystem.entity.User;
 import com.gem.tradesystem.service.SucaiService;
+import com.gem.tradesystem.service.UserSettingService;
 import com.gem.tradesystem.utils.SrcUrl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
@@ -31,10 +32,15 @@ public class ProductController {
     private SucaiService sucaiService;
     @Autowired
     private SrcUrl srcUrl;
+    @Autowired
+    private UserSettingService userSettingService;
 
     @RequestMapping("/detail")
     public String detail(Integer id,HttpServletRequest request,Model model,HttpSession session) throws UnsupportedEncodingException {
 //        String sid=request.getParameter("id");
+        User user = new User();
+        User sucaiuser = new User();
+        Sucai sucai = new Sucai();
         String menuName=request.getParameter("menu");
         String submenuName=request.getParameter("submenu");
         if(menuName!=null&&!("".equals(menuName))){
@@ -46,17 +52,18 @@ public class ProductController {
 
         if(id!=null){
 //            Integer id=Integer.parseInt(sid);
-            Sucai sucai=sucaiService.getOneById(id);
-
+            sucai=sucaiService.getOneById(id);
             String srcurl=srcUrl.getSrcUrl(sucai);//动态拼接数据库中存储的路径后
             sucai.setSave(srcurl);
 //            System.out.println(sucai);
             List<String> taglist=sucaiService.getTags(id);
-            model.addAttribute("sucai",sucai);
-            model.addAttribute("taglist",taglist);
 
             //已登录用户的收藏已否
-            User user= (User) session.getAttribute("user");
+            user= (User) request.getSession().getAttribute("user");
+
+            //获取作者信息
+            sucaiuser = userSettingService.selectUserById(sucai.getUserid());
+
             if(user!=null){
                 Integer uid=user.getId();
                 List<Integer> user_favlist =sucaiService.getUserFavList(uid);
@@ -65,10 +72,23 @@ public class ProductController {
                 List<Integer> user_shopcar=sucaiService.getUserShoppingCar(uid);
                 model.addAttribute("shopcar",user_shopcar);
             }
+            model.addAttribute("sucai",sucai);
+            model.addAttribute("taglist",taglist);
+            model.addAttribute("user",sucaiuser);
 
         }
 
-        return "pro_detail";
+        System.out.println("sucai=====================>" + sucai);
+
+        if(null != user){
+            if (user.getId() == sucai.getUserid()){
+                List<String> subtag= sucaiService.getAllSubMenu();
+                model.addAttribute("tags",subtag);
+                return "pro_edit";
+            }else return "pro_detail";
+        }else {
+            return "pro_detail";
+        }
     }
 
     @RequestMapping("/list")//显示pro_list.html

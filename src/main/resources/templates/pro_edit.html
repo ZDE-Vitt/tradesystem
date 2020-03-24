@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>详情页</title>
+		<link rel="stylesheet" th:href="@{/css/layout.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/assets/css/layui.css}" />
+		<script type="text/javascript" th:src="@{/assets/layui.all.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bannerslider.js}"></script>
+		<script type="text/javascript" th:src="@{/js/layout.js}"></script>
+	</head>
+
+	<body>
+	<input type="hidden" th:if="${session.user}" th:value="${session.user.username}"/>
+	<input type="hidden" id="user_id" th:if="${session.user}" th:value="${session.user.id}"/>
+	<div th:insert="~{top :: nav}"></div>
+	<form class="layui-form" id="form" post="unset">
+		<input type="hidden" name="id" id="id" th:value="${sucai.id}">
+		<input type="hidden" name="size" id="size" th:value="${sucai.size}"/>
+		<div  class="pro_wrap auto">
+			<h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > <a href="#" th:href="@{/product/list}">分类</a> <span th:if="${menu}"> > </span> <a href="#" th:text="${menu}" th:href="@{/product/list(menu=${menu})}">一级菜单</a> <span th:if="${submenu}"> > </span> <a href="#" th:if="${submenu}" th:text="${submenu}" th:href="@{/product/list(menu=${menu},submenu=${submenu})}">二级菜单</a> > [[${sucai.name}]]</h2>
+			<div class="pro_detail_wrap">
+				<div class="pro_detail_left left" style="height: 760px">
+					<h2>[[${sucai.name}]]<span>发布时间：[[${#dates.format(sucai.createtime,"yyyy-MM-dd")}]]</span></h2>
+					<div class="pro_detail_img" id="pic_wrap"><!--加了个id-->
+						<div id="float_box"></div><!--加了个id-->
+						<img id="queue_img" th:src="${sucai.picUrl}" />
+						<div class="fabu_twozero_title left">
+							<div class="layui-input-block">
+								<div id="queue">
+									<input type="hidden" name="picUrl" id="picUrl" th:value="${sucai.picUrl}">
+								</div><br>
+								<div class="pro_detail_btn">
+									<a class="pro_detail_xz left layui-btn" id="sucai-pic">修改预览图</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pro_detail_title">
+						<textarea rows="3" cols="90" name="description" th:text="${sucai.description}" class="fabu_twozero_textarea1 fabu_twozero_textarea1sm" onkeyup="changeLength(this,200)"></textarea>
+						<div class="fabu_twozero_shengyu">
+							修改素材内容说明：最多200字（<label id="ss_sz">0</label>/200）
+						</div>
+					</div>
+
+					<div class="pro_detail_biaoqian">
+						<select name="tagName">
+							<option th:each="tag : ${tags} " th:value="${tag}" th:if="${sucai.tagName} eq ${tag}" selected>[[${tag}]]</option>
+							<option th:each="tag : ${tags} " th:value="${tag}" th:if="${sucai.tagName} ne ${tag}" >[[${tag}]]</option>
+<!--							<option th:value="${sucai.tagName}" selected>[[${sucai.tagName}]]</option>-->
+						</select>
+					</div>
+				</div>
+
+				</div>
+
+				<div class="pro_detail_right right">
+					<div class="pro_detail_name">
+						<div class="pro_detail_m left"><img th:src="@{/img/pro_detail_name_img.jpg}" /></div>
+<!--						<div class="pro_detail_n " th:text="${sucai.name}">番茄设计部落</div>-->
+						<input onkeyup="changenameLength(this,15)" type="text" name="name" th:value="${sucai.name}" />
+						<div class="fabu_twozero_shengyu">
+							修改素材名称，15字以内（<label id="sn_sz">0</label>/15）
+						</div>
+						<div class="pro_detail_b" th:text="${user.username}">原创设计师</div>
+					</div>
+					<div class="pro_detail_price">
+						价格：<input type="text" name="money" th:value="${sucai.money}" />
+					</div>
+					<div style="margin-left: 30px;margin-bottom: 10px">
+						<input type="hidden" name="save" id="save" th:value="${sucai.save}">
+						<img style="display:none" width="240px" id="queue_img2" height="240px" >
+					</div>
+					<div class="pro_detail_btn">
+						<a class="pro_detail_xz left layui-btn" style="width:100px" id="sucai-pic2">修改原图</a>
+						<a class="pro_detail_xz left" style="width:100px" lay-submit lay-filter="save">保存修改</a>
+					</div>
+					<div class="pro_detail_caozuo">
+						<div class="pro_detail_czcontent detail_caozuo_wrap">
+							<a class="caozuo_sc" th:if="${favlist}"  th:classappend="${#lists.contains(favlist,sucai.id)} ? 'favored':''" href="javascript:void(0);" th:text="${#lists.contains(favlist,sucai.id)} ?'已收藏('+${sucai.favnum}+')':'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_sc" th:unless="${favlist}" href="javascript:void(0);" th:text="'收藏('+${sucai.favnum}+')'">收藏（2333）</a><a class="caozuo_xz" href="#">下载（[[${sucai.downnum}]]）</a>
+<!--							<span class="caozuo_ll" href="#">浏览</span>-->
+						</div>
+					</div>
+					<div class="pro_detail_miaoshu">
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td class="pro_detail_td">编号</td>
+								<td colspan="2" th:text="${sucai.num}">1999302</td>
+							</tr>
+<!--							<tr>-->
+<!--								<td class="pro_detail_td">分类</td>-->
+<!--								<td colspan="2">原创-图片素材-DM</td>-->
+<!--							</tr>-->
+							<tr>
+								<td class="pro_detail_td">格式</td>
+								<td colspan="2" th:text="${sucai.suffix}">psd jpg</td>
+							</tr>
+<!--							<tr>-->
+<!--								<td class="pro_detail_td">大小</td>-->
+<!--								<td colspan="2">1998KB</td>-->
+<!--							</tr>-->
+							<tr>
+								<td class="pro_detail_td">尺寸</td>
+
+								<td class="pro_detail_td2" th:text="${sucai.size}+' 像素'">1024*860像素</td>
+<!--								<td><span><a href="#">举报</a></span></td>-->
+							</tr>
+						</table>
+					</div>
+					<div class="pro_detail_joindesinger"><a href="#" th:href="@{/index/register}"><img th:src="@{/img/pro_detail_joindesinger.jpg}" /></a></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+	</form>
+	<div th:insert="~{bottom :: nav}"></div>
+	</body>
+	<script type="text/javascript">
+		//编辑发布页textarea剩余字数JS
+		function changenameLength(obj,lg){
+			var len = $(obj).val();
+			$(obj).next().find("span").text(len.length);
+			$(obj).next().find("label").text(len.length);
+			//$(obj).next().find("span").text(lg-len.length);//剩余字数
+			if(len.length>=lg){
+				$(obj).next().find("span").text(70);
+				$(obj).next().find("label").text(10);
+				$("#sn_sz").text(15);
+				$(obj).val(len.substring(0,lg));
+			}
+		}
+
+		layui.use(['form'], function () {
+			var form = layui.form
+					, layer = layui.layer;
+
+			form.on('submit(save)', function (data) {
+				var data = $("#form").serialize();
+				$.ajax({
+					url: '[[${#request.getContextPath()}]]' + "/sucailist/sucaiupdate",
+					type: "post",
+					data: data,
+					async: false,
+					success: function (data) {
+						if (data.row == '1') {
+							layer.msg('修改成功', {icon: 1},function () {
+								$().ready(function() {
+									window.location.reload();
+								})
+							})
+						} else {
+							layer.alert("失败");
+						}
+					}
+				});
+				return false;
+			})
+			form.render();
+		});
+
+		layui.use('upload', function(){
+			var upload = layui.upload;
+			var layer = layui.layer;
+
+			//执行实例
+			var uploadInst = upload.render({
+				elem: '#sucai-pic' //绑定元素
+				,url: '[[${#request.getContextPath()}]]' + '/sucailist/file' //上传接口
+				,done: function(res){
+					//上传完毕回调
+					//将图片路径放到film实体的图片路径属性中
+					if(res.status == 'ok'){
+						$("#picUrl").val(res.url);
+						//将图片路径放到img标签中
+						$("#queue_img").attr("src", res.url);
+					}else{
+						layer.msg(res.msg,{
+							time:3000
+						})
+					}
+				}
+				,error: function(res){
+					//请求异常回调
+					console.log("error" + res.url);
+				}
+			});
+		});
+
+		// 获取图片真实高度
+		function getImageWidth(url,callback) {
+			var img = new Image();
+			img.src = url;
+			// 如果图片被缓存，则直接返回缓存数据
+			if (img.complete) {
+				callback(img.width, img.height);
+			} else {
+				img.onload = function () {
+					callback(img.width, img.height);
+				}
+			}
+		}
+
+		layui.use('upload', function(){
+			var upload = layui.upload;
+
+			//执行实例
+			var uploadInst = upload.render({
+				elem: '#sucai-pic2' //绑定元素
+				,url: '[[${#request.getContextPath()}]]' + '/sucailist/file2' //上传接口
+				,done: function(res){
+					//上传完毕回调
+					//将图片路径放到film实体的图片路径属性中
+					if(res.status == 'ok'){
+						$("#save").val(res.url);
+						//将图片路径放到img标签中
+						$("#queue_img2").css("display","block");
+						$("#queue_img2").attr("src", res.iurl);
+
+						$(function(){
+							getImageWidth(res.iurl,function(w,h){
+								var sizee = w + "X" + h ;
+								$("#size").val(sizee);
+							});
+						});
+
+					}else{
+						layer.msg(res.msg,{
+							time:3000
+						})
+					}
+				}
+				,error: function(res){
+					//请求异常回调
+					console.log("error" + res.url);
+				}
+			});
+		});
+
+
+
+	</script>
+</html>

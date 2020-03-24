@@ -85,9 +85,25 @@ public class SucaiListController {
     @RequestMapping("/sucaiupload")
     public Map<String, Integer> sucaiupload(Sucai sucai, String tagname, String width, String heigth, HttpServletRequest request) {
 
-        System.out.println("sucai=================>" + sucai);
+//        System.out.println("sucai=================>" + sucai);
 
         Integer row = sucaiListService.sucaiupload(sucai, tagname, width, heigth, request);
+        User user = (User) request.getSession().getAttribute("user");
+        Map<String, Integer> map = sucaiListService.getNum(user.getId());
+
+        map.put("row", row);
+        return map;
+    }
+
+    @ResponseBody
+    @RequestMapping("/sucaiupdate")
+    public Map<String, Integer> sucaiupdate(Sucai sucai, String tagName,HttpServletRequest request) {
+
+//        System.out.println("sucai=================>" + sucai);
+//        System.out.println("tagname=================>" + tagName);
+
+        Integer row = sucaiListService.update(sucai,tagName,request);
+
         User user = (User) request.getSession().getAttribute("user");
         Map<String, Integer> map = sucaiListService.getNum(user.getId());
         map.put("row", row);

@@ -43,7 +43,7 @@ public class OrderController {
         Page<UserOrderCustom> userOrder = null;
         User user = null;
         if (null == curr) curr = 1;
-        if (null == limit) limit = 10;
+        if (null == limit) limit = 5;
         if (null == status) status = 0;
 
         if (null != request.getSession().getAttribute("user")) {
@@ -83,7 +83,7 @@ public class OrderController {
 
         //重新加载数据
         if (null == curr) curr = 1;
-        if (null == limit) limit = 10;
+        if (null == limit) limit = 5;
         if (null == status) status = 0;
 
         if (null != request.getSession().getAttribute("user")) {
@@ -111,8 +111,6 @@ public class OrderController {
     @ResponseBody
     @RequestMapping("/payone")
     public String payone(HttpServletRequest request , Integer sucaiMoney , Integer userOrderid){
-        System.out.println("controller-==============================>"+userOrderid);
-
         User user = (User) request.getSession().getAttribute("user");
         if (sucaiMoney > user.getAccount()){
             return "error";

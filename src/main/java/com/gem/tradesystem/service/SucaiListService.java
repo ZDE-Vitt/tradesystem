@@ -28,4 +28,6 @@ public interface SucaiListService {
     Map<String , Integer> getNum(Integer userid);
 
     Integer deleteOne(Integer id);
+
+    Integer update(Sucai sucai, String tagName, HttpServletRequest request);
 }

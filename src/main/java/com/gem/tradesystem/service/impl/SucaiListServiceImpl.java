@@ -142,4 +142,15 @@ public class SucaiListServiceImpl implements SucaiListService {
     public Integer deleteOne(Integer id) {
         return sucaiMapper.deleteById(id);
     }
+
+    @Override
+    public Integer update(Sucai sucai, String tagName, HttpServletRequest request) {
+        if (tagName != null){
+            sucai.setTagid(tagMapper.getid(tagName));
+        }
+        QueryWrapper<Sucai> queryWrapper =new QueryWrapper<>();
+        queryWrapper.eq("id",sucai.getId());
+//        System.out.println("=========================>" + sucai);
+        return sucaiMapper.update(sucai,queryWrapper);
+    }
 }

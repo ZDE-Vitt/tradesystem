@@ -70,7 +70,8 @@
 <!--		</div>-->
 
 		<!--1200结构-->
-		<div class="pro_wrap auto">
+
+		<div  class="pro_wrap auto">
 			<h2 class="weizhi_title">位置：<a href="#" th:href="@{/}">首页</a> > <a href="#" th:href="@{/product/list}">分类</a> <span th:if="${menu}"> > </span> <a href="#" th:text="${menu}" th:href="@{/product/list(menu=${menu})}">一级菜单</a> <span th:if="${submenu}"> > </span> <a href="#" th:if="${submenu}" th:text="${submenu}" th:href="@{/product/list(menu=${menu},submenu=${submenu})}">二级菜单</a> > [[${sucai.name}]]</h2>
 			<div class="pro_detail_wrap">
 				<div class="pro_detail_left left">
@@ -100,340 +101,10 @@
 					<img src="" th:src="${sucai.picUrl}" id="big_img" mirror>
 				</div>
 				<div class="pro_detail_right right">
-					<script type="text/javascript">
-						$(function(){
-
-							$(".pro_detail_gwc").on("click",
-									function () {
-										var ndiv=$(this);//获取要加入购物车的元素的标签
-										var id=[[${sucai.id}]];
-										var nclazz=ndiv.hasClass("added");//判断是否已加入购物车
-										// console.log(nclazz);
-
-										if(ndiv.hasClass("added")){
-											//已加入 nclazz:true
-											layui.use('layer', function() { //独立版的layer无需执行这一句
-												var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-
-												//触发事件
-												layui.use('layer', function() { //独立版的layer无需执行这一句
-													var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-													layer.msg('已经加入购物车，不可重复添加哟！');
-												});
-											});
-
-										}else{//未加入购物车，则进行加入操作 nclazz:false
-											$.ajax(
-													{
-														url:contextPath +"/shopCar/add",
-														data:{"sid":id,"flag":nclazz},
-														// dataType:"json",
-														type:"post",
-														success:function(res){
-															// alert(sucai.favnum);
-															if(res){
-																if(res=="success"){//用户不曾下过该素材的订单
-																	ndiv.addClass("added");
-																	// layui.use('layer', function() { //独立版的layer无需执行这一句
-																	// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-
-																		//触发事件
-																		layui.use('layer', function() { //独立版的layer无需执行这一句
-																			var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-																			layer.msg('以成功添加购物车！可前往购物车查看结算');
-																		});
-																	// });
-																}
-																if(res=="failed"){
-																	// ndiv.addClass("added");
-																	// layui.use('layer', function() { //独立版的layer无需执行这一句
-																	// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-
-																		//触发事件
-																		layui.use('layer', function() { //独立版的layer无需执行这一句
-																			var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-																			layer.msg('你已经将有该素材相关的订单咯，无需再添加购物车！可前往订单记录中查看详情！');
-																		});
-																	// });
-
-																}
-															}else {
-																// alert(sucai);
-																showDiv();
-															}
-														}
-													}
-											);
-
-										}
-
-									}
-							);
-
-							// pro_detail_sc
-							$(".pro_detail_sc").on("click",
-									function () {
-										var picfav=$(this);//获取当前点赞的元素标签
-										var ndiv=$(".caozuo_sc");
-										var id=[[${sucai.id}]];
-										console.log(id);
-
-										var nclazz=picfav.hasClass("favored");//判断是否已被点赞
-										// 	console.log(nclazz);
-										if(picfav.hasClass("favored")){
-											//已点赞，则取消赞， nclazz:true
-											$.ajax(
-													{
-														url:contextPath+"/product/fav/addfav",
-														data:{"sid":id,"fav":nclazz},
-														// dataType:"json",
-														type:"post",
-														success:function(sucai){
-															// alert(sucai.favnum);
-															ndiv.text("收藏("+sucai.favnum+")");
-															ndiv.removeClass("favored");
-															picfav.removeClass("favored");
-														}
-													}
-											);
-
-										}else{//未被点赞，则进行点赞操作 nclazz:false
-											$.ajax(
-													{
-														url: contextPath +"/product/fav/addfav",
-														data:{"sid":id,"fav":nclazz},
-														// dataType:"json",
-														type:"post",
-														success:function(sucai){
-															// alert(sucai.favnum);
-															if(sucai){
-																ndiv.text("已收藏("+sucai.favnum+")");
-																ndiv.addClass("favored");
-																picfav.addClass("favored");
-															}else {
-																// alert(sucai);
-																showDiv();
-															}
-														}
-													}
-											);
-
-										}
-									}
-							);
-
-							$(".caozuo_sc").on("click",
-									function () {
-										var ndiv=$(this);//获取隐藏div中当前点赞的元素标签
-										var picfav=$(".pro_detail_sc");
-										var id=[[${sucai.id}]];
-										console.log(id);
-
-										var nclazz=ndiv.hasClass("favored");//判断是否已被点赞
-									// 	console.log(nclazz);
-										if(ndiv.hasClass("favored")){
-											//已点赞，则取消赞， nclazz:true
-											$.ajax(
-													{
-														url:contextPath +"/product/fav/addfav",
-														data:{"sid":id,"fav":nclazz},
-														// dataType:"json",
-														type:"post",
-														success:function(sucai){
-															// alert(sucai.favnum);
-															ndiv.text("收藏("+sucai.favnum+")");
-															ndiv.removeClass("favored");
-															picfav.removeClass("favored");
-														}
-													}
-											);
-
-										}else{//未被点赞，则进行点赞操作 nclazz:false
-											$.ajax(
-													{
-														url:contextPath +"/product/fav/addfav",
-														data:{"sid":id,"fav":nclazz},
-														// dataType:"json",
-														type:"post",
-														success:function(sucai){
-															// alert(sucai.favnum);
-															if(sucai){
-																ndiv.text("已收藏("+sucai.favnum+")");
-																ndiv.addClass("favored");
-																picfav.addClass("favored");
-															}else {
-																// alert(sucai);
-																showDiv();
-															}
-														}
-													}
-											);
-
-										}
-									}
-							);
-
-						});
-
-						var pic_wrap = document.getElementById('pic_wrap')//原图
-								float_box = document.getElementById("float_box"),//原图上的放大镜，大小应该和比例有关
-								show = document.getElementById('show');//展示放大图的区域
-						big_img = document.getElementById("big_img");//放大的图 大小应该是原图*比例 目前2倍
-						//鼠标移入事件，让放大镜和放大区显示！
-						pic_wrap.onmouseover = function() {
-							var pich=pic_wrap.offsetHeight;
-							var picw=pic_wrap.offsetWidth;
-							var big_img_w=picw*2;
-							var big_img_h=pich*2;
-							big_img.style.width=big_img_w+"px";
-							big_img.style.height=big_img_h+"px";//设置放大的图的大小
-							var show_h=$("#show").height();
-							var show_w=$("#show").width();
-							var scale_h=(show_h/big_img_h).toFixed(2);
-							var scale_w=(show_w/big_img_w).toFixed(2);
-							float_box.style.height=pich*scale_h+"px";
-							float_box.style.width=picw*scale_w+"px";//设置移块的大小
-							// console.log("pic width:"+picw+"pic height:"+pich);
-							// console.log("show width:"+show_h+"pic height:"+show_h);
-							// console.log("scale_h:"+scale_h+"scale_w:"+scale_w);
-							float_box.style.display = "block";
-							show.style.display = "block";
-						}
-						//鼠标不断移动时触发，实时更新放大镜得到的图片
-						pic_wrap.onmousemove = function(event) {
-							floatMove(float_box, pic_wrap, big_img,show,event);
-							// showPic();
-						}
-						//鼠标移出后，放大镜和放大区隐藏
-						pic_wrap.onmouseout = function() {
-							float_box.style.display = "none";
-							show.style.display = "none";
-						}
-						//运动框架，控制放大镜在原图中的位置！
-						function floatMove(argu1, argu2,argu3,argu4, event) {
-							var fdiv=$(argu1);
-							var picdiv=$(argu2);
-							var offset_pic=picdiv.offset();//图片在页面的偏移
-							var pic_w=picdiv.width();
-							var pic_h=picdiv.height();
-							var float_w=fdiv.width();
-							var float_h=fdiv.height();
-							var x = event.pageX - offset_pic.left-float_w/2;//在容器里的偏移
-							var y = event.pageY - offset_pic.top-float_h/2;
-
-							var minleft=0,mintop=0;//float最小最大的偏移位置
-							var maxleft=pic_w-float_w;
-							var maxtop=pic_h-float_h;
-							var fleft,ftop;
-
-							if(x < minleft){
-								fdiv.offset({"left":offset_pic.left+minleft});
-								fleft=minleft;
-							}else if(x>maxleft){
-								fdiv.offset({"left":offset_pic.left+maxleft});
-								fleft=maxleft;
-							}else {
-								fdiv.offset({"left":offset_pic.left+x});
-								fleft=x;
-							}
-							if(y<mintop){
-								fdiv.offset({"top":offset_pic.top+mintop});
-								ftop=mintop;
-							}else if(y>maxtop){
-								fdiv.offset({"top":offset_pic.top+maxtop});
-								ftop=maxtop;
-							}else {
-								fdiv.offset({"top":offset_pic.top+y});
-								ftop=y;
-							}
-							// console.log("x="+x+",y="+y);
-							// console.log("float_w="+float_w+",float_h="+float_h);
-							// console.log("fleft="+fleft+",ftop="+ftop);
-							var bigpic=$(argu3);//获取大图对象
-							// console.log(bigpic);
-							var showdiv=$(argu4);
-							var show_off_h=showdiv.offset().top;
-							var show_off_w=showdiv.offset().left;
-							// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
-							bigpic.offset({"left":(show_off_w-fleft*2),"top":(show_off_h-ftop*2)});
-							// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
-							// bigpic.offset({"left":(-fleft*2)+"px","top":(-ftop*2)+"px"});
-							// bigpic.offset({"left":fleft*2,"top":ftop*2});
-
-						}
-						//点击下载后，若登录，则跳转，不然就弹出登录框
-						function jumpToDownload(id) {
-							console.log("进入了js方法");
-							// var test="[[${session.user}]]";
-							// console.log(test);
-							if("[[${session.user}]]"){//用户已登录
-								var uid=$("#user_id").val();
-								$.ajax(
-										{
-											url:contextPath +"/product/isPay",
-											data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
-											// dataType:"json",
-											type:"post",
-											success:function(flag){
-												console.log(flag);
-												if(flag){//已购买
-													// window.open(`${filePath}?attname=${fileName}`,'_self');
-													//获取下载地址
-													layui.use('layer', function() { //独立版的layer无需执行这一句
-														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-														layer.msg('该素材已经购买，将直接下载！');
-													});
-													$.ajax(
-															{
-																url:contextPath +"/product/getDownUrl",
-																data:{"sid":id},//传递参数：素材id和用户id
-																// dataType:"json",
-																type:"post",
-																success:function(url){
-																	console.log(url);
-																	// console.log(sucai.save+"?attname="+sucai.name+".jpg");
-																	// window.open(sucai.save+"?attname="+sucai.name+".jpg","_self");
-																	window.open(url,"_self");
-																	$.ajax(
-																			{
-																				url:contextPath +"/product/addDownNum",
-																				data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
-																				// dataType:"json",
-																				type:"post",
-																				success:function(sucai){
-																					// console.log(sucai);
-																					// alert(url);
-																					$(".caozuo_xz").text("下载("+sucai.downnum+")");
-																				}
-																			}
-																	);
-																}
-															}
-													);
-
-												}else {
-													layui.use('layer', function() { //独立版的layer无需执行这一句
-														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
-														layer.msg('该素材还未购买，无法直接进行下载，请先添加购物车进行购买！');
-													});
-												}
-											}
-										}
-								);
-
-
-								// window.location.href=contextPath+"/product/download?id="+id;
-							}else{
-								showDiv();
-							}
-						}
-
-					</script>
-
 					<div class="pro_detail_name">
 						<div class="pro_detail_m left"><img th:src="@{/img/pro_detail_name_img.jpg}" /></div>
 						<div class="pro_detail_n " th:text="${sucai.name}">番茄设计部落</div>
-						<div class="pro_detail_b" th:text="${sucai.author}">原创设计师</div>
+						<div class="pro_detail_b" th:text="${user.username}">原创设计师</div>
 					</div>
 					<div class="pro_detail_price">
 						价格：<span>¥[[${sucai.money}]]</span>
@@ -483,10 +154,10 @@
 				</div>
 				<div class="clear"></div>
 			</div>
-
 		</div>
 		<!--1200结构end-->
 
+	<div>
 		<!--保障结构-->
 <!--		<div class="baozhang_wrap baozhang_wrap_fbfbfb">-->
 <!--			<div class="baozhang_content auto">-->
@@ -778,6 +449,331 @@
 <!--&lt;!&ndash;		</div>&ndash;&gt;-->
 <!--		<div id="bg" class="bg" style="display:none;"></div>-->
 		<!--登陆弹出框end-->
+	</div>
+
 	<div th:insert="~{bottom :: nav}"></div>
 	</body>
+	<script type="text/javascript">
+
+		var vue = new Vue({
+
+		});
+
+
+		$(function(){
+			$(".pro_detail_gwc").on("click",
+					function () {
+						var ndiv=$(this);//获取要加入购物车的元素的标签
+						var id=[[${sucai.id}]];
+						var nclazz=ndiv.hasClass("added");//判断是否已加入购物车
+						// console.log(nclazz);
+
+						if(ndiv.hasClass("added")){
+							//已加入 nclazz:true
+							layui.use('layer', function() { //独立版的layer无需执行这一句
+								var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+								//触发事件
+								layui.use('layer', function() { //独立版的layer无需执行这一句
+									var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+									layer.msg('已经加入购物车，不可重复添加哟！');
+								});
+							});
+
+						}else{//未加入购物车，则进行加入操作 nclazz:false
+							$.ajax(
+									{
+										url:contextPath +"/shopCar/add",
+										data:{"sid":id,"flag":nclazz},
+										// dataType:"json",
+										type:"post",
+										success:function(res){
+											// alert(sucai.favnum);
+											if(res){
+												if(res=="success"){//用户不曾下过该素材的订单
+													ndiv.addClass("added");
+													// layui.use('layer', function() { //独立版的layer无需执行这一句
+													// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+													//触发事件
+													layui.use('layer', function() { //独立版的layer无需执行这一句
+														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+														layer.msg('已成功添加购物车！可前往购物车查看结算');
+													});
+													// });
+												}
+												if(res=="failed"){
+													// ndiv.addClass("added");
+													// layui.use('layer', function() { //独立版的layer无需执行这一句
+													// 	var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+
+													//触发事件
+													layui.use('layer', function() { //独立版的layer无需执行这一句
+														var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+														layer.msg('你已经将有该素材相关的订单咯，无需再添加购物车！可前往订单记录中查看详情！');
+													});
+													// });
+												}
+											}else {
+												// alert(sucai);
+												showDiv();
+											}
+										}
+									}
+							);
+						}
+					}
+			);
+
+			// pro_detail_sc
+			$(".pro_detail_sc").on("click",
+					function () {
+						var picfav=$(this);//获取当前点赞的元素标签
+						var ndiv=$(".caozuo_sc");
+						var id=[[${sucai.id}]];
+						console.log(id);
+
+						var nclazz=picfav.hasClass("favored");//判断是否已被点赞
+						// 	console.log(nclazz);
+						if(picfav.hasClass("favored")){
+							//已点赞，则取消赞， nclazz:true
+							$.ajax(
+									{
+										url:contextPath+"/product/fav/addfav",
+										data:{"sid":id,"fav":nclazz},
+										// dataType:"json",
+										type:"post",
+										success:function(sucai){
+											// alert(sucai.favnum);
+											ndiv.text("收藏("+sucai.favnum+")");
+											ndiv.removeClass("favored");
+											picfav.removeClass("favored");
+										}
+									}
+							);
+						}else{//未被点赞，则进行点赞操作 nclazz:false
+							$.ajax(
+									{
+										url: contextPath +"/product/fav/addfav",
+										data:{"sid":id,"fav":nclazz},
+										// dataType:"json",
+										type:"post",
+										success:function(sucai){
+											// alert(sucai.favnum);
+											if(sucai){
+												ndiv.text("已收藏("+sucai.favnum+")");
+												ndiv.addClass("favored");
+												picfav.addClass("favored");
+											}else {
+												// alert(sucai);
+												showDiv();
+											}
+										}
+									}
+							);
+						}
+					}
+			);
+
+			$(".caozuo_sc").on("click",
+					function () {
+						var ndiv=$(this);//获取隐藏div中当前点赞的元素标签
+						var picfav=$(".pro_detail_sc");
+						var id=[[${sucai.id}]];
+						console.log(id);
+
+						var nclazz=ndiv.hasClass("favored");//判断是否已被点赞
+						// 	console.log(nclazz);
+						if(ndiv.hasClass("favored")){
+							//已点赞，则取消赞， nclazz:true
+							$.ajax(
+									{
+										url:contextPath +"/product/fav/addfav",
+										data:{"sid":id,"fav":nclazz},
+										// dataType:"json",
+										type:"post",
+										success:function(sucai){
+											// alert(sucai.favnum);
+											ndiv.text("收藏("+sucai.favnum+")");
+											ndiv.removeClass("favored");
+											picfav.removeClass("favored");
+										}
+									}
+							);
+						}else{//未被点赞，则进行点赞操作 nclazz:false
+							$.ajax(
+									{
+										url:contextPath +"/product/fav/addfav",
+										data:{"sid":id,"fav":nclazz},
+										// dataType:"json",
+										type:"post",
+										success:function(sucai){
+											// alert(sucai.favnum);
+											if(sucai){
+												ndiv.text("已收藏("+sucai.favnum+")");
+												ndiv.addClass("favored");
+												picfav.addClass("favored");
+											}else {
+												// alert(sucai);
+												showDiv();
+											}
+										}
+									}
+							);
+						}
+					}
+			);
+		});
+
+		var pic_wrap = document.getElementById('pic_wrap')//原图
+		float_box = document.getElementById("float_box"),//原图上的放大镜，大小应该和比例有关
+				show = document.getElementById('show');//展示放大图的区域
+		big_img = document.getElementById("big_img");//放大的图 大小应该是原图*比例 目前2倍
+		//鼠标移入事件，让放大镜和放大区显示！
+		pic_wrap.onmouseover = function() {
+			var pich=pic_wrap.offsetHeight;
+			var picw=pic_wrap.offsetWidth;
+			var big_img_w=picw*2;
+			var big_img_h=pich*2;
+			big_img.style.width=big_img_w+"px";
+			big_img.style.height=big_img_h+"px";//设置放大的图的大小
+			var show_h=$("#show").height();
+			var show_w=$("#show").width();
+			var scale_h=(show_h/big_img_h).toFixed(2);
+			var scale_w=(show_w/big_img_w).toFixed(2);
+			float_box.style.height=pich*scale_h+"px";
+			float_box.style.width=picw*scale_w+"px";//设置移块的大小
+			// console.log("pic width:"+picw+"pic height:"+pich);
+			// console.log("show width:"+show_h+"pic height:"+show_h);
+			// console.log("scale_h:"+scale_h+"scale_w:"+scale_w);
+			float_box.style.display = "block";
+			show.style.display = "block";
+		}
+		//鼠标不断移动时触发，实时更新放大镜得到的图片
+		pic_wrap.onmousemove = function(event) {
+			floatMove(float_box, pic_wrap, big_img,show,event);
+			// showPic();
+		}
+		//鼠标移出后，放大镜和放大区隐藏
+		pic_wrap.onmouseout = function() {
+			float_box.style.display = "none";
+			show.style.display = "none";
+		}
+		//运动框架，控制放大镜在原图中的位置！
+		function floatMove(argu1, argu2,argu3,argu4, event) {
+			var fdiv=$(argu1);
+			var picdiv=$(argu2);
+			var offset_pic=picdiv.offset();//图片在页面的偏移
+			var pic_w=picdiv.width();
+			var pic_h=picdiv.height();
+			var float_w=fdiv.width();
+			var float_h=fdiv.height();
+			var x = event.pageX - offset_pic.left-float_w/2;//在容器里的偏移
+			var y = event.pageY - offset_pic.top-float_h/2;
+
+			var minleft=0,mintop=0;//float最小最大的偏移位置
+			var maxleft=pic_w-float_w;
+			var maxtop=pic_h-float_h;
+			var fleft,ftop;
+
+			if(x < minleft){
+				fdiv.offset({"left":offset_pic.left+minleft});
+				fleft=minleft;
+			}else if(x>maxleft){
+				fdiv.offset({"left":offset_pic.left+maxleft});
+				fleft=maxleft;
+			}else {
+				fdiv.offset({"left":offset_pic.left+x});
+				fleft=x;
+			}
+			if(y<mintop){
+				fdiv.offset({"top":offset_pic.top+mintop});
+				ftop=mintop;
+			}else if(y>maxtop){
+				fdiv.offset({"top":offset_pic.top+maxtop});
+				ftop=maxtop;
+			}else {
+				fdiv.offset({"top":offset_pic.top+y});
+				ftop=y;
+			}
+			// console.log("x="+x+",y="+y);
+			// console.log("float_w="+float_w+",float_h="+float_h);
+			// console.log("fleft="+fleft+",ftop="+ftop);
+			var bigpic=$(argu3);//获取大图对象
+			// console.log(bigpic);
+			var showdiv=$(argu4);
+			var show_off_h=showdiv.offset().top;
+			var show_off_w=showdiv.offset().left;
+			// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
+			bigpic.offset({"left":(show_off_w-fleft*2),"top":(show_off_h-ftop*2)});
+			// console.log(bigpic.offset().left+"=============="+bigpic.offset().top);
+			// bigpic.offset({"left":(-fleft*2)+"px","top":(-ftop*2)+"px"});
+			// bigpic.offset({"left":fleft*2,"top":ftop*2});
+
+		}
+		//点击下载后，若登录，则跳转，不然就弹出登录框
+		function jumpToDownload(id) {
+			console.log("进入了js方法");
+			// var test="[[${session.user}]]";
+			// console.log(test);
+			if("[[${session.user}]]"){//用户已登录
+				var uid=$("#user_id").val();
+				$.ajax(
+						{
+							url:contextPath +"/product/isPay",
+							data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+							// dataType:"json",
+							type:"post",
+							success:function(flag){
+								console.log(flag);
+								if(flag){//已购买
+									// window.open(`${filePath}?attname=${fileName}`,'_self');
+									//获取下载地址
+									layui.use('layer', function() { //独立版的layer无需执行这一句
+										var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+										layer.msg('该素材已经购买，将直接下载！');
+									});
+									$.ajax(
+											{
+												url:contextPath +"/product/getDownUrl",
+												data:{"sid":id},//传递参数：素材id和用户id
+												// dataType:"json",
+												type:"post",
+												success:function(url){
+													console.log(url);
+													// console.log(sucai.save+"?attname="+sucai.name+".jpg");
+													// window.open(sucai.save+"?attname="+sucai.name+".jpg","_self");
+													window.open(url,"_self");
+													$.ajax(
+															{
+																url:contextPath +"/product/addDownNum",
+																data:{"sid":id,"uid":uid},//传递参数：素材id和用户id
+																// dataType:"json",
+																type:"post",
+																success:function(sucai){
+																	// console.log(sucai);
+																	// alert(url);
+																	$(".caozuo_xz").text("下载("+sucai.downnum+")");
+																}
+															}
+													);
+												}
+											}
+									);
+								}else {
+									layui.use('layer', function() { //独立版的layer无需执行这一句
+										var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+										layer.msg('该素材还未购买，无法直接进行下载，请先添加购物车进行购买！');
+									});
+								}
+							}
+						}
+				);
+				// window.location.href=contextPath+"/product/download?id="+id;
+			}else{
+				showDiv();
+			}
+		}
+
+	</script>
 </html>

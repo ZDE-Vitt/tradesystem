@@ -2,6 +2,7 @@ package com.gem.tradesystem.service.impl;
 
 import com.gem.tradesystem.entity.Sucai;
 import com.gem.tradesystem.mapper.SucaiMapper;
+import com.gem.tradesystem.mapper.TagMapper;
 import com.gem.tradesystem.service.SucaiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,13 @@ import java.util.List;
 public class SucaiServiceImpl implements SucaiService {
     @Autowired
     private SucaiMapper sucaiMapper;
+    @Autowired
+    private TagMapper tagMapper;
 
     @Override
     public Sucai getOneById(Integer id) {
         Sucai sucai=sucaiMapper.getOneById(id);
+        sucai.setTagName(tagMapper.getname(sucai.getTagid()));
         return sucai;
     }
 

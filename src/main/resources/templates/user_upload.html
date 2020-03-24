@@ -113,7 +113,7 @@
                         <tr>
                             <td class="fabu_twozero_td1 fabu_twozero_tdtop">大小：</td>
                             <td class="fabu_twozero_td2">
-                                <input type="text" name="width" />&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" name="heigth" />
+                                <input type="text" readonly id="width" name="width" />&nbsp;&nbsp;X&nbsp;&nbsp;<input type="text" readonly id="heigth" name="heigth" />
                             </td>
                         </tr>
 
@@ -271,6 +271,20 @@
         });
     });
 
+    // 获取图片真实高度
+    function getImageWidth(url,callback) {
+        var img = new Image();
+        img.src = url;
+        // 如果图片被缓存，则直接返回缓存数据
+        if (img.complete) {
+            callback(img.width, img.height);
+        } else {
+            img.onload = function () {
+                callback(img.width, img.height);
+            }
+        }
+    }
+
     layui.use('upload', function(){
         var upload = layui.upload;
 
@@ -286,6 +300,14 @@
                     //将图片路径放到img标签中
                     $("#queue_img2").css("display","block");
                     $("#queue_img2").attr("src", res.iurl);
+                    $(function(){
+                        getImageWidth(res.iurl,function(w,h){
+                            $("#width").val(w);
+                            // $("#width").attr("text" , w);
+                            $("#heigth").val(h);
+                            // $("#heigth").attr("text" , w);
+                        });
+                    });
                 }else{
                     layer.msg(res.msg,{
                         time:3000

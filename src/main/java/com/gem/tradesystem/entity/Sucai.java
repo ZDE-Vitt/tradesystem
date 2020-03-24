@@ -44,6 +44,9 @@ public class Sucai {
     @TableField(exist = false)
     private String formatTime;
 
+    @TableField(exist = false)
+    private String tagName;
+
     @TableLogic
     private Integer delFlag;
 

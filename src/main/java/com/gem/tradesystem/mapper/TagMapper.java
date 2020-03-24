@@ -22,4 +22,7 @@ public interface TagMapper {
     @Select("select id from tag where typename = #{typename}")
     Integer getid(@Param("typename")String typename);
 
+    @Select("select typename from tag where id = #{id}")
+    String getname(@Param("id")Integer id);
+
 }
