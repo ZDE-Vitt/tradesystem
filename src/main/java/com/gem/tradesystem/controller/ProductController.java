@@ -53,6 +53,10 @@ public class ProductController {
         if(id!=null){
 //            Integer id=Integer.parseInt(sid);
             sucai=sucaiService.getOneById(id);
+
+            //用户不做修改时
+            model.addAttribute("save",sucai.getSave());
+
             String srcurl=srcUrl.getSrcUrl(sucai);//动态拼接数据库中存储的路径后
             sucai.setSave(srcurl);
 //            System.out.println(sucai);
@@ -77,8 +81,6 @@ public class ProductController {
             model.addAttribute("user",sucaiuser);
 
         }
-
-        System.out.println("sucai=====================>" + sucai);
 
         if(null != user){
             if (user.getId() == sucai.getUserid()){
